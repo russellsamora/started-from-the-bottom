@@ -1,0 +1,19 @@
+{
+  "name": "worst-to-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russellgoldenberg/worst-to-first.git"
+  },
+  "author": "Russell Goldenberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/russellgoldenberg/worst-to-first/issues"
+  },
+  "homepage": "https://github.com/russellgoldenberg/worst-to-first#readme"
+}
