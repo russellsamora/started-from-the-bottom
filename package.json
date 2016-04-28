@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/russellgoldenberg/worst-to-first/issues"
   },
-  "homepage": "https://github.com/russellgoldenberg/worst-to-first#readme"
+  "homepage": "https://github.com/russellgoldenberg/worst-to-first#readme",
+  "devDependencies": {
+    "d3-dsv": "^0.3.2"
+  }
 }
