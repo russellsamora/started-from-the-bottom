@@ -45,7 +45,7 @@ teams.forEach(t =>
 		const gamesBack = wins ?  most - wins : false
 		const worst = wins ? curSeason.lastIndexOf(wins) === curSeason.length - 1 : false
 		const first = gamesBack === 0
-		const rank = wins ? curSeason.indexOf(wins) : false
+		const rank = wins ? curSeason.indexOf(wins) + 1 : false
 
 		return { season, gamesBack, rank, worst, first }
 	})

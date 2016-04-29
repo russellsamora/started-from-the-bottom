@@ -7,3 +7,6 @@ Started from the bottom...
 
 ### Data source
 [http://www.basketball-reference.com/leagues/NBA_wins.html](basketball-reference.com)
+
+### Resources
+[http://bl.ocks.org/mbostock/3035090](gaps in line chart)
