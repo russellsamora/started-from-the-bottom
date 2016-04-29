@@ -7,8 +7,9 @@ const data = csvParse(csvData)
 // where the team starts so we can strip out other properties
 const firstTeamIndex = 3
 
-// helper function turn team names into array
-const getTeams = obj => Object.keys(obj).slice(firstTeamIndex)
+// turn team names into array
+const getTeams = obj =>
+	Object.keys(obj).slice(firstTeamIndex)
 
 // filter to seasons since the merger (1976)
 const sinceMerger = data.filter(d => +(d.Season.split('-')[0]) > 1975)
@@ -20,7 +21,8 @@ const teams = getTeams(sinceMerger[0]).map(team => ({ team }))
 const sortedWins = sinceMerger.map(d =>
 	// get teams, get wins, sort, get most
 	getTeams(d)
-		.map(t => d[t] || 0)
+		.map(team => d[team] || 0)
+		.filter(val => val > 0)
 		.sort((a, b) => b - a)
 )
 
@@ -29,12 +31,14 @@ teams.forEach(t =>
 	// go thru each year, find the team, calculate wins back and rank
 	t.data = sinceMerger.map((d, index) => {
 		const season = d.Season
+		const curSeason = sortedWins[index]
 		const wins = d[t.team] || 0
-		const most = sortedWins[index][0]
-		const gamesBack = wins ?  most - wins : -1
-		const rank = wins? sortedWins[index].indexOf(wins) + 1 : -1  // ranking starts at 1 not 0
+		const most = curSeason[0]
+		const gamesBack = wins ?  most - wins : false
+		const worst = wins ? curSeason.lastIndexOf(wins) === curSeason.length - 1 : false
+		const first = gamesBack === 0
 
-		return { season, gamesBack, rank }
+		return { season, gamesBack, worst, first }
 	})
 )
 
