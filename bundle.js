@@ -6,8 +6,8 @@
 	};
 
 	var handleDataLoaded = function handleDataLoaded(err, data) {
-		var outerWidth = 640;
-		var outerHeight = 480;
+		var outerWidth = 960;
+		var outerHeight = 540;
 		var margin = { top: 20, right: 40, bottom: 40, left: 40 };
 		var chartWidth = outerWidth - margin.left - margin.right;
 		var chartHeight = outerHeight - margin.top - margin.bottom;
@@ -15,7 +15,7 @@
 		// create containers
 		var svg = d3.select('svg').attr('width', outerWidth).attr('height', outerHeight);
 
-		var chart = svg.append('g').attr('class', 'chart').attr('transform', translate(margin.left, margin.top));
+		var chartGroup = svg.append('g').attr('class', 'chart').attr('transform', translate(margin.left, margin.top));
 
 		var yearFormat = d3.time.format('%Y');
 
@@ -30,7 +30,8 @@
 
 		xScale.domain(d3.extent(data, function (d) {
 			return d.seasonFormatted;
-		})).range([0, chartWidth]).nice();
+		})).range([0, chartWidth]);
+		// .nice()
 		yScale.domain([1, data.filter(function (d) {
 			return d.season === '2015-16';
 		}).length + 1])
@@ -42,7 +43,7 @@
 
 		var yAxis = d3.svg.axis().scale(yScale).orient('left').tickValues([1, 5, 10, 15, 20, 25, 30]);
 
-		var line = d3.svg.line().defined(function (d) {
+		var createLine = d3.svg.line().defined(function (d) {
 			return d.rank;
 		}).interpolate('step').x(function (d) {
 			return xScale(d.seasonFormatted);
@@ -50,29 +51,37 @@
 			return yScale(d.rank);
 		});
 
-		chart.append('g').attr('class', 'axis axis--x').attr('transform', translate(0, chartHeight)).call(xAxis);
+		chartGroup.append('g').attr('class', 'axis axis--x').attr('transform', translate(0, chartHeight)).call(xAxis);
 
-		chart.append('g').attr('class', 'axis axis--y').attr('transform', translate(0, 0)).call(yAxis);
+		chartGroup.append('g').attr('class', 'axis axis--y').attr('transform', translate(0, 0)).call(yAxis);
 
-		// add data
-		var dots = chart.append('g').attr('class', 'dot-group');
+		var lineGroup = chartGroup.append('g').attr('class', 'line-group');
 
-		data = data.filter(function (d) {
-			return d.wins;
+		var dotGroup = chartGroup.append('g').attr('class', 'dot-group');
+
+		var dataByTeam = d3.nest().key(function (d) {
+			return d.name;
+		}).entries(data);
+
+		var test = dataByTeam.filter(function (d) {
+			return d.key === 'GSW';
 		});
-		dots.selectAll('.dot').data(data).enter().append('circle').attr('class', 'dot').attr('r', 2).attr('cx', function (d) {
+
+		// DATA
+		var teamLine = lineGroup.selectAll('.team').data(test).enter().append('g').attr('class', 'team');
+
+		// ENTER
+		teamLine.append('path').attr('class', 'line').attr('d', function (d) {
+			return createLine(d.values);
+		});
+
+		var teamDot = dotGroup.selectAll('.dot').data(test[0].values).enter().append('circle').attr('class', function (d) {
+			return 'dot ' + (d.worst ? 'worst' : '') + ' ' + (d.first ? 'first' : '');
+		}).attr('r', 2).attr('cx', function (d) {
 			return xScale(d.seasonFormatted);
 		}).attr('cy', function (d) {
 			return yScale(d.rank);
 		});
-
-		var lines = chart.append('g').attr('class', 'line-group');
-
-		var test = data.filter(function (d) {
-			return d.team === 'CHO';
-		});
-
-		lines.append('path').datum(test).attr('class', 'line').attr('d', line);
 	};
 
 	var init = function init() {

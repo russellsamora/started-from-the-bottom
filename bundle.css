@@ -7,6 +7,10 @@ main {
 svg {
   margin-top: 1em;
   border: 1px solid #000;
+  stroke: #000;
+  stroke-opacity: 0.1;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
 svg .axis {
   font-size: 11px;
@@ -15,14 +19,23 @@ svg .axis path,
 svg .axis line {
   fill: none;
   stroke: #ccc;
+  stroke-opacity: 1;
   shape-rendering: crispEdges;
+}
+svg .axis--y path,
+svg .axis--y line {
+  stroke: none;
 }
 svg .dot {
   fill: #888;
   stroke: none;
 }
+svg .dot.worst {
+  fill: #f00;
+}
+svg .dot.first {
+  fill: #008000;
+}
 svg .line {
   fill: none;
-  stroke: #888;
-  stroke-width: 1px;
 }

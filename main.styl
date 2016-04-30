@@ -12,11 +12,21 @@ svg
 		path, line
 			fill none
 			stroke #ccc
+			stroke-opacity 1
 			shape-rendering crispEdges
+		&--y
+			path, line
+				stroke none
 	.dot 
 		fill #888
 		stroke none
+		&.worst 
+			fill red
+		&.first
+			fill green
 	.line 
 		fill none
-		stroke #888
-		stroke-width 1px
+	    stroke #000
+	    stroke-opacity 0.1
+	    stroke-linejoin round
+	    stroke-linecap round

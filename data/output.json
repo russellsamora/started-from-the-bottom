@@ -1,6 +1,6 @@
 [
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 48,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -10,7 +10,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 48,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -20,7 +20,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 21,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -30,7 +30,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 42,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -40,7 +40,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 48,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -50,7 +50,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 57,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -60,7 +60,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 42,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -70,7 +70,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 33,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -80,7 +80,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 44,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -90,7 +90,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 73,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -100,7 +100,7 @@
     "first": true
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 41,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -110,7 +110,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 45,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -120,7 +120,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 53,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -130,7 +130,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 17,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -140,7 +140,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 42,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -150,7 +150,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 48,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -160,7 +160,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 33,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -170,7 +170,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 29,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -180,7 +180,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 30,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -190,7 +190,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 32,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -200,7 +200,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 55,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -210,7 +210,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 35,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -220,7 +220,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 10,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -230,7 +230,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 23,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -240,7 +240,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 44,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -250,7 +250,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 33,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -260,7 +260,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 67,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -270,7 +270,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 56,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -280,7 +280,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 40,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -290,7 +290,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 41,
     "season": "2015-16",
     "seasonYear": "2016",
@@ -300,7 +300,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 60,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -310,7 +310,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 40,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -320,7 +320,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 38,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -330,7 +330,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 50,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -340,7 +340,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 33,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -350,7 +350,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 53,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -360,7 +360,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 50,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -370,7 +370,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 30,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -380,7 +380,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 32,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -390,7 +390,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 67,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -400,7 +400,7 @@
     "first": true
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 56,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -410,7 +410,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 38,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -420,7 +420,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 56,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -430,7 +430,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 21,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -440,7 +440,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 55,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -450,7 +450,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 37,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -460,7 +460,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 41,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -470,7 +470,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 16,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -480,7 +480,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 45,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -490,7 +490,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 17,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -500,7 +500,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 45,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -510,7 +510,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 25,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -520,7 +520,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 18,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -530,7 +530,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 39,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -540,7 +540,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 51,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -550,7 +550,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 29,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -560,7 +560,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 55,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -570,7 +570,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 49,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -580,7 +580,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 38,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -590,7 +590,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 46,
     "season": "2014-15",
     "seasonYear": "2015",
@@ -600,7 +600,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 38,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -610,7 +610,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 25,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -620,7 +620,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 44,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -630,7 +630,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 48,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -640,7 +640,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 43,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -650,7 +650,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 33,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -660,7 +660,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 49,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -670,7 +670,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 36,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -680,7 +680,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 29,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -690,7 +690,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 51,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -700,7 +700,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 54,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -710,7 +710,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 56,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -720,7 +720,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 57,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -730,7 +730,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 27,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -740,7 +740,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 50,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -750,7 +750,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 54,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -760,7 +760,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 15,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -770,7 +770,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 40,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -780,7 +780,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 34,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -790,7 +790,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 37,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -800,7 +800,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 59,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -810,7 +810,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 23,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -820,7 +820,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 19,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -830,7 +830,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 48,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -840,7 +840,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 54,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -850,7 +850,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 28,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -860,7 +860,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 62,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -870,7 +870,7 @@
     "first": true
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 48,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -880,7 +880,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 25,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -890,7 +890,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 44,
     "season": "2013-14",
     "seasonYear": "2014",
@@ -900,7 +900,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 44,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -910,7 +910,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 41,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -920,7 +920,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 49,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -930,7 +930,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 45,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -940,7 +940,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 21,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -950,7 +950,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 24,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -960,7 +960,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 41,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -970,7 +970,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 57,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -980,7 +980,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 29,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -990,7 +990,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 47,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1000,7 +1000,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 45,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1010,7 +1010,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 49,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1020,7 +1020,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 56,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1030,7 +1030,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 45,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1040,7 +1040,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 56,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1050,7 +1050,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 66,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1060,7 +1060,7 @@
     "first": true
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 38,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1070,7 +1070,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 31,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1080,7 +1080,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 27,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1090,7 +1090,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 54,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1100,7 +1100,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 60,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1110,7 +1110,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 20,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1120,7 +1120,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 34,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1130,7 +1130,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 25,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1140,7 +1140,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 33,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1150,7 +1150,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 28,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1160,7 +1160,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 58,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1170,7 +1170,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 34,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1180,7 +1180,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 43,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1190,7 +1190,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 29,
     "season": "2012-13",
     "seasonYear": "2013",
@@ -1200,7 +1200,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 40,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1210,7 +1210,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 39,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1220,7 +1220,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 22,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1230,7 +1230,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 50,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1240,7 +1240,7 @@
     "first": true
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 7,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1250,7 +1250,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 21,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1260,7 +1260,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 36,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1270,7 +1270,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 38,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1280,7 +1280,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 25,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1290,7 +1290,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 23,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1300,7 +1300,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 34,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1310,7 +1310,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 42,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1320,7 +1320,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 40,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1330,7 +1330,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 41,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1340,7 +1340,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 41,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1350,7 +1350,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 46,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1360,7 +1360,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 31,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1370,7 +1370,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 26,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1380,7 +1380,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 21,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1390,7 +1390,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 36,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1400,7 +1400,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 47,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1410,7 +1410,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 37,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1420,7 +1420,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 35,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1430,7 +1430,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 33,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1440,7 +1440,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 28,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1450,7 +1450,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 22,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1460,7 +1460,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 50,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1470,7 +1470,7 @@
     "first": true
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 23,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1480,7 +1480,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 36,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1490,7 +1490,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 20,
     "season": "2011-12",
     "seasonYear": "2012",
@@ -1500,7 +1500,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 44,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1510,7 +1510,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 56,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1520,7 +1520,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 24,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1530,7 +1530,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 62,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1540,7 +1540,7 @@
     "first": true
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 34,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1550,7 +1550,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 19,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1560,7 +1560,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 57,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1570,7 +1570,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 50,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1580,7 +1580,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 30,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1590,7 +1590,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 36,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1600,7 +1600,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 43,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1610,7 +1610,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 37,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1620,7 +1620,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 32,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1630,7 +1630,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 57,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1640,7 +1640,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 46,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1650,7 +1650,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 58,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1660,7 +1660,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 35,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1670,7 +1670,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 17,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1680,7 +1680,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 46,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1690,7 +1690,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 42,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1700,7 +1700,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 55,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1710,7 +1710,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 52,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1720,7 +1720,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 41,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1730,7 +1730,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 40,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1740,7 +1740,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 48,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1750,7 +1750,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 24,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1760,7 +1760,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 61,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1770,7 +1770,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 22,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1780,7 +1780,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 39,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1790,7 +1790,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 23,
     "season": "2010-11",
     "seasonYear": "2011",
@@ -1800,7 +1800,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 53,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1810,7 +1810,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 50,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1820,7 +1820,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 12,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1830,7 +1830,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 41,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1840,7 +1840,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 44,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1850,7 +1850,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 61,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1860,7 +1860,7 @@
     "first": true
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 55,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1870,7 +1870,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 53,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1880,7 +1880,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 27,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1890,7 +1890,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 26,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1900,7 +1900,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 42,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1910,7 +1910,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 32,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1920,7 +1920,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 29,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1930,7 +1930,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 57,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1940,7 +1940,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 40,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1950,7 +1950,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 47,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1960,7 +1960,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 46,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1970,7 +1970,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 15,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1980,7 +1980,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 37,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -1990,7 +1990,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 29,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2000,7 +2000,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 50,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2010,7 +2010,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 59,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2020,7 +2020,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 27,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2030,7 +2030,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 54,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2040,7 +2040,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 50,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2050,7 +2050,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 25,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2060,7 +2060,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 50,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2070,7 +2070,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 40,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2080,7 +2080,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 53,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2090,7 +2090,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 26,
     "season": "2009-10",
     "seasonYear": "2010",
@@ -2100,7 +2100,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 47,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2110,7 +2110,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 62,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2120,7 +2120,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 34,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2130,7 +2130,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 41,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2140,7 +2140,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 35,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2150,7 +2150,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 66,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2160,7 +2160,7 @@
     "first": true
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 50,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2170,7 +2170,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 54,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2180,7 +2180,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 39,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2190,7 +2190,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 29,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2200,7 +2200,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 53,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2210,7 +2210,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 36,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2220,7 +2220,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 19,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2230,7 +2230,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 65,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2240,7 +2240,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 24,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2250,7 +2250,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 43,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2260,7 +2260,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 34,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2270,7 +2270,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 24,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2280,7 +2280,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 49,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2290,7 +2290,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 32,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2300,7 +2300,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 23,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2310,7 +2310,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 59,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2320,7 +2320,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 41,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2330,7 +2330,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 46,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2340,7 +2340,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 54,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2350,7 +2350,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 17,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2360,7 +2360,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 54,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2370,7 +2370,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 33,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2380,7 +2380,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 48,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2390,7 +2390,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 19,
     "season": "2008-09",
     "seasonYear": "2009",
@@ -2400,7 +2400,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 37,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2410,7 +2410,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 66,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2420,7 +2420,7 @@
     "first": true
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 34,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2430,7 +2430,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 33,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2440,7 +2440,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 32,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2450,7 +2450,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 45,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2460,7 +2460,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 51,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2470,7 +2470,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 50,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2480,7 +2480,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 59,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2490,7 +2490,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 48,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2500,7 +2500,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 55,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2510,7 +2510,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 36,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2520,7 +2520,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 23,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2530,7 +2530,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 57,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2540,7 +2540,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 22,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2550,7 +2550,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 15,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2560,7 +2560,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 26,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2570,7 +2570,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 22,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2580,7 +2580,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 56,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2590,7 +2590,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 23,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2600,7 +2600,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 20,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2610,7 +2610,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 52,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2620,7 +2620,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 40,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2630,7 +2630,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 55,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2640,7 +2640,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 41,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2650,7 +2650,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 38,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2660,7 +2660,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 56,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2670,7 +2670,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 41,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2680,7 +2680,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 54,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2690,7 +2690,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 43,
     "season": "2007-08",
     "seasonYear": "2008",
@@ -2700,7 +2700,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 30,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2710,7 +2710,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 24,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2720,7 +2720,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 41,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2730,7 +2730,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 49,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2740,7 +2740,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 33,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2750,7 +2750,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 50,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2760,7 +2760,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 67,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2770,7 +2770,7 @@
     "first": true
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 45,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2780,7 +2780,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 53,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2790,7 +2790,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 42,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2800,7 +2800,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 52,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2810,7 +2810,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 35,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2820,7 +2820,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 40,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2830,7 +2830,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 42,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2840,7 +2840,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 22,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2850,7 +2850,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 44,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2860,7 +2860,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 28,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2870,7 +2870,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 32,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2880,7 +2880,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 39,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2890,7 +2890,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 33,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2900,7 +2900,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 31,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2910,7 +2910,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 40,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2920,7 +2920,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 35,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2930,7 +2930,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 61,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2940,7 +2940,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 32,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2950,7 +2950,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 33,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2960,7 +2960,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 58,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2970,7 +2970,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 47,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2980,7 +2980,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 51,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -2990,7 +2990,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 41,
     "season": "2006-07",
     "seasonYear": "2007",
@@ -3000,7 +3000,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 26,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3010,7 +3010,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 33,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3020,7 +3020,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 49,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3030,7 +3030,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 41,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3040,7 +3040,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 26,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3050,7 +3050,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 50,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3060,7 +3060,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 60,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3070,7 +3070,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 44,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3080,7 +3080,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 64,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3090,7 +3090,7 @@
     "first": true
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 34,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3100,7 +3100,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 34,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3110,7 +3110,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 41,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3120,7 +3120,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 47,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3130,7 +3130,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 45,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3140,7 +3140,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 49,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3150,7 +3150,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 52,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3160,7 +3160,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 40,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3170,7 +3170,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 33,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3180,7 +3180,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 38,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3190,7 +3190,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 23,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3200,7 +3200,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 35,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3210,7 +3210,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 36,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3220,7 +3220,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 38,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3230,7 +3230,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 54,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3240,7 +3240,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 21,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3250,7 +3250,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 44,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3260,7 +3260,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 63,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3270,7 +3270,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 27,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3280,7 +3280,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 41,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3290,7 +3290,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 42,
     "season": "2005-06",
     "seasonYear": "2006",
@@ -3300,7 +3300,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 13,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3310,7 +3310,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 45,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3320,7 +3320,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 42,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3330,7 +3330,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 47,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3340,7 +3340,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 18,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3350,7 +3350,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 42,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3360,7 +3360,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 58,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3370,7 +3370,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 49,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3380,7 +3380,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 54,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3390,7 +3390,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 34,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3400,7 +3400,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 51,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3410,7 +3410,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 44,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3420,7 +3420,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 37,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3430,7 +3430,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 34,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3440,7 +3440,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 45,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3450,7 +3450,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 59,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3460,7 +3460,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 30,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3470,7 +3470,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 44,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3480,7 +3480,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 18,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3490,7 +3490,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 33,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3500,7 +3500,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 52,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3510,7 +3510,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 36,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3520,7 +3520,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 43,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3530,7 +3530,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 62,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3540,7 +3540,7 @@
     "first": true
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 27,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3550,7 +3550,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 50,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3560,7 +3560,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 59,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3570,7 +3570,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 33,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3580,7 +3580,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 26,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3590,7 +3590,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 45,
     "season": "2004-05",
     "seasonYear": "2005",
@@ -3600,7 +3600,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 28,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3610,7 +3610,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 36,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3620,7 +3620,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 47,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3630,7 +3630,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 23,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3640,7 +3640,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3650,7 +3650,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 35,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3660,7 +3660,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 52,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3670,7 +3670,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 43,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3680,7 +3680,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 54,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3690,7 +3690,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 37,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3700,7 +3700,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 45,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3710,7 +3710,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 61,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3720,7 +3720,7 @@
     "first": true
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 28,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3730,7 +3730,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 56,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3740,7 +3740,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 50,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3750,7 +3750,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 42,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3760,7 +3760,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 41,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3770,7 +3770,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 58,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3780,7 +3780,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 41,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3790,7 +3790,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 39,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3800,7 +3800,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 37,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3810,7 +3810,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 21,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3820,7 +3820,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 33,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3830,7 +3830,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 29,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3840,7 +3840,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 41,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3850,7 +3850,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 55,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3860,7 +3860,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 57,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3870,7 +3870,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 33,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3880,7 +3880,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 42,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3890,7 +3890,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 25,
     "season": "2003-04",
     "seasonYear": "2004",
@@ -3900,7 +3900,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 35,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3910,7 +3910,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 44,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3920,7 +3920,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 49,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3930,7 +3930,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 30,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3940,7 +3940,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3950,7 +3950,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 17,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3960,7 +3960,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 60,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3970,7 +3970,7 @@
     "first": true
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 17,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3980,7 +3980,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 50,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -3990,7 +3990,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 38,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4000,7 +4000,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 43,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4010,7 +4010,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 48,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4020,7 +4020,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 27,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4030,7 +4030,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 50,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4040,7 +4040,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 28,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4050,7 +4050,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 25,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4060,7 +4060,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 42,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4070,7 +4070,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 51,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4080,7 +4080,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 47,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4090,7 +4090,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 37,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4100,7 +4100,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 40,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4110,7 +4110,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 42,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4120,7 +4120,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 48,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4130,7 +4130,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 44,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4140,7 +4140,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 50,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4150,7 +4150,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 59,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4160,7 +4160,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 60,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4170,7 +4170,7 @@
     "first": true
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 24,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4180,7 +4180,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 47,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4190,7 +4190,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 37,
     "season": "2002-03",
     "seasonYear": "2003",
@@ -4200,7 +4200,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 33,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4210,7 +4210,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 49,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4220,7 +4220,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 52,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4230,7 +4230,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 21,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4240,7 +4240,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 44,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4250,7 +4250,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 29,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4260,7 +4260,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 57,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4270,7 +4270,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 27,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4280,7 +4280,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 50,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4290,7 +4290,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 21,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4300,7 +4300,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 28,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4310,7 +4310,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 42,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4320,7 +4320,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 39,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4330,7 +4330,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 58,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4340,7 +4340,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 23,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4350,7 +4350,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 36,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4360,7 +4360,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 41,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4370,7 +4370,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 50,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4380,7 +4380,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4390,7 +4390,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 30,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4400,7 +4400,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 45,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4410,7 +4410,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 44,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4420,7 +4420,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 43,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4430,7 +4430,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 36,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4440,7 +4440,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 49,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4450,7 +4450,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 61,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4460,7 +4460,7 @@
     "first": true
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 58,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4470,7 +4470,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 42,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4480,7 +4480,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 44,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4490,7 +4490,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 37,
     "season": "2001-02",
     "seasonYear": "2002",
@@ -4500,7 +4500,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 25,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4510,7 +4510,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 36,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4520,7 +4520,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 26,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4530,7 +4530,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 15,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4540,7 +4540,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 46,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4550,7 +4550,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 30,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4560,7 +4560,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 53,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4570,7 +4570,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 40,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4580,7 +4580,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 32,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4590,7 +4590,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 17,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4600,7 +4600,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 45,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4610,7 +4610,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 41,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4620,7 +4620,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 31,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4630,7 +4630,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 56,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4640,7 +4640,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 23,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4650,7 +4650,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 50,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4660,7 +4660,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 52,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4670,7 +4670,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 47,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4680,7 +4680,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4690,7 +4690,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 48,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4700,7 +4700,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 44,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4710,7 +4710,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 43,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4720,7 +4720,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 56,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4730,7 +4730,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 51,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4740,7 +4740,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 50,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4750,7 +4750,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 55,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4760,7 +4760,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 58,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4770,7 +4770,7 @@
     "first": true
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 47,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4780,7 +4780,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 53,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4790,7 +4790,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 19,
     "season": "2000-01",
     "seasonYear": "2001",
@@ -4800,7 +4800,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 28,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4810,7 +4810,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 35,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4820,7 +4820,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 31,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4830,7 +4830,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 17,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4840,7 +4840,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 49,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4850,7 +4850,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 32,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4860,7 +4860,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 40,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4870,7 +4870,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 35,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4880,7 +4880,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 42,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4890,7 +4890,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 19,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4900,7 +4900,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 34,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4910,7 +4910,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 56,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4920,7 +4920,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 15,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4930,7 +4930,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 67,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4940,7 +4940,7 @@
     "first": true
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 22,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4950,7 +4950,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 52,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4960,7 +4960,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 42,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4970,7 +4970,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 50,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4980,7 +4980,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -4990,7 +4990,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 50,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5000,7 +5000,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 45,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5010,7 +5010,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 41,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5020,7 +5020,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 49,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5030,7 +5030,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 53,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5040,7 +5040,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 59,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5050,7 +5050,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 44,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5060,7 +5060,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 53,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5070,7 +5070,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 45,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5080,7 +5080,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 55,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5090,7 +5090,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 29,
     "season": "1999-00",
     "seasonYear": "2000",
@@ -5100,7 +5100,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 31,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5110,7 +5110,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 19,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5120,7 +5120,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 16,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5130,7 +5130,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 13,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5140,7 +5140,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 26,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5150,7 +5150,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 22,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5160,7 +5160,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 19,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5170,7 +5170,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 14,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5180,7 +5180,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 29,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5190,7 +5190,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 21,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5200,7 +5200,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 31,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5210,7 +5210,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 33,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5220,7 +5220,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 9,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5230,7 +5230,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 31,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5240,7 +5240,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 8,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5250,7 +5250,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 33,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5260,7 +5260,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 28,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5270,7 +5270,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 25,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5280,7 +5280,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5290,7 +5290,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 27,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5300,7 +5300,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 25,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5310,7 +5310,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 33,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5320,7 +5320,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 28,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5330,7 +5330,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 27,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5340,7 +5340,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 35,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5350,7 +5350,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 27,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5360,7 +5360,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 37,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5370,7 +5370,7 @@
     "first": true
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 23,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5380,7 +5380,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 37,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5390,7 +5390,7 @@
     "first": true
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 18,
     "season": "1998-99",
     "seasonYear": "1999",
@@ -5400,7 +5400,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 50,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5410,7 +5410,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 36,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5420,7 +5420,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 43,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5430,7 +5430,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 62,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5440,7 +5440,7 @@
     "first": true
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 51,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5450,7 +5450,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 47,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5460,7 +5460,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 20,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5470,7 +5470,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 11,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5480,7 +5480,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 37,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5490,7 +5490,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 19,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5500,7 +5500,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 41,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5510,7 +5510,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 58,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5520,7 +5520,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 17,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5530,7 +5530,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 61,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5540,7 +5540,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 19,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5550,7 +5550,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 55,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5560,7 +5560,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 36,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5570,7 +5570,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 45,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5580,7 +5580,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5590,7 +5590,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 43,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5600,7 +5600,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 61,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5610,7 +5610,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 41,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5620,7 +5620,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 31,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5630,7 +5630,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 56,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5640,7 +5640,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 46,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5650,7 +5650,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 27,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5660,7 +5660,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 56,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5670,7 +5670,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 16,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5680,7 +5680,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 62,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5690,7 +5690,7 @@
     "first": true
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 42,
     "season": "1997-98",
     "seasonYear": "1998",
@@ -5700,7 +5700,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 56,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5710,7 +5710,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 15,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5720,7 +5720,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 26,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5730,7 +5730,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 69,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5740,7 +5740,7 @@
     "first": true
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 54,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5750,7 +5750,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 42,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5760,7 +5760,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 24,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5770,7 +5770,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 21,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5780,7 +5780,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 54,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5790,7 +5790,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 30,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5800,7 +5800,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 57,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5810,7 +5810,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 39,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5820,7 +5820,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 36,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5830,7 +5830,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 56,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5840,7 +5840,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 14,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5850,7 +5850,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 61,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5860,7 +5860,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 33,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5870,7 +5870,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 40,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5880,7 +5880,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5890,7 +5890,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 57,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5900,7 +5900,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 57,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5910,7 +5910,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 45,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5920,7 +5920,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 22,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5930,7 +5930,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 40,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5940,7 +5940,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 49,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5950,7 +5950,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 34,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5960,7 +5960,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 20,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5970,7 +5970,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 30,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5980,7 +5980,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 64,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -5990,7 +5990,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 44,
     "season": "1996-97",
     "seasonYear": "1997",
@@ -6000,7 +6000,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 46,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6010,7 +6010,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 33,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6020,7 +6020,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 30,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6030,7 +6030,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 72,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6040,7 +6040,7 @@
     "first": true
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 41,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6050,7 +6050,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 47,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6060,7 +6060,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 26,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6070,7 +6070,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 35,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6080,7 +6080,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 46,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6090,7 +6090,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 36,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6100,7 +6100,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 48,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6110,7 +6110,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 52,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6120,7 +6120,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 29,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6130,7 +6130,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 53,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6140,7 +6140,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 15,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6150,7 +6150,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 42,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6160,7 +6160,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 25,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6170,7 +6170,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 26,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6180,7 +6180,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6190,7 +6190,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 47,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6200,7 +6200,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 64,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6210,7 +6210,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 60,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6220,7 +6220,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 18,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6230,7 +6230,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 41,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6240,7 +6240,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 44,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6250,7 +6250,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 39,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6260,7 +6260,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 59,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6270,7 +6270,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 21,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6280,7 +6280,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 55,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6290,7 +6290,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 39,
     "season": "1995-96",
     "seasonYear": "1996",
@@ -6300,7 +6300,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 42,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6310,7 +6310,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 35,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6320,7 +6320,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 30,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6330,7 +6330,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 47,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6340,7 +6340,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 50,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6350,7 +6350,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 43,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6360,7 +6360,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 36,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6370,7 +6370,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 41,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6380,7 +6380,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 28,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6390,7 +6390,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 26,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6400,7 +6400,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 47,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6410,7 +6410,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 52,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6420,7 +6420,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 17,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6430,7 +6430,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 48,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6440,7 +6440,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6450,7 +6450,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 32,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6460,7 +6460,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 34,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6470,7 +6470,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 21,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6480,7 +6480,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6490,7 +6490,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 55,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6500,7 +6500,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 57,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6510,7 +6510,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 57,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6520,7 +6520,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 24,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6530,7 +6530,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 59,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6540,7 +6540,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 44,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6550,7 +6550,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 39,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6560,7 +6560,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 62,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6570,7 +6570,7 @@
     "first": true
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6580,7 +6580,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 60,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6590,7 +6590,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 21,
     "season": "1994-95",
     "seasonYear": "1995",
@@ -6600,7 +6600,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 57,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6610,7 +6610,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 32,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6620,7 +6620,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 45,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6630,7 +6630,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 55,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6640,7 +6640,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 41,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6650,7 +6650,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 47,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6660,7 +6660,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 13,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6670,7 +6670,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 42,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6680,7 +6680,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 20,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6690,7 +6690,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 50,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6700,7 +6700,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 58,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6710,7 +6710,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 47,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6720,7 +6720,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 27,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6730,7 +6730,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 33,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6740,7 +6740,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6750,7 +6750,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 42,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6760,7 +6760,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 20,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6770,7 +6770,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 20,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6780,7 +6780,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6790,7 +6790,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 57,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6800,7 +6800,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 63,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6810,7 +6810,7 @@
     "first": true
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 50,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6820,7 +6820,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 25,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6830,7 +6830,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 56,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6840,7 +6840,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 47,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6850,7 +6850,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 28,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6860,7 +6860,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 55,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6870,7 +6870,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6880,7 +6880,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 53,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6890,7 +6890,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 24,
     "season": "1993-94",
     "seasonYear": "1994",
@@ -6900,7 +6900,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 43,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6910,7 +6910,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 48,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6920,7 +6920,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 43,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6930,7 +6930,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 57,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6940,7 +6940,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 44,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6950,7 +6950,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 54,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6960,7 +6960,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 11,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6970,7 +6970,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 36,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6980,7 +6980,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 40,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -6990,7 +6990,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 34,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7000,7 +7000,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 55,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7010,7 +7010,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 41,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7020,7 +7020,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 41,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7030,7 +7030,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 39,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7040,7 +7040,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7050,7 +7050,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 36,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7060,7 +7060,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 28,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7070,7 +7070,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 19,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7080,7 +7080,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7090,7 +7090,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 60,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7100,7 +7100,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 55,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7110,7 +7110,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 41,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7120,7 +7120,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 26,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7130,7 +7130,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 62,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7140,7 +7140,7 @@
     "first": true
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 51,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7150,7 +7150,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 25,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7160,7 +7160,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 49,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7170,7 +7170,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7180,7 +7180,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 47,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7190,7 +7190,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 22,
     "season": "1992-93",
     "seasonYear": "1993",
@@ -7200,7 +7200,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 38,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7210,7 +7210,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 51,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7220,7 +7220,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 40,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7230,7 +7230,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 67,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7240,7 +7240,7 @@
     "first": true
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 31,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7250,7 +7250,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 57,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7260,7 +7260,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 22,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7270,7 +7270,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 24,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7280,7 +7280,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 48,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7290,7 +7290,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 55,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7300,7 +7300,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 42,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7310,7 +7310,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 40,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7320,7 +7320,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 45,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7330,7 +7330,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 43,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7340,7 +7340,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7350,7 +7350,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 38,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7360,7 +7360,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 31,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7370,7 +7370,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 15,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7380,7 +7380,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7390,7 +7390,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 51,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7400,7 +7400,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 47,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7410,7 +7410,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 21,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7420,7 +7420,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 35,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7430,7 +7430,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 53,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7440,7 +7440,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 57,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7450,7 +7450,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 29,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7460,7 +7460,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 47,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7470,7 +7470,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7480,7 +7480,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 55,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7490,7 +7490,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 25,
     "season": "1991-92",
     "seasonYear": "1992",
@@ -7500,7 +7500,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 43,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7510,7 +7510,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 56,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7520,7 +7520,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 26,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7530,7 +7530,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 61,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7540,7 +7540,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 26,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7550,7 +7550,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 33,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7560,7 +7560,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 28,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7570,7 +7570,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 20,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7580,7 +7580,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 50,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7590,7 +7590,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 44,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7600,7 +7600,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 52,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7610,7 +7610,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 41,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7620,7 +7620,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 31,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7630,7 +7630,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 58,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7640,7 +7640,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7650,7 +7650,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 24,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7660,7 +7660,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 48,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7670,7 +7670,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 29,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7680,7 +7680,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7690,7 +7690,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 39,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7700,7 +7700,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 41,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7710,7 +7710,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 31,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7720,7 +7720,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 44,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7730,7 +7730,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 55,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7740,7 +7740,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 63,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7750,7 +7750,7 @@
     "first": true
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 25,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7760,7 +7760,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 55,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7770,7 +7770,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7780,7 +7780,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 54,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7790,7 +7790,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 30,
     "season": "1990-91",
     "seasonYear": "1991",
@@ -7800,7 +7800,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 41,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7810,7 +7810,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 52,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7820,7 +7820,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 17,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7830,7 +7830,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 55,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7840,7 +7840,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 19,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7850,7 +7850,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 42,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7860,7 +7860,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 47,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7870,7 +7870,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 43,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7880,7 +7880,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 59,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7890,7 +7890,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 37,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7900,7 +7900,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 41,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7910,7 +7910,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 42,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7920,7 +7920,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 30,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7930,7 +7930,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 63,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7940,7 +7940,7 @@
     "first": true
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7950,7 +7950,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 18,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7960,7 +7960,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 44,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7970,7 +7970,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 22,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7980,7 +7980,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -7990,7 +7990,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 45,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8000,7 +8000,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 41,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8010,7 +8010,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 18,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8020,7 +8020,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 53,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8030,7 +8030,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 54,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8040,7 +8040,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 59,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8050,7 +8050,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 23,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8060,7 +8060,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 56,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8070,7 +8070,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8080,7 +8080,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 55,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8090,7 +8090,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 31,
     "season": "1989-90",
     "seasonYear": "1990",
@@ -8100,7 +8100,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 52,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8110,7 +8110,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 42,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8120,7 +8120,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 26,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8130,7 +8130,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 47,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8140,7 +8140,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 20,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8150,7 +8150,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 57,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8160,7 +8160,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 38,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8170,7 +8170,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 44,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8180,7 +8180,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 63,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8190,7 +8190,7 @@
     "first": true
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 43,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8200,7 +8200,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 45,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8210,7 +8210,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 28,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8220,7 +8220,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 21,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8230,7 +8230,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 57,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8240,7 +8240,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8250,7 +8250,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 15,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8260,7 +8260,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 49,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8270,7 +8270,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8280,7 +8280,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8290,7 +8290,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 52,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8300,7 +8300,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 47,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8310,7 +8310,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8320,7 +8320,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 46,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8330,7 +8330,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 55,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8340,7 +8340,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 39,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8350,7 +8350,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 27,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8360,7 +8360,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 21,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8370,7 +8370,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8380,7 +8380,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 51,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8390,7 +8390,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 40,
     "season": "1988-89",
     "seasonYear": "1989",
@@ -8400,7 +8400,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 50,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8410,7 +8410,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 57,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8420,7 +8420,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 19,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8430,7 +8430,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 50,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8440,7 +8440,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8450,7 +8450,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 42,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8460,7 +8460,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 53,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8470,7 +8470,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 54,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8480,7 +8480,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 54,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8490,7 +8490,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 20,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8500,7 +8500,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 46,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8510,7 +8510,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 38,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8520,7 +8520,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 17,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8530,7 +8530,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 62,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8540,7 +8540,7 @@
     "first": true
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8550,7 +8550,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8560,7 +8560,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 42,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8570,7 +8570,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8580,7 +8580,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8590,7 +8590,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 38,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8600,7 +8600,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 44,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8610,7 +8610,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8620,7 +8620,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 36,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8630,7 +8630,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 28,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8640,7 +8640,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 53,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8650,7 +8650,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 24,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8660,7 +8660,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 31,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8670,7 +8670,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8680,7 +8680,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 47,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8690,7 +8690,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 38,
     "season": "1987-88",
     "seasonYear": "1988",
@@ -8700,7 +8700,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 57,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8710,7 +8710,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 59,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8720,7 +8720,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 24,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8730,7 +8730,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 40,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8740,7 +8740,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8750,7 +8750,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 31,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8760,7 +8760,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 55,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8770,7 +8770,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 37,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8780,7 +8780,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 52,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8790,7 +8790,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 42,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8800,7 +8800,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 42,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8810,7 +8810,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 41,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8820,7 +8820,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 12,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8830,7 +8830,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 65,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8840,7 +8840,7 @@
     "first": true
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8850,7 +8850,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8860,7 +8860,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 50,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8870,7 +8870,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8880,7 +8880,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8890,7 +8890,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 24,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8900,7 +8900,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 39,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8910,7 +8910,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8920,7 +8920,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 45,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8930,7 +8930,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 36,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8940,7 +8940,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 49,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8950,7 +8950,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 29,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8960,7 +8960,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 28,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8970,7 +8970,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8980,7 +8980,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 44,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -8990,7 +8990,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 42,
     "season": "1986-87",
     "seasonYear": "1987",
@@ -9000,7 +9000,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 50,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9010,7 +9010,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 67,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9020,7 +9020,7 @@
     "first": true
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 39,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9030,7 +9030,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 30,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9040,7 +9040,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9050,7 +9050,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 29,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9060,7 +9060,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 44,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9070,7 +9070,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 47,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9080,7 +9080,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 46,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9090,7 +9090,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 30,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9100,7 +9100,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 51,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9110,7 +9110,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 26,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9120,7 +9120,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 32,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9130,7 +9130,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 62,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9140,7 +9140,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9150,7 +9150,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9160,7 +9160,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 57,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9170,7 +9170,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9180,7 +9180,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9190,7 +9190,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 23,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9200,7 +9200,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 31,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9210,7 +9210,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9220,7 +9220,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 54,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9230,7 +9230,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 32,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9240,7 +9240,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 40,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9250,7 +9250,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 37,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9260,7 +9260,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 35,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9270,7 +9270,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9280,7 +9280,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 42,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9290,7 +9290,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 39,
     "season": "1985-86",
     "seasonYear": "1986",
@@ -9300,7 +9300,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 34,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9310,7 +9310,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 63,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9320,7 +9320,7 @@
     "first": true
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 42,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9330,7 +9330,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 38,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9340,7 +9340,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9350,7 +9350,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 36,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9360,7 +9360,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 44,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9370,7 +9370,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 52,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9380,7 +9380,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 46,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9390,7 +9390,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 22,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9400,7 +9400,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 48,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9410,7 +9410,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 22,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9420,7 +9420,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 31,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9430,7 +9430,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 62,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9440,7 +9440,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9450,7 +9450,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9460,7 +9460,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 59,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9470,7 +9470,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9480,7 +9480,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9490,7 +9490,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 24,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9500,7 +9500,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 31,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9510,7 +9510,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9520,7 +9520,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 58,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9530,7 +9530,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 36,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9540,7 +9540,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 42,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9550,7 +9550,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 31,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9560,7 +9560,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 41,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9570,7 +9570,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9580,7 +9580,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 41,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9590,7 +9590,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 40,
     "season": "1984-85",
     "seasonYear": "1985",
@@ -9600,7 +9600,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 40,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9610,7 +9610,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 62,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9620,7 +9620,7 @@
     "first": true
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 45,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9630,7 +9630,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 27,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9640,7 +9640,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9650,7 +9650,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 28,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9660,7 +9660,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 43,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9670,7 +9670,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 38,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9680,7 +9680,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 49,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9690,7 +9690,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 37,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9700,7 +9700,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 29,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9710,7 +9710,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 26,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9720,7 +9720,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 30,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9730,7 +9730,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 54,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9740,7 +9740,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9750,7 +9750,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9760,7 +9760,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 50,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9770,7 +9770,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9780,7 +9780,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9790,7 +9790,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 47,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9800,7 +9800,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 42,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9810,7 +9810,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9820,7 +9820,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 52,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9830,7 +9830,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 41,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9840,7 +9840,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 48,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9850,7 +9850,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 38,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9860,7 +9860,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 37,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9870,7 +9870,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9880,7 +9880,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 45,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9890,7 +9890,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 35,
     "season": "1983-84",
     "seasonYear": "1984",
@@ -9900,7 +9900,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 43,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9910,7 +9910,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 56,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9920,7 +9920,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 49,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9930,7 +9930,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 28,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9940,7 +9940,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9950,7 +9950,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 23,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9960,7 +9960,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 38,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9970,7 +9970,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 45,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9980,7 +9980,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 37,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -9990,7 +9990,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 30,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10000,7 +10000,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 14,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10010,7 +10010,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 20,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10020,7 +10020,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 25,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10030,7 +10030,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 58,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10040,7 +10040,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10050,7 +10050,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10060,7 +10060,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 51,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10070,7 +10070,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10080,7 +10080,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10090,7 +10090,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 44,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10100,7 +10100,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 48,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10110,7 +10110,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10120,7 +10120,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 65,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10130,7 +10130,7 @@
     "first": true
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 53,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10140,7 +10140,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 46,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10150,7 +10150,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 45,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10160,7 +10160,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 53,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10170,7 +10170,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10180,7 +10180,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 30,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10190,7 +10190,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 42,
     "season": "1982-83",
     "seasonYear": "1983",
@@ -10200,7 +10200,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 42,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10210,7 +10210,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 63,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10220,7 +10220,7 @@
     "first": true
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 44,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10230,7 +10230,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 34,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10240,7 +10240,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10250,7 +10250,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 15,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10260,7 +10260,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 28,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10270,7 +10270,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 46,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10280,7 +10280,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 39,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10290,7 +10290,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 45,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10300,7 +10300,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 46,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10310,7 +10310,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 35,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10320,7 +10320,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 17,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10330,7 +10330,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 57,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10340,7 +10340,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10350,7 +10350,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10360,7 +10360,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 55,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10370,7 +10370,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10380,7 +10380,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10390,7 +10390,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 33,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10400,7 +10400,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 52,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10410,7 +10410,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10420,7 +10420,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 58,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10430,7 +10430,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 46,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10440,7 +10440,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 42,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10450,7 +10450,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 30,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10460,7 +10460,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 48,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10470,7 +10470,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10480,7 +10480,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 25,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10490,7 +10490,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 43,
     "season": "1981-82",
     "seasonYear": "1982",
@@ -10500,7 +10500,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 31,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10510,7 +10510,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 62,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10520,7 +10520,7 @@
     "first": true
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 24,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10530,7 +10530,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 45,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10540,7 +10540,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10550,7 +10550,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 28,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10560,7 +10560,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 15,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10570,7 +10570,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 37,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10580,7 +10580,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 21,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10590,7 +10590,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 39,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10600,7 +10600,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 40,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10610,7 +10610,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 44,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10620,7 +10620,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 36,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10630,7 +10630,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 54,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10640,7 +10640,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10650,7 +10650,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10660,7 +10660,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 60,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10670,7 +10670,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10680,7 +10680,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10690,7 +10690,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 50,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10700,7 +10700,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 34,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10710,7 +10710,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10720,7 +10720,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 62,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10730,7 +10730,7 @@
     "first": true
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 57,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10740,7 +10740,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 45,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10750,7 +10750,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 40,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10760,7 +10760,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 52,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10770,7 +10770,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10780,7 +10780,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 28,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10790,7 +10790,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 39,
     "season": "1980-81",
     "seasonYear": "1981",
@@ -10800,7 +10800,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 50,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10810,7 +10810,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 61,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10820,7 +10820,7 @@
     "first": true
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 34,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10830,7 +10830,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 30,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10840,7 +10840,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10850,7 +10850,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 37,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10860,7 +10860,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10870,7 +10870,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 30,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10880,7 +10880,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 16,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10890,7 +10890,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 24,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10900,7 +10900,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 41,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10910,7 +10910,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 37,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10920,7 +10920,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 35,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10930,7 +10930,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 60,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10940,7 +10940,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10950,7 +10950,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10960,7 +10960,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 49,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10970,7 +10970,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10980,7 +10980,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -10990,7 +10990,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 39,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11000,7 +11000,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 56,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11010,7 +11010,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11020,7 +11020,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 59,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11030,7 +11030,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 55,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11040,7 +11040,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 38,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11050,7 +11050,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 47,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11060,7 +11060,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 41,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11070,7 +11070,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11080,7 +11080,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 24,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11090,7 +11090,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 39,
     "season": "1979-80",
     "seasonYear": "1980",
@@ -11100,7 +11100,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 46,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11110,7 +11110,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 29,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11120,7 +11120,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 37,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11130,7 +11130,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 31,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11140,7 +11140,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11150,7 +11150,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 30,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11160,7 +11160,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11170,7 +11170,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 47,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11180,7 +11180,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 30,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11190,7 +11190,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 38,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11200,7 +11200,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 47,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11210,7 +11210,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 38,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11220,7 +11220,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 43,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11230,7 +11230,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 47,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11240,7 +11240,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11250,7 +11250,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11260,7 +11260,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 38,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11270,7 +11270,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11280,7 +11280,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11290,7 +11290,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 31,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11300,7 +11300,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 52,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11310,7 +11310,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11320,7 +11320,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 47,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11330,7 +11330,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 50,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11340,7 +11340,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 45,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11350,7 +11350,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 48,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11360,7 +11360,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 48,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11370,7 +11370,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11380,7 +11380,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 26,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11390,7 +11390,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 54,
     "season": "1978-79",
     "seasonYear": "1979",
@@ -11400,7 +11400,7 @@
     "first": true
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 41,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11410,7 +11410,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 32,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11420,7 +11420,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 24,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11430,7 +11430,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 40,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11440,7 +11440,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11450,7 +11450,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 43,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11460,7 +11460,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11470,7 +11470,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 48,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11480,7 +11480,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 38,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11490,7 +11490,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 43,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11500,7 +11500,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 28,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11510,7 +11510,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 31,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11520,7 +11520,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 27,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11530,7 +11530,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 45,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11540,7 +11540,7 @@
     "first": false
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11550,7 +11550,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11560,7 +11560,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 44,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11570,7 +11570,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11580,7 +11580,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11590,7 +11590,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 43,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11600,7 +11600,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 47,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11610,7 +11610,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11620,7 +11620,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 55,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11630,7 +11630,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 49,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11640,7 +11640,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 58,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11650,7 +11650,7 @@
     "first": true
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 31,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11660,7 +11660,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 52,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11670,7 +11670,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11680,7 +11680,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 39,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11690,7 +11690,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 44,
     "season": "1977-78",
     "seasonYear": "1978",
@@ -11700,7 +11700,7 @@
     "first": false
   },
   {
-    "team": "ATL",
+    "name": "ATL",
     "wins": 31,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11710,7 +11710,7 @@
     "first": false
   },
   {
-    "team": "BOS",
+    "name": "BOS",
     "wins": 44,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11720,7 +11720,7 @@
     "first": false
   },
   {
-    "team": "BRK",
+    "name": "BRK",
     "wins": 22,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11730,7 +11730,7 @@
     "first": false
   },
   {
-    "team": "CHI",
+    "name": "CHI",
     "wins": 44,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11740,7 +11740,7 @@
     "first": false
   },
   {
-    "team": "CHO",
+    "name": "CHO",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11750,7 +11750,7 @@
     "first": false
   },
   {
-    "team": "CLE",
+    "name": "CLE",
     "wins": 43,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11760,7 +11760,7 @@
     "first": false
   },
   {
-    "team": "DAL",
+    "name": "DAL",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11770,7 +11770,7 @@
     "first": false
   },
   {
-    "team": "DEN",
+    "name": "DEN",
     "wins": 50,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11780,7 +11780,7 @@
     "first": false
   },
   {
-    "team": "DET",
+    "name": "DET",
     "wins": 44,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11790,7 +11790,7 @@
     "first": false
   },
   {
-    "team": "GSW",
+    "name": "GSW",
     "wins": 46,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11800,7 +11800,7 @@
     "first": false
   },
   {
-    "team": "HOU",
+    "name": "HOU",
     "wins": 49,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11810,7 +11810,7 @@
     "first": false
   },
   {
-    "team": "IND",
+    "name": "IND",
     "wins": 36,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11820,7 +11820,7 @@
     "first": false
   },
   {
-    "team": "LAC",
+    "name": "LAC",
     "wins": 30,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11830,7 +11830,7 @@
     "first": false
   },
   {
-    "team": "LAL",
+    "name": "LAL",
     "wins": 53,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11840,7 +11840,7 @@
     "first": true
   },
   {
-    "team": "MEM",
+    "name": "MEM",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11850,7 +11850,7 @@
     "first": false
   },
   {
-    "team": "MIA",
+    "name": "MIA",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11860,7 +11860,7 @@
     "first": false
   },
   {
-    "team": "MIL",
+    "name": "MIL",
     "wins": 30,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11870,7 +11870,7 @@
     "first": false
   },
   {
-    "team": "MIN",
+    "name": "MIN",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11880,7 +11880,7 @@
     "first": false
   },
   {
-    "team": "NOP",
+    "name": "NOP",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11890,7 +11890,7 @@
     "first": false
   },
   {
-    "team": "NYK",
+    "name": "NYK",
     "wins": 40,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11900,7 +11900,7 @@
     "first": false
   },
   {
-    "team": "OKC",
+    "name": "OKC",
     "wins": 40,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11910,7 +11910,7 @@
     "first": false
   },
   {
-    "team": "ORL",
+    "name": "ORL",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11920,7 +11920,7 @@
     "first": false
   },
   {
-    "team": "PHI",
+    "name": "PHI",
     "wins": 50,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11930,7 +11930,7 @@
     "first": false
   },
   {
-    "team": "PHO",
+    "name": "PHO",
     "wins": 34,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11940,7 +11940,7 @@
     "first": false
   },
   {
-    "team": "POR",
+    "name": "POR",
     "wins": 49,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11950,7 +11950,7 @@
     "first": false
   },
   {
-    "team": "SAC",
+    "name": "SAC",
     "wins": 40,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11960,7 +11960,7 @@
     "first": false
   },
   {
-    "team": "SAS",
+    "name": "SAS",
     "wins": 44,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11970,7 +11970,7 @@
     "first": false
   },
   {
-    "team": "TOR",
+    "name": "TOR",
     "wins": 0,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11980,7 +11980,7 @@
     "first": false
   },
   {
-    "team": "UTA",
+    "name": "UTA",
     "wins": 35,
     "season": "1976-77",
     "seasonYear": "1977",
@@ -11990,7 +11990,7 @@
     "first": false
   },
   {
-    "team": "WAS",
+    "name": "WAS",
     "wins": 48,
     "season": "1976-77",
     "seasonYear": "1977",

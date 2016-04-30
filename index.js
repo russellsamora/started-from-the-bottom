@@ -16,7 +16,7 @@ const sinceMerger = data.filter(d => +(d.Season.split('-')[0]) > 1975)
 // sorted wins each season
 const sortedWinsBySeason = sinceMerger.map(d =>
 	getTeams(d)
-		.map(team => +d[team] || 0)
+		.map(name => +d[name] || 0)
 		.filter(wins => wins > 0)
 		.sort((a, b) => b - a)
 )
@@ -28,13 +28,13 @@ const output = sinceMerger.reduce((previous, current, index) => {
 	const sortedWins = sortedWinsBySeason[index]
 	const maxWins = sortedWins[0]
 
-	const teams = getTeams(current).map(team => {
-		const wins = +current[team] || 0
+	const teams = getTeams(current).map(name => {
+		const wins = +current[name] || 0
 		const gamesBack = wins ? maxWins - wins : false
 		const worst = wins ? sortedWins.lastIndexOf(wins) === sortedWins.length - 1 : false
 		const first = gamesBack === 0
 		const rank = wins ? sortedWins.indexOf(wins) + 1 : false
-		return { team, wins, season, seasonYear, gamesBack, rank, worst, first }
+		return { name, wins, season, seasonYear, gamesBack, rank, worst, first }
 	})
 
 	return previous.concat(teams)
