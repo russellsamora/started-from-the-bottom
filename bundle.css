@@ -1,6 +1,28 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
 }
-.graphic {
+main {
+  padding: 1em;
+}
+svg {
+  margin-top: 1em;
   border: 1px solid #000;
+}
+svg .axis {
+  font-size: 11px;
+}
+svg .axis path,
+svg .axis line {
+  fill: none;
+  stroke: #ccc;
+  shape-rendering: crispEdges;
+}
+svg .dot {
+  fill: #888;
+  stroke: none;
+}
+svg .line {
+  fill: none;
+  stroke: #888;
+  stroke-width: 1px;
 }
