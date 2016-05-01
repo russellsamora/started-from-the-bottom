@@ -52,6 +52,6 @@ const output = sinceMerger.reduce((previous, current, index) => {
 
 	return previous.concat(teams)
 
-}, [])
+}, []).reverse()
 
 fs.writeFileSync('./data/output.json', JSON.stringify(output, null, 2))

@@ -1,11 +1,87 @@
-body
-	font-family Helvetica, Arial, sans-serif
+$bottom = #20565E
+$top = #EE8767
+$neutral = #ccc
 
+@font-face
+	font-family 'Roboto'
+	font-style normal
+	font-weight 300
+	src local('Roboto Light'), local('Roboto-Light'), url('fonts/roboto-v15-latin-300.woff2') format('woff2'), url('fonts/roboto-v15-latin-300.woff') format('woff')
+
+@font-face
+	font-family 'Roboto'
+	font-style normal
+	font-weight 400
+	src local('Roboto Regular'), local('Roboto-Regular'), url('fonts/roboto-v15-latin-regular.woff2') format('woff2'), url('fonts/roboto-v15-latin-regular.woff') format('woff')
+
+@font-face
+	font-family 'Roboto'
+	font-style normal
+	font-weight 700
+	src local('Roboto Bold'), local('Roboto-Bold'), url('fonts/roboto-v15-latin-700.woff2') format('woff2'), url('fonts/roboto-v15-latin-700.woff') format('woff')
+
+body
+	background #fff
+	color #454545
+	font-size 19px
+	line-height 1.4
+	font-family 'Roboto', Helvetica, Arial, sans-serif
+	font-weight 400
+	-webkit-font-smoothing antialiased
+
+strong 
+	font-weight 700
+
+em 
+	font-style italic
+
+p 
+	margin-bottom 1em
 main 
-	padding 1em
+	padding 0 1em
+
+.intro
+	max-width 35em
+	margin 2em auto
+	&-hed
+		font-weight 700
+		font-size 2em
+		text-align center
+		margin-bottom 0.5em
+	&-byline
+		text-align center
+
+#container
+	position relative
+	width 100%
+	overflow auto
+
+.sections
+	max-width 320px
+	float left
+	margin-top 1em
+	section
+		background-color #fff
+		opacity 0.35
+		min-height 50vh
+		transition opacity 250ms ease-in-out
+		&.graph-scroll-active 
+			opacity 1
+
+#graphic
+	float left
+	margin-left 20px
+	margin-top 1em
+	&.graph-scroll-fixed
+		position fixed
+		top 0px
+		left 340px
+	&.graph-scroll-below
+		position absolute
+		bottom 0px
+		margin-left 380px
 
 svg
-	margin-top 1em
 	.axis
 		font-size 11px
 		path, line
@@ -17,18 +93,19 @@ svg
 			path, line
 				stroke none
 	.dot 
-		fill #dedede
+		fill $neutral
+		fill-opacity 0.33
 		stroke none
-		&.worst 
-			fill #2b83ba
 		&.bottom
-			fill #2b83ba
-			opacity 0.33
-		&.first
-			fill #d7191c
+			fill $bottom
+			fill-opacity 0.33
+			stroke $bottom
+			stroke-opacity 1
 		&.top 
-			fill #d7191c
-			opacity 0.33
+			fill $top
+			fill-opacity 0.33
+			stroke $top
+			stroke-opacity 1
 	.line 
 		fill none
 	    stroke #000

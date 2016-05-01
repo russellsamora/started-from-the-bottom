@@ -1,11 +1,90 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url("fonts/roboto-v15-latin-300.woff2") format('woff2'), url("fonts/roboto-v15-latin-300.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url("fonts/roboto-v15-latin-regular.woff2") format('woff2'), url("fonts/roboto-v15-latin-regular.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url("fonts/roboto-v15-latin-700.woff2") format('woff2'), url("fonts/roboto-v15-latin-700.woff") format('woff');
+}
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #454545;
+  font-size: 19px;
+  line-height: 1.4;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+strong {
+  font-weight: 700;
+}
+em {
+  font-style: italic;
+}
+p {
+  margin-bottom: 1em;
 }
 main {
-  padding: 1em;
+  padding: 0 1em;
+}
+.intro {
+  max-width: 35em;
+  margin: 2em auto;
+}
+.intro-hed {
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.intro-byline {
+  text-align: center;
+}
+#container {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+.sections {
+  max-width: 320px;
+  float: left;
+  margin-top: 1em;
+}
+.sections section {
+  background-color: #fff;
+  opacity: 0.35;
+  min-height: 50vh;
+  transition: opacity 250ms ease-in-out;
+}
+.sections section.graph-scroll-active {
+  opacity: 1;
+}
+#graphic {
+  float: left;
+  margin-left: 20px;
+  margin-top: 1em;
+}
+#graphic.graph-scroll-fixed {
+  position: fixed;
+  top: 0px;
+  left: 340px;
+}
+#graphic.graph-scroll-below {
+  position: absolute;
+  bottom: 0px;
+  margin-left: 380px;
 }
 svg {
-  margin-top: 1em;
   stroke: #000;
   stroke-opacity: 0.1;
   stroke-linejoin: round;
@@ -26,22 +105,21 @@ svg .axis--y line {
   stroke: none;
 }
 svg .dot {
-  fill: #dedede;
+  fill: #ccc;
+  fill-opacity: 0.33;
   stroke: none;
 }
-svg .dot.worst {
-  fill: #2b83ba;
-}
 svg .dot.bottom {
-  fill: #2b83ba;
-  opacity: 0.33;
-}
-svg .dot.first {
-  fill: #d7191c;
+  fill: #20565e;
+  fill-opacity: 0.33;
+  stroke: #20565e;
+  stroke-opacity: 1;
 }
 svg .dot.top {
-  fill: #d7191c;
-  opacity: 0.33;
+  fill: #ee8767;
+  fill-opacity: 0.33;
+  stroke: #ee8767;
+  stroke-opacity: 1;
 }
 svg .line {
   fill: none;
