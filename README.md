@@ -5,6 +5,9 @@ Started from the bottom...
 1998-99 and 2011-12 had shortened seasons
 2002-03, 2003-04 charlotte no team (gap)
 
+### Notes
+* completed vs. active stretches 
+
 ### Data source
 [http://www.basketball-reference.com/leagues/NBA_wins.html](basketball-reference.com)
 

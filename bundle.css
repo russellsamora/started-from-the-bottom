@@ -6,7 +6,6 @@ main {
 }
 svg {
   margin-top: 1em;
-  border: 1px solid #000;
   stroke: #000;
   stroke-opacity: 0.1;
   stroke-linejoin: round;
@@ -27,14 +26,22 @@ svg .axis--y line {
   stroke: none;
 }
 svg .dot {
-  fill: #888;
+  fill: #dedede;
   stroke: none;
 }
 svg .dot.worst {
-  fill: #f00;
+  fill: #2b83ba;
+}
+svg .dot.bottom {
+  fill: #2b83ba;
+  opacity: 0.33;
 }
 svg .dot.first {
-  fill: #008000;
+  fill: #d7191c;
+}
+svg .dot.top {
+  fill: #d7191c;
+  opacity: 0.33;
 }
 svg .line {
   fill: none;

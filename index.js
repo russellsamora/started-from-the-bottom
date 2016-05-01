@@ -21,20 +21,33 @@ const sortedWinsBySeason = sinceMerger.map(d =>
 		.sort((a, b) => b - a)
 )
 
+// how many teams were active during each season
+const activeTeamsBySeason = sinceMerger.map(d =>
+	getTeams(d)
+	.map(team => d[team] || 0)
+	.filter(wins => wins > 0)
+	.length 
+)
+
 // go thru each year, find the team, calculate wins back and rank
 const output = sinceMerger.reduce((previous, current, index) => {
 	const season = current.Season
 	const seasonYear = (+season.split('-')[0] + 1).toString()
 	const sortedWins = sortedWinsBySeason[index]
+	const activeTeams = activeTeamsBySeason[index]
 	const maxWins = sortedWins[0]
 
 	const teams = getTeams(current).map(name => {
 		const wins = +current[name] || 0
-		const gamesBack = wins ? maxWins - wins : false
-		const worst = wins ? sortedWins.lastIndexOf(wins) === sortedWins.length - 1 : false
+		const gamesBack = wins ? maxWins - wins : undefined
+		const worst = wins ? sortedWins.lastIndexOf(wins) === sortedWins.length - 1 : undefined
 		const first = gamesBack === 0
-		const rank = wins ? sortedWins.indexOf(wins) + 1 : false
-		return { name, wins, season, seasonYear, gamesBack, rank, worst, first }
+		const placeFront = sortedWins.indexOf(wins)
+		const placeBack = sortedWins.lastIndexOf(wins)
+		const rank = wins ? placeFront + 1 : undefined
+		const top = wins ? placeFront < 4 : undefined
+		const bottom = wins ? activeTeams - placeBack < 5 : undefined
+		return { name, wins, season, seasonYear, gamesBack, rank, worst, first, top, bottom }
 	})
 
 	return previous.concat(teams)

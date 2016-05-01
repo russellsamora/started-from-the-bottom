@@ -6,7 +6,6 @@ main
 
 svg
 	margin-top 1em
-	border 1px solid black
 	.axis
 		font-size 11px
 		path, line
@@ -18,12 +17,18 @@ svg
 			path, line
 				stroke none
 	.dot 
-		fill #888
+		fill #dedede
 		stroke none
 		&.worst 
-			fill red
+			fill #2b83ba
+		&.bottom
+			fill #2b83ba
+			opacity 0.33
 		&.first
-			fill green
+			fill #d7191c
+		&.top 
+			fill #d7191c
+			opacity 0.33
 	.line 
 		fill none
 	    stroke #000
