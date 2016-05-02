@@ -4,7 +4,14 @@
 	const RADIUS_SMALL = 4
 	const SECOND = 1000
 	const EXIT_DURATION = SECOND
-	// let currentStep = null
+	const MARGIN = { top: 20, right: 40, bottom: 40, left: 40 }
+	const outerWidth = 640
+	const outerHeight = 480
+
+	let previousStep = 0
+	let dir = 0
+	let chartWidth = 0
+	let chartHeight = 0
 	let data = []
 	let dataByTeam = []
 	let svg = null
@@ -41,48 +48,6 @@
 			const text = e.target.options[e.target.selectedIndex].text
 			drawTeam(text)
 		})
-	}
-
-	function drawTeam(name) {
-		// const chartGroup = svg.select('.chart')
-		// const lineGroup = chartGroup.select('.line-group')
-		// const dotGroup = chartGroup.select('.dot-group')
-
-		// const oneTeam = dataByTeam.filter(d => d.key === name)
-		
-		// // DATA
-		// const lineSelection = lineGroup.selectAll('.line').data(oneTeam)
-
-		// // UPDATE
-
-		// // ENTER
-		// lineSelection.enter()
-		// 	.append('path')
-		// 		.attr('class', 'line')
-
-		// // ENTER + UPDATE
-		// lineSelection.attr('d', d => createLine(d.values))
-
-		// // EXIT
-		// lineSelection.exit().remove()
-
-		// const dataWithWins = oneTeam[0].values.filter(d => d.wins)
-		// // const dataWithWins = dataWithSeason.filter(d => d.wins)
-
-		// const dotSelection = dotGroup.selectAll('.dot').data(dataWithWins)
-		
-		// dotSelection.enter()
-		// 	.append('circle')
-		// 	.attr('class', 'dot')
-
-		// dotSelection
-		// 	// .attr('class', d => `dot ${d.worst ? 'worst' : ''} ${d.first ? 'first' : ''}`)
-		// 	.attr('class', d => `dot ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
-		// 	.attr('r', 4)
-		// 	.attr('cx', d => xScale(d.seasonFormatted))
-		// 	.attr('cy', d => yScale(d.rank))
-
-		// dotSelection.exit().remove()
 	}
 
 	function getStepData(step) {	
@@ -130,50 +95,57 @@
 			.attrTween('stroke-dasharray', tweenDash)
 	}
 
-	function stepGraphic(index) {
+	function stepGraphic(step) {
+		dir = step - previousStep
+		previousStep = step
+
 		const chartGroup = svg.select('.chart')
 		const lineGroup = chartGroup.select('.line-group')
 		const dotGroup = chartGroup.select('.dot-group')
 
 		// DATA
-		const stepData = getStepData(STEPS[index])		
+		const stepData = getStepData(STEPS[step])		
 		const lineSelection = lineGroup.selectAll('.line').data(stepData.line)
 		const dotSelection = dotGroup.selectAll('.dot').data(stepData.dot, d => d.id)
-		console.log(dotSelection)
-
-		// ENTER
-		lineSelection.enter()
-			.append('path')
-				.attr('class', 'line')
-
-		dotSelection.enter()
-			.append('circle')
-			.attr('class', d => `dot ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
-			.attr('r', 0)
 
 		// UPDATE
-		switch(STEPS[index]) {
+		switch(STEPS[step]) {
 		case 'top-and-bottom': {
+			dotSelection.enter()
+				.append('circle')
+					.attr('class', d => `dot ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
+					.attr('r', 0)
+					.attr('cx', d => xScale(d.seasonFormatted))
+					.attr('cy', d => yScale(d.rank))
+
 			dotSelection
 				.transition()
-				.delay(EXIT_DURATION)
 				.duration(SECOND * 2)
-				.ease('cubic-out')
+				.delay(d => d.rank * 75)
+				.ease('quad-in-out')
 				.attr('r', RADIUS_SMALL)
-				.attr('cx', d => xScale(d.seasonFormatted))
-				.attr('cy', d => yScale(d.rank))
 			break
 		}
 			
 		case 'path-single': {
+			lineSelection.enter()
+				.append('path')
+					.attr('class', 'line')
+
 			lineSelection.attr('d', d => createLine(d.values))
 				.call(transitionPath)
+
+			dotSelection.enter()
+				.append('circle')
+					.attr('class', d => `dot ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
+					.attr('r', 0)
+					.attr('cy', d => yScale(d.rank))
 
 			dotSelection
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND * 2)
-				.ease('cubic-out')
+				.ease('elastic')
 				.attr('r', d => d.bottom || d.top ? RADIUS_LARGE : RADIUS_SMALL)
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', d => yScale(d.rank))
@@ -223,11 +195,8 @@
 			.entries(data)
 
 		// setup chart
-		const outerWidth = 960
-		const outerHeight = 540
-		const margin = { top: 20, right: 40, bottom: 40, left: 40 }
-		const chartWidth = outerWidth - margin.left - margin.right
-		const chartHeight = outerHeight - margin.top - margin.bottom
+		chartWidth = outerWidth - MARGIN.left - MARGIN.right
+		chartHeight = outerHeight - MARGIN.top - MARGIN.bottom
 
 		// create containers
 		svg = d3.select('svg')
@@ -236,7 +205,7 @@
 
 		const chartGroup = svg.append('g')
 			.attr('class', 'chart')
-			.attr('transform', translate(margin.left, margin.top))
+			.attr('transform', translate(MARGIN.left, MARGIN.top))
 		
 		xScale
 			.domain(d3.extent(data, d => d.seasonFormatted))

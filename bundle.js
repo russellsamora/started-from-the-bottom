@@ -6,7 +6,14 @@
 	var RADIUS_SMALL = 4;
 	var SECOND = 1000;
 	var EXIT_DURATION = SECOND;
-	// let currentStep = null
+	var MARGIN = { top: 20, right: 40, bottom: 40, left: 40 };
+	var outerWidth = 640;
+	var outerHeight = 480;
+
+	var previousStep = 0;
+	var dir = 0;
+	var chartWidth = 0;
+	var chartHeight = 0;
 	var data = [];
 	var dataByTeam = [];
 	var svg = null;
@@ -45,48 +52,6 @@
 			var text = e.target.options[e.target.selectedIndex].text;
 			drawTeam(text);
 		});
-	}
-
-	function drawTeam(name) {
-		// const chartGroup = svg.select('.chart')
-		// const lineGroup = chartGroup.select('.line-group')
-		// const dotGroup = chartGroup.select('.dot-group')
-
-		// const oneTeam = dataByTeam.filter(d => d.key === name)
-
-		// // DATA
-		// const lineSelection = lineGroup.selectAll('.line').data(oneTeam)
-
-		// // UPDATE
-
-		// // ENTER
-		// lineSelection.enter()
-		// 	.append('path')
-		// 		.attr('class', 'line')
-
-		// // ENTER + UPDATE
-		// lineSelection.attr('d', d => createLine(d.values))
-
-		// // EXIT
-		// lineSelection.exit().remove()
-
-		// const dataWithWins = oneTeam[0].values.filter(d => d.wins)
-		// // const dataWithWins = dataWithSeason.filter(d => d.wins)
-
-		// const dotSelection = dotGroup.selectAll('.dot').data(dataWithWins)
-
-		// dotSelection.enter()
-		// 	.append('circle')
-		// 	.attr('class', 'dot')
-
-		// dotSelection
-		// 	// .attr('class', d => `dot ${d.worst ? 'worst' : ''} ${d.first ? 'first' : ''}`)
-		// 	.attr('class', d => `dot ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
-		// 	.attr('r', 4)
-		// 	.attr('cx', d => xScale(d.seasonFormatted))
-		// 	.attr('cy', d => yScale(d.rank))
-
-		// dotSelection.exit().remove()
 	}
 
 	function getStepData(step) {
@@ -140,45 +105,54 @@
 		path.transition().duration(SECOND * 4).attrTween('stroke-dasharray', tweenDash);
 	}
 
-	function stepGraphic(index) {
+	function stepGraphic(step) {
+		dir = step - previousStep;
+		previousStep = step;
+
 		var chartGroup = svg.select('.chart');
 		var lineGroup = chartGroup.select('.line-group');
 		var dotGroup = chartGroup.select('.dot-group');
 
 		// DATA
-		var stepData = getStepData(STEPS[index]);
+		var stepData = getStepData(STEPS[step]);
 		var lineSelection = lineGroup.selectAll('.line').data(stepData.line);
 		var dotSelection = dotGroup.selectAll('.dot').data(stepData.dot, function (d) {
 			return d.id;
 		});
-		console.log(dotSelection);
-
-		// ENTER
-		lineSelection.enter().append('path').attr('class', 'line');
-
-		dotSelection.enter().append('circle').attr('class', function (d) {
-			return 'dot ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
-		}).attr('r', 0);
 
 		// UPDATE
-		switch (STEPS[index]) {
+		switch (STEPS[step]) {
 			case 'top-and-bottom':
 				{
-					dotSelection.transition().delay(EXIT_DURATION).duration(SECOND * 2).ease('cubic-out').attr('r', RADIUS_SMALL).attr('cx', function (d) {
+					dotSelection.enter().append('circle').attr('class', function (d) {
+						return 'dot ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
+					}).attr('r', 0).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
+
+					dotSelection.transition().duration(SECOND * 2).delay(function (d) {
+						return d.rank * 75;
+					}).ease('quad-in-out').attr('r', RADIUS_SMALL);
 					break;
 				}
 
 			case 'path-single':
 				{
+					lineSelection.enter().append('path').attr('class', 'line');
+
 					lineSelection.attr('d', function (d) {
 						return createLine(d.values);
 					}).call(transitionPath);
 
-					dotSelection.transition().delay(EXIT_DURATION).duration(SECOND * 2).ease('cubic-out').attr('r', function (d) {
+					dotSelection.enter().append('circle').attr('class', function (d) {
+						return 'dot ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
+					}).attr('r', 0).attr('cy', function (d) {
+						return yScale(d.rank);
+					});
+
+					dotSelection.transition().delay(EXIT_DURATION).duration(SECOND * 2).ease('elastic').attr('r', function (d) {
 						return d.bottom || d.top ? RADIUS_LARGE : RADIUS_SMALL;
 					}).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
@@ -225,16 +199,13 @@
 		}).entries(data);
 
 		// setup chart
-		var outerWidth = 960;
-		var outerHeight = 540;
-		var margin = { top: 20, right: 40, bottom: 40, left: 40 };
-		var chartWidth = outerWidth - margin.left - margin.right;
-		var chartHeight = outerHeight - margin.top - margin.bottom;
+		chartWidth = outerWidth - MARGIN.left - MARGIN.right;
+		chartHeight = outerHeight - MARGIN.top - MARGIN.bottom;
 
 		// create containers
 		svg = d3.select('svg').attr('width', outerWidth).attr('height', outerHeight);
 
-		var chartGroup = svg.append('g').attr('class', 'chart').attr('transform', translate(margin.left, margin.top));
+		var chartGroup = svg.append('g').attr('class', 'chart').attr('transform', translate(MARGIN.left, MARGIN.top));
 
 		xScale.domain(d3.extent(data, function (d) {
 			return d.seasonFormatted;
