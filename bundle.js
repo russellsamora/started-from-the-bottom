@@ -1,7 +1,9 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 (function () {
-	var TEAM_NAME_DICT = { 'ATL': 'Hawks', 'BOS': 'Celtics', 'BRK': 'Nets', 'CHI': 'Bulls', 'CHO': 'Hornets', 'CLE': 'Cavaliers', 'DAL': 'Mavericks', 'DEN': 'Nuggest', 'DET': 'Pistons', 'GSW': 'Warriors', 'HOU': 'Rockets', 'IND': 'Pacers', 'LAC': 'Clippers', 'LAL': 'Lakers', 'MEM': 'Grizzlies', 'MIA': 'Heat', 'MIL': 'Bucks', 'MIN': 'Timberwolves', 'NOP': 'Pelicans', 'NYK': 'Knicks', 'OKC': 'Thunder', 'ORL': 'Magic', 'PHI': '76ers', 'PHO': 'Suns', 'POR': 'Trail Blazers', 'SAC': 'Kings', 'SAS': 'Spurs', 'TOR': 'Raports', 'UTA': 'Jazz', WAS: 'Wizards' };
+	var TEAM_NAME_DICT = { 'ATL': 'Hawks', 'BOS': 'Celtics', 'BRK': 'Nets', 'CHI': 'Bulls', 'CHO': 'Hornets', 'CLE': 'Cavaliers', 'DAL': 'Mavericks', 'DEN': 'Nuggets', 'DET': 'Pistons', 'GSW': 'Warriors', 'HOU': 'Rockets', 'IND': 'Pacers', 'LAC': 'Clippers', 'LAL': 'Lakers', 'MEM': 'Grizzlies', 'MIA': 'Heat', 'MIL': 'Bucks', 'MIN': 'Timberwolves', 'NOP': 'Pelicans', 'NYK': 'Knicks', 'OKC': 'Thunder', 'ORL': 'Magic', 'PHI': '76ers', 'PHO': 'Suns', 'POR': 'Trail Blazers', 'SAC': 'Kings', 'SAS': 'Spurs', 'TOR': 'Raports', 'UTA': 'Jazz', WAS: 'Wizards' };
 	var COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five'];
 	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-normalized', 'stretch-duration'];
 	var SECOND = 1000;
@@ -9,7 +11,11 @@
 	var MARGIN = { top: 20, right: 40, bottom: 40, left: 40 };
 	var GRAPHIC_MARGIN = 20;
 	var RATIO = 16 / 9;
-	var SECTION_WIDTH = 320;
+	var SECTION_WIDTH = 360;
+	var DRAKE = 2.8;
+	var RADIUS_FACTOR = 1.75;
+
+	var audioElement = document.querySelector('.sample');
 
 	var singleTeam = 'GSW';
 	var outerWidth = 0;
@@ -29,11 +35,8 @@
 	var INTERPOLATE = 'step';
 	var xScale = d3.time.scale();
 	var yScale = d3.scale.linear();
-	// const createLineAll = d3.svg.line()
-	// 	.defined(d => d.rank)
-	// 	.interpolate(INTERPOLATE)
-	// 	.x(d => xScale(d.seasonFormatted))
-	// 	.y(d => yScale(d.rank))
+	var xScaleNormalized = d3.scale.linear();
+	var yearFormat = d3.time.format('%Y');
 
 	var createLine = d3.svg.line().defined(function (d) {
 		return d.rank;
@@ -43,16 +46,24 @@
 		return yScale(d.rank);
 	});
 
+	var createNormalizedLine = d3.svg.line().defined(function (d) {
+		return d.rank;
+	}).interpolate(INTERPOLATE).x(function (d, i) {
+		return xScaleNormalized(i);
+	}).y(function (d) {
+		return yScale(d.rank);
+	});
+
 	function translate(x, y) {
 		return 'translate(' + x + ',' + y + ')';
 	}
 
 	function cleanData(data) {
-		var yearFormat = d3.time.format('%Y');
-		return data.map(function (d, index) {
-			d.seasonFormatted = yearFormat.parse(d.seasonYear);
-			d.id = index;
-			return d;
+		return data.map(function (d, id) {
+			return _extends({}, d, {
+				seasonFormatted: yearFormat.parse(d.seasonYear),
+				id: id
+			});
 		});
 	}
 
@@ -168,8 +179,38 @@
 					};
 				}
 
+			case 'stretch-all':
+				{
+					// TODO can we get first bottom part of completed stretch?
+					var stretches = dataByTeam.map(getStretches).filter(function (s) {
+						return s.length;
+					}).reduce(function (previous, current) {
+						return previous.concat(current);
+					});
+
+					return {
+						all: [],
+						wins: data.filter(function (d) {
+							return d.wins && d.stretch && d.stop;
+						}),
+						stretches: stretches
+					};
+				}
+
 			case 'stretch-normalized':
-				{}
+				{
+					var _stretches = dataByTeam.map(getStretches).filter(function (s) {
+						return s.length;
+					}).reduce(function (previous, current) {
+						return previous.concat(current);
+					});
+
+					return {
+						all: [],
+						wins: [],
+						stretches: _stretches
+					};
+				}
 
 			case 'stretch-duration':
 				{}
@@ -177,6 +218,10 @@
 			default:
 				return {};
 		}
+	}
+
+	function emptyDash() {
+		return '0,' + this.getTotalLength();
 	}
 
 	function tweenDash() {
@@ -187,8 +232,12 @@
 		};
 	}
 
-	function transitionPath(path) {
-		path.transition().ease('quad-in-out').duration(SECOND * 3).attrTween('stroke-dasharray', tweenDash);
+	function updateMadlib(stretches) {
+		var count = stretches.length;
+		document.querySelector('.madlib-count').innerHTML = count ? 'have made their journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed their quest to finish in the top four after starting from the bottom.';
+
+		var recent = count ? stretches[count - 1].length - 1 : 0;
+		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' average, spanning <strong class=\'bottom\'>' + recent + '</strong> seasons.' : 'Maybe next year will be their year...';
 	}
 
 	function stepGraphic(step) {
@@ -202,11 +251,15 @@
 
 		// DATA
 		var stepData = getStepData(STEPS[step]);
-		var allSelection = allGroup.selectAll('.all').data(stepData.all);
+		var allSelection = allGroup.selectAll('.all').data(stepData.all, function (d, i) {
+			return d.key ? d.key + '-' + i : i;
+		});
 		var winsSelection = winsGroup.selectAll('.wins').data(stepData.wins, function (d) {
 			return d.id;
 		});
-		var stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches);
+		var stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, function (d, i) {
+			return d.length ? d[0].name + '-' + i : i;
+		});
 
 		console.log(stepData);
 
@@ -230,11 +283,11 @@
 
 			case 'warriors':
 				{
-					allSelection.enter().append('path').attr('class', 'all');
+					allSelection.enter().append('path').attr('class', 'all').style('opacity', 0);
 
 					allSelection.attr('d', function (d) {
 						return createLine(d.values);
-					}).call(transitionPath);
+					}).transition('quad-in-out').delay(EXIT_DURATION).duration(SECOND * 0.75).style('opacity', 1);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -242,7 +295,9 @@
 						return yScale(d.rank);
 					});
 
-					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND * 2).ease('elastic').attr('r', function (d) {
+					winsSelection.transition().delay(function (d, i) {
+						return EXIT_DURATION * 2 + i * 100;
+					}).duration(SECOND * DRAKE).ease('elastic').attr('r', function (d) {
 						return d.bottom || d.top ? radiusLarge : radiusSmall;
 					}).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
@@ -260,41 +315,69 @@
 						return createLine(d.values);
 					});
 
-					stretchSelection.enter().append('path').attr('class', 'stretch');
+					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', radiusLarge * 2 + 'px');
 
-					stretchSelection.attr('d', function (d) {
-						return createLine(d);
-					}).call(transitionPath);
+					stretchSelection.attr('d', createLine).attr('stroke-dasharray', emptyDash);
+
+					stretchSelection.attr('d', createLine).transition().duration(SECOND * DRAKE).ease('quad-in-out').attrTween('stroke-dasharray', tweenDash);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
-					}).attr('r', 0).attr('cy', function (d) {
-						return yScale(d.rank);
-					});
-
-					winsSelection.transition().delay(dir === 0 ? 0 : EXIT_DURATION).duration(SECOND * 2).ease('elastic').attr('r', function (d) {
-						return d.bottom || d.top ? radiusLarge : radiusSmall;
-					}).attr('cx', function (d) {
+					}).attr('r', 0).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d) {
+						return yScale(d.rank);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
 
-					var count = stepData.stretches.length;
-					document.querySelector('.madlib-count').innerHTML = count ? 'have made their journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed their quest to finish in the top four after starting from the bottom.';
+					winsSelection.transition().duration(SECOND).ease('elastic').attr('r', function (d) {
+						return d.bottom || d.top ? radiusLarge : radiusSmall;
+					});
 
-					var recent = count ? stepData.stretches[count - 1].length - 1 : 0;
-					document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' average, spanning <strong class=\'bottom\'>' + recent + '</strong> seasons.' : 'Maybe next year will be their year...';
+					// drake!
+					// if (stepData.stretches.length) audioElement.play()
+
+					updateMadlib(stepData.stretches);
 					break;
 				}
 
 			case 'stretch-all':
 				{
+					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', '2px').style('opacity', 0);
+
+					stretchSelection.attr('d', createLine).transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').style('opacity', 1);
+
+					winsSelection.enter().append('circle').attr('class', function (d) {
+						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
+					}).attr('r', 0).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d) {
+						return yScale(d.rank);
+					}).attr('cy', function (d) {
+						return yScale(d.rank);
+					});
+
+					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').attr('r', function (d) {
+						return d.bottom || d.top ? radiusLarge : radiusSmall;
+					});
+
+					var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('‘%y'));
+
+					d3.select('.axis--x').call(xAxis);
+
 					break;
 				}
 
 			case 'stretch-normalized':
 				{
+					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', '2px').style('opacity', 0);
+
+					var _xAxis = d3.svg.axis().scale(xScaleNormalized).orient('bottom');
+
+					d3.select('.axis--x').call(_xAxis);
+
+					stretchSelection.attr('d', createNormalizedLine).transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').style('opacity', 1);
 					break;
 				}
 
@@ -308,11 +391,11 @@
 		}
 
 		// EXIT
-		allSelection.exit().transition().duration(EXIT_DURATION).style('opacity', 0).remove();
+		allSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
 
-		stretchSelection.exit().transition().duration(EXIT_DURATION).style('opacity', 0).remove();
+		winsSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
 
-		winsSelection.exit().transition().duration(EXIT_DURATION).style('opacity', 0).remove();
+		stretchSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
 	}
 
 	function updateSingleStep() {
@@ -344,11 +427,11 @@
 			return d;
 		});
 
-		var comp = dataByTeam.reduce(function (previous, current) {
+		var completed = dataByTeam.reduce(function (previous, current) {
 			return previous.concat(current.stretches.completed);
 		}, []);
-		stretchesMedian = d3.median(comp);
-		stretchesCompleted = comp.length;
+		stretchesMedian = d3.median(completed);
+		stretchesCompleted = completed.length;
 
 		// setup chart
 		chartWidth = outerWidth - MARGIN.left - MARGIN.right;
@@ -362,12 +445,13 @@
 		xScale.domain(d3.extent(data, function (d) {
 			return d.seasonFormatted;
 		})).range([0, chartWidth]);
-		// .nice()
+
 		yScale.domain([1, data.filter(function (d) {
 			return d.season === '2015-16';
-		}).length + 1])
-		// .domain(d3.extent(data, d => d.gamesBack))
-		.range([0, chartHeight]);
+		}).length + 1]).range([0, chartHeight]);
+
+		// shortest to longest stretch
+		xScaleNormalized.domain([0, d3.max(completed)]).range([0, chartWidth]);
 
 		// create axis
 		var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('‘%y'));
@@ -385,6 +469,7 @@
 		chartGroup.append('g').attr('class', 'wins-group');
 
 		setupGraphScroll();
+		createDropdown();
 	}
 
 	function createDropdown() {
@@ -396,6 +481,14 @@
 		el.innerHTML = html;
 
 		el.addEventListener('change', updateSingleStep);
+
+		// set first madlib
+		var team = dataByTeam.filter(function (d) {
+			return d.key === 'GSW';
+		});
+		updateMadlib(getStretches(team[0]));
+		// total madlib
+		document.querySelector('.madlib-total').textContent = stretchesCompleted;
 	}
 
 	function init() {
@@ -403,9 +496,8 @@
 		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN;
 		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2);
 		radiusSmall = Math.max(4, Math.round(outerHeight / 200));
-		radiusLarge = Math.round(radiusSmall * 1.5);
+		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR);
 
-		createDropdown();
 		d3.json('data/output.json', handleDataLoaded);
 	}
 

@@ -37,11 +37,14 @@ p {
 main {
   padding: 0 1em;
 }
+.hide {
+  display: none;
+}
 .bottom {
-  color: #20565e;
+  color: #205e65;
 }
 .top {
-  color: #ee8767;
+  color: #ca6e5d;
 }
 .intro {
   max-width: 35em;
@@ -62,7 +65,7 @@ main {
   overflow: auto;
 }
 .sections {
-  max-width: 320px;
+  max-width: 360px;
   float: left;
   margin-top: 1em;
 }
@@ -70,6 +73,7 @@ main {
   background-color: #fff;
   opacity: 0.35;
   min-height: 50vh;
+  padding-top: 2em;
   transition: opacity 250ms ease-in-out;
 }
 .sections section.graph-scroll-active {
@@ -83,12 +87,12 @@ main {
 #graphic.graph-scroll-fixed {
   position: fixed;
   top: 0px;
-  left: 340px;
+  left: 380px;
 }
 #graphic.graph-scroll-below {
   position: absolute;
   bottom: 0px;
-  margin-left: 380px;
+  margin-left: 400px;
 }
 .axis {
   font-size: 11px;
@@ -111,16 +115,16 @@ circle.wins {
   stroke-opacity: 1;
 }
 circle.wins.bottom {
-  fill: #20565e;
-  stroke: #20565e;
+  fill: #205e65;
+  stroke: #205e65;
 }
 circle.wins.top {
-  fill: #ee8767;
-  stroke: #ee8767;
+  fill: #ca6e5d;
+  stroke: #ca6e5d;
 }
 path.all {
   fill: none;
-  stroke: #000;
+  stroke: #666;
   stroke-width: 2px;
   stroke-opacity: 0.1;
   stroke-linejoin: round;
@@ -128,8 +132,7 @@ path.all {
 }
 path.stretch {
   fill: none;
-  stroke: #000;
-  stroke-width: 4px;
+  stroke: #666;
   stroke-opacity: 0.2;
   stroke-linejoin: round;
   stroke-linecap: round;

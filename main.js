@@ -1,5 +1,5 @@
 (function() {
-	const TEAM_NAME_DICT = { 'ATL': 'Hawks','BOS': 'Celtics','BRK': 'Nets','CHI': 'Bulls','CHO': 'Hornets','CLE': 'Cavaliers','DAL': 'Mavericks','DEN': 'Nuggest','DET': 'Pistons','GSW': 'Warriors','HOU': 'Rockets','IND': 'Pacers','LAC': 'Clippers','LAL': 'Lakers','MEM': 'Grizzlies','MIA': 'Heat','MIL': 'Bucks','MIN': 'Timberwolves','NOP': 'Pelicans','NYK': 'Knicks','OKC': 'Thunder','ORL': 'Magic','PHI': '76ers','PHO': 'Suns','POR': 'Trail Blazers','SAC': 'Kings','SAS': 'Spurs','TOR': 'Raports','UTA': 'Jazz', WAS: 'Wizards' }
+	const TEAM_NAME_DICT = { 'ATL': 'Hawks','BOS': 'Celtics','BRK': 'Nets','CHI': 'Bulls','CHO': 'Hornets','CLE': 'Cavaliers','DAL': 'Mavericks','DEN': 'Nuggets','DET': 'Pistons','GSW': 'Warriors','HOU': 'Rockets','IND': 'Pacers','LAC': 'Clippers','LAL': 'Lakers','MEM': 'Grizzlies','MIA': 'Heat','MIL': 'Bucks','MIN': 'Timberwolves','NOP': 'Pelicans','NYK': 'Knicks','OKC': 'Thunder','ORL': 'Magic','PHI': '76ers','PHO': 'Suns','POR': 'Trail Blazers','SAC': 'Kings','SAS': 'Spurs','TOR': 'Raports','UTA': 'Jazz', WAS: 'Wizards' }
 	const COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five']
 	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-normalized', 'stretch-duration']
 	const SECOND = 1000
@@ -7,8 +7,12 @@
 	const MARGIN = { top: 20, right: 40, bottom: 40, left: 40 }
 	const GRAPHIC_MARGIN = 20
 	const RATIO = 16 / 9
-	const SECTION_WIDTH = 320
-	
+	const SECTION_WIDTH = 360
+	const DRAKE = 2.8
+	const RADIUS_FACTOR = 1.75
+
+	const audioElement = document.querySelector('.sample')
+
 	let singleTeam = 'GSW'
 	let outerWidth = 0
 	let outerHeight = 0
@@ -27,11 +31,8 @@
 	const INTERPOLATE = 'step'
 	const xScale = d3.time.scale()
 	const yScale = d3.scale.linear()
-	// const createLineAll = d3.svg.line()
-	// 	.defined(d => d.rank)
-	// 	.interpolate(INTERPOLATE)
-	// 	.x(d => xScale(d.seasonFormatted))
-	// 	.y(d => yScale(d.rank))
+	const xScaleNormalized = d3.scale.linear()
+	const yearFormat = d3.time.format('%Y')
 
 	const createLine = d3.svg.line()
 		.defined(d => d.rank)
@@ -39,17 +40,22 @@
 		.x(d => xScale(d.seasonFormatted))
 		.y(d => yScale(d.rank))
 
+	const createNormalizedLine = d3.svg.line()
+		.defined(d => d.rank)
+		.interpolate(INTERPOLATE)
+		.x((d, i) => xScaleNormalized(i))
+		.y(d => yScale(d.rank))
+
 	function translate(x, y) { 
 		return `translate(${x},${y})`
 	}
 
 	function cleanData(data) {
-		const yearFormat = d3.time.format('%Y')
-		return data.map((d, index) => {
-			d.seasonFormatted = yearFormat.parse(d.seasonYear)
-			d.id = index
-			return d
-		})
+		return data.map((d, id) => ({
+			...d,
+			seasonFormatted: yearFormat.parse(d.seasonYear),
+			id,
+		}))
 	}
 
 	function calculateStretch(team) {
@@ -144,9 +150,32 @@
 				stretches: getStretches(team[0]),
 			}
 		}
-			
-		case 'stretch-normalized': {
+		
+		case 'stretch-all': {
+			// TODO can we get first bottom part of completed stretch?
+			const stretches = dataByTeam
+				.map(getStretches)
+				.filter(s => s.length)
+				.reduce((previous, current) => previous.concat(current))
 
+			return {
+				all: [],
+				wins: data.filter(d => d.wins && d.stretch && d.stop),
+				stretches,
+			}
+		}	
+
+		case 'stretch-normalized': {
+			const stretches = dataByTeam
+				.map(getStretches)
+				.filter(s => s.length)
+				.reduce((previous, current) => previous.concat(current))
+
+			return {
+				all: [],
+				wins: [],
+				stretches,
+			}
 		}
 			
 		case 'stretch-duration': {
@@ -157,17 +186,26 @@
 		}
 	}
 
+	function emptyDash() {
+		return `0,${this.getTotalLength()}`
+	}
+
 	function tweenDash() {
 		const l = this.getTotalLength()
 		const i = d3.interpolateString(`0,${l}`, `${l}, ${l}`)
 		return (t) => i(t)
 	}
 
-	function transitionPath(path) {
-		path.transition()
-			.ease('quad-in-out')
-			.duration(SECOND * 3)
-			.attrTween('stroke-dasharray', tweenDash)
+	function updateMadlib(stretches) {
+		const count = stretches.length
+		document.querySelector('.madlib-count').innerHTML = count
+			? `have made their journey from the bottom to the top <strong class='top'>${COUNT_TO_WORD[count]}</strong> time${count === 1 ? '' : 's'} in franchise history.`
+			: 'have never completed their quest to finish in the top four after starting from the bottom.'
+
+		const recent = count ? stretches[count - 1].length  - 1 : 0
+		document.querySelector('.madlib-detail').innerHTML = count
+			? `Their most recent ascent was ${getAverageDiff(recent)} average, spanning <strong class='bottom'>${recent}</strong> seasons.`
+			: 'Maybe next year will be their year...'
 	}
 
 	function stepGraphic(step) {
@@ -181,9 +219,9 @@
 
 		// DATA
 		const stepData = getStepData(STEPS[step])		
-		const allSelection = allGroup.selectAll('.all').data(stepData.all)
+		const allSelection = allGroup.selectAll('.all').data(stepData.all, (d,i) => d.key ? `${d.key}-${i}` : i)
 		const winsSelection = winsGroup.selectAll('.wins').data(stepData.wins, d => d.id)
-		const stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches)
+		const stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, (d,i) => d.length ? `${d[0].name}-${i}` : i)
 
 		console.log(stepData)
 
@@ -210,9 +248,13 @@
 			allSelection.enter()
 				.append('path')
 					.attr('class', 'all')
+					.style('opacity', 0)
 
 			allSelection.attr('d', d => createLine(d.values))
-				.call(transitionPath)
+				.transition('quad-in-out')
+				.delay(EXIT_DURATION)
+				.duration(SECOND * 0.75)
+				.style('opacity', 1)
 
 			winsSelection.enter()
 				.append('circle')
@@ -222,8 +264,8 @@
 
 			winsSelection
 				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND * 2)
+				.delay((d, i) => EXIT_DURATION * 2 + (i * 100))
+				.duration(SECOND * DRAKE)
 				.ease('elastic')
 				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
 				.attr('cx', d => xScale(d.seasonFormatted))
@@ -242,42 +284,100 @@
 			stretchSelection.enter()
 				.append('path')
 					.attr('class', 'stretch')
+					.attr('stroke-width', `${radiusLarge * 2}px`)
 
-			stretchSelection.attr('d', d => createLine(d))
-				.call(transitionPath)
+			stretchSelection.attr('d', createLine)
+				.attr('stroke-dasharray', emptyDash)
+			
+			stretchSelection.attr('d', createLine)
+				.transition()
+				.duration(SECOND * DRAKE)
+				.ease('quad-in-out')
+				.attrTween('stroke-dasharray', tweenDash)
 
 			winsSelection.enter()
 				.append('circle')
 					.attr('class', d => `wins ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
 					.attr('r', 0)
+					.attr('cx', d => xScale(d.seasonFormatted))
+					.attr('cy', d => yScale(d.rank))
 					.attr('cy', d => yScale(d.rank))
 
 			winsSelection
 				.transition()
-				.delay(dir === 0 ? 0 : EXIT_DURATION)
-				.duration(SECOND * 2)
+				.duration(SECOND)
 				.ease('elastic')
 				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
-				.attr('cx', d => xScale(d.seasonFormatted))
-				.attr('cy', d => yScale(d.rank))
+				
+			// drake!
+			// if (stepData.stretches.length) audioElement.play()
 
-			const count = stepData.stretches.length
-			document.querySelector('.madlib-count').innerHTML = count
-				? `have made their journey from the bottom to the top <strong class='top'>${COUNT_TO_WORD[count]}</strong> time${count === 1 ? '' : 's'} in franchise history.`
-				: 'have never completed their quest to finish in the top four after starting from the bottom.'
-
-			const recent = count ? stepData.stretches[count - 1].length  - 1 : 0
-			document.querySelector('.madlib-detail').innerHTML = count
-				? `Their most recent ascent was ${getAverageDiff(recent)} average, spanning <strong class='bottom'>${recent}</strong> seasons.`
-				: 'Maybe next year will be their year...'
+			updateMadlib(stepData.stretches)
 			break
 		}
 
 		case 'stretch-all': {
+			stretchSelection.enter()
+				.append('path')
+					.attr('class', 'stretch')
+					.attr('stroke-width', '2px')
+					.style('opacity', 0)
+
+			stretchSelection.attr('d', createLine)
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('stroke-width', '2px')
+				.style('opacity', 1)
+
+			winsSelection.enter()
+				.append('circle')
+					.attr('class', d => `wins ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
+					.attr('r', 0)
+					.attr('cx', d => xScale(d.seasonFormatted))
+					.attr('cy', d => yScale(d.rank))
+					.attr('cy', d => yScale(d.rank))
+
+			winsSelection
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('elastic')
+				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
+			
+			const xAxis = d3.svg.axis()
+				.scale(xScale)
+				.orient('bottom')
+				.tickFormat(d3.time.format('‘%y'))
+
+			d3.select('.axis--x')
+				.call(xAxis)
+
 			break
 		}
 			
 		case 'stretch-normalized': {
+			stretchSelection.enter()
+				.append('path')
+					.attr('class', 'stretch')
+					.attr('stroke-width', '2px')
+					.style('opacity', 0)
+
+			const xAxis = d3.svg.axis()
+				.scale(xScaleNormalized)
+				.orient('bottom')
+
+			d3.select('.axis--x')
+				.call(xAxis)
+
+			stretchSelection.attr('d', createNormalizedLine)
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('stroke-width', '2px')
+				.style('opacity', 1)
 			break
 		}
 			
@@ -291,22 +391,22 @@
 		// EXIT
 		allSelection.exit()
 			.transition()
-			.duration(EXIT_DURATION)
-			.style('opacity', 0)
-			.remove()
-
-		stretchSelection.exit()
-			.transition()
-			.duration(EXIT_DURATION)
+			.duration(dir === 0 ? 0 : EXIT_DURATION)
 			.style('opacity', 0)
 			.remove()
 
 		winsSelection.exit()
 			.transition()
-			.duration(EXIT_DURATION)
+			.duration(dir === 0 ? 0 : EXIT_DURATION)
 			.style('opacity', 0)
 			.remove()
-		
+
+		stretchSelection.exit()
+			.transition()
+			.duration(dir === 0 ? 0 : EXIT_DURATION)
+			.style('opacity', 0)
+			.remove()
+
 	}
 
 	function updateSingleStep() {
@@ -340,9 +440,9 @@
 				return d
 			})
 
-		const comp = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.completed), [])
-		stretchesMedian = d3.median(comp)
-		stretchesCompleted = comp.length
+		const completed = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.completed), [])
+		stretchesMedian = d3.median(completed)
+		stretchesCompleted = completed.length
 
 		// setup chart
 		chartWidth = outerWidth - MARGIN.left - MARGIN.right
@@ -360,11 +460,15 @@
 		xScale
 			.domain(d3.extent(data, d => d.seasonFormatted))
 			.range([0, chartWidth])
-			// .nice()
+
 		yScale
 			.domain([1, data.filter(d => d.season === '2015-16').length + 1])
-			// .domain(d3.extent(data, d => d.gamesBack))
 			.range([0, chartHeight])
+
+		// shortest to longest stretch
+		xScaleNormalized
+			.domain([0, d3.max(completed)])
+			.range([0, chartWidth])
 
 		// create axis
 		const xAxis = d3.svg.axis()
@@ -397,6 +501,7 @@
 			.attr('class', 'wins-group')
 
 		setupGraphScroll()
+		createDropdown()
 	}
 
 	function createDropdown() {
@@ -408,6 +513,12 @@
 		el.innerHTML = html
 
 		el.addEventListener('change', updateSingleStep)
+
+		// set first madlib
+		const team = dataByTeam.filter(d => d.key === 'GSW')
+		updateMadlib(getStretches(team[0]))
+		// total madlib
+		document.querySelector('.madlib-total').textContent = stretchesCompleted
 	}
 
 	function init() {
@@ -415,9 +526,8 @@
 		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN
 		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2)
 		radiusSmall = Math.max(4, Math.round(outerHeight / 200))
-		radiusLarge = Math.round(radiusSmall * 1.5)
+		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)
 
-		createDropdown()
 		d3.json('data/output.json', handleDataLoaded)
 	}
 
