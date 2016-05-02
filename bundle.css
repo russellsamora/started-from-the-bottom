@@ -37,6 +37,12 @@ p {
 main {
   padding: 0 1em;
 }
+.bottom {
+  color: #20565e;
+}
+.top {
+  color: #ee8767;
+}
 .intro {
   max-width: 35em;
   margin: 2em auto;
@@ -84,43 +90,57 @@ main {
   bottom: 0px;
   margin-left: 380px;
 }
-svg {
-  stroke: #000;
-  stroke-opacity: 0.1;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-svg .axis {
+.axis {
   font-size: 11px;
 }
-svg .axis path,
-svg .axis line {
+.axis path,
+.axis line {
   fill: none;
   stroke: #ccc;
   stroke-opacity: 1;
   shape-rendering: crispEdges;
 }
-svg .axis--y path,
-svg .axis--y line {
+.axis--y path,
+.axis--y line {
   stroke: none;
 }
-svg .dot {
+circle.wins {
   fill: #ccc;
   fill-opacity: 0.33;
   stroke: none;
+  stroke-opacity: 1;
 }
-svg .dot.bottom {
+circle.wins.bottom {
   fill: #20565e;
-  fill-opacity: 0.33;
   stroke: #20565e;
-  stroke-opacity: 1;
 }
-svg .dot.top {
+circle.wins.top {
   fill: #ee8767;
-  fill-opacity: 0.33;
   stroke: #ee8767;
-  stroke-opacity: 1;
 }
-svg .line {
+path.all {
   fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+  stroke-opacity: 0.1;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+path.stretch {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4px;
+  stroke-opacity: 0.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.madlib-name {
+  border: none;
+  background: none;
+  text-align: center;
+  display: inline-block;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  color: #454545;
+  border-bottom: 1px dashed #000;
 }

@@ -20,12 +20,14 @@ $neutral = #ccc
 	font-weight 700
 	src local('Roboto Bold'), local('Roboto-Bold'), url('fonts/roboto-v15-latin-700.woff2') format('woff2'), url('fonts/roboto-v15-latin-700.woff') format('woff')
 
+$roboto = 'Roboto', Helvetica, Arial, sans-serif
+
 body
 	background #fff
 	color #454545
 	font-size 19px
 	line-height 1.4
-	font-family 'Roboto', Helvetica, Arial, sans-serif
+	font-family $roboto
 	font-weight 400
 	-webkit-font-smoothing antialiased
 
@@ -39,6 +41,12 @@ p
 	margin-bottom 1em
 main 
 	padding 0 1em
+
+.bottom 
+	color $bottom
+
+.top
+	color $top
 
 .intro
 	max-width 35em
@@ -81,34 +89,54 @@ main
 		bottom 0px
 		margin-left 380px
 
-svg
-	.axis
-		font-size 11px
-		path, line
-			fill none
-			stroke #ccc
-			stroke-opacity 1
-			shape-rendering crispEdges
-		&--y
-			path, line
-				stroke none
-	.dot 
-		fill $neutral
-		fill-opacity 0.33
-		stroke none
-		&.bottom
-			fill $bottom
-			fill-opacity 0.33
-			stroke $bottom
-			stroke-opacity 1
-		&.top 
-			fill $top
-			fill-opacity 0.33
-			stroke $top
-			stroke-opacity 1
-	.line 
+.axis
+	font-size 11px
+
+	path, line
 		fill none
-	    stroke #000
-	    stroke-opacity 0.1
-	    stroke-linejoin round
-	    stroke-linecap round
+		stroke #ccc
+		stroke-opacity 1
+		shape-rendering crispEdges
+	
+	&--y
+		path, line
+			stroke none
+
+circle.wins  
+	fill $neutral
+	fill-opacity 0.33
+	stroke none
+	stroke-opacity 1
+	&.bottom
+		fill $bottom
+		stroke $bottom
+	&.top
+		fill $top
+		stroke $top
+		
+path.all
+	fill none
+	stroke #000
+	stroke-width 2px
+	stroke-opacity 0.1
+	stroke-linejoin round
+	stroke-linecap round
+
+path.stretch 
+	fill none
+	stroke: #000
+	stroke-width 4px
+	stroke-opacity 0.2
+	stroke-linejoin round
+	stroke-linecap round
+
+.madlib-name 
+	// -webkit-appearance none 
+	border none
+	background none
+	text-align center
+	display inline-block
+	font-family $roboto 
+	font-size 19px
+	color #454545
+	border-bottom 1px dashed black
