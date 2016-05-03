@@ -17,7 +17,7 @@
   src: local('Roboto Bold'), local('Roboto-Bold'), url("fonts/roboto-v15-latin-700.woff2") format('woff2'), url("fonts/roboto-v15-latin-700.woff") format('woff');
 }
 body {
-  background: #fff;
+  background: #fffaf0;
   color: #454545;
   font-size: 19px;
   line-height: 1.4;
@@ -41,10 +41,10 @@ main {
   display: none;
 }
 .bottom {
-  color: #205e65;
+  color: #61a8ac;
 }
 .top {
-  color: #ca6e5d;
+  color: #c84440;
 }
 .intro {
   max-width: 35em;
@@ -70,7 +70,7 @@ main {
   margin-top: 1em;
 }
 .sections section {
-  background-color: #fff;
+  background-color: #fffaf0;
   opacity: 0.35;
   min-height: 50vh;
   padding-top: 2em;
@@ -109,22 +109,22 @@ main {
   stroke: none;
 }
 circle.wins {
-  fill: #ccc;
+  fill: #a08c78;
   fill-opacity: 0.33;
   stroke: none;
   stroke-opacity: 1;
 }
 circle.wins.bottom {
-  fill: #205e65;
-  stroke: #205e65;
+  fill: #61a8ac;
+  stroke: #61a8ac;
 }
 circle.wins.top {
-  fill: #ca6e5d;
-  stroke: #ca6e5d;
+  fill: #c84440;
+  stroke: #c84440;
 }
 path.all {
   fill: none;
-  stroke: #666;
+  stroke: #a08c78;
   stroke-width: 2px;
   stroke-opacity: 0.1;
   stroke-linejoin: round;
@@ -132,7 +132,7 @@ path.all {
 }
 path.stretch {
   fill: none;
-  stroke: #666;
+  stroke: #a08c78;
   stroke-opacity: 0.2;
   stroke-linejoin: round;
   stroke-linecap: round;
