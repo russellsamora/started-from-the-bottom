@@ -13,7 +13,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var RATIO = 16 / 9;
 	var SECTION_WIDTH = 360;
 	var DRAKE = 2.8;
-	var RADIUS_FACTOR = 1.75;
+	var RADIUS_FACTOR = 1.5;
 
 	var audioElement = document.querySelector('.sample');
 
@@ -90,7 +90,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	}
 
 	function addStretches(values) {
-		var active = false;
+		var active = 0;
 		return values.map(function (season) {
 			var bottom = season.bottom;
 			var top = season.top;
@@ -98,13 +98,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (bottom && !active) {
 				season.start = true;
 				season.stretch = true;
-				active = true;
+				active += 1;
 			} else if (top && active) {
 				season.stop = true;
 				season.stretch = true;
-				active = false;
+				season.stopCount = active;
+				active = 0;
 			}
-			if (active) season.stretch = true;
+			if (active) {
+				season.stretch = true;
+				active += 1;
+			}
 			return season;
 		});
 	}
@@ -188,11 +192,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return previous.concat(current);
 					});
 
+					var wins = stretches.reduce(function (previous, current) {
+						var startAndStop = [current[0], current[current.length - 1]];
+						return previous.concat(startAndStop);
+					}, []);
+
 					return {
 						all: [],
-						wins: data.filter(function (d) {
-							return d.wins && d.stretch && d.stop;
-						}),
+						wins: wins,
 						stretches: stretches
 					};
 				}
@@ -205,9 +212,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return previous.concat(current);
 					});
 
+					var _wins = _stretches.reduce(function (previous, current) {
+						var startAndStop = [current[0], current[current.length - 1]];
+						return previous.concat(startAndStop);
+					}, []);
+
 					return {
 						all: [],
-						wins: [],
+						wins: _wins,
 						stretches: _stretches
 					};
 				}
@@ -315,7 +327,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return createLine(d.values);
 					});
 
-					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', radiusLarge * 2 + 'px');
+					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', radiusSmall + 'px');
 
 					stretchSelection.attr('d', createLine).attr('stroke-dasharray', emptyDash);
 
@@ -346,7 +358,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				{
 					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', '2px').style('opacity', 0);
 
-					stretchSelection.attr('d', createLine).transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').style('opacity', 1);
+					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('d', createLine).attr('stroke-width', '2px').style('opacity', 1);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -354,30 +366,45 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
+					});
+
+					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').attr('r', radiusSmall).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
 
-					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').attr('r', function (d) {
-						return d.bottom || d.top ? radiusLarge : radiusSmall;
-					});
-
 					var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('‘%y'));
 
-					d3.select('.axis--x').call(xAxis);
+					d3.select('.axis--x').transition().delay(EXIT_DURATION).duration(SECOND).call(xAxis);
 
 					break;
 				}
 
 			case 'stretch-normalized':
 				{
-					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', '2px').style('opacity', 0);
+					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', '2px');
 
 					var _xAxis = d3.svg.axis().scale(xScaleNormalized).orient('bottom');
 
-					d3.select('.axis--x').call(_xAxis);
+					d3.select('.axis--x').transition().delay(EXIT_DURATION).duration(SECOND).call(_xAxis);
 
-					stretchSelection.attr('d', createNormalizedLine).transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').style('opacity', 1);
+					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createNormalizedLine);
+
+					winsSelection.enter().append('circle').attr('class', function (d) {
+						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
+					}).attr('r', 0).attr('cx', function (d) {
+						return xScale(d.stopCount || 0);
+					}).attr('cy', function (d) {
+						return yScale(d.rank);
+					});
+
+					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
+						return xScaleNormalized(d.stopCount - 1 || 0);
+					}).attr('cy', function (d) {
+						return yScale(d.rank);
+					});
+
 					break;
 				}
 

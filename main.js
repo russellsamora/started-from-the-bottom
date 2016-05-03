@@ -9,7 +9,7 @@
 	const RATIO = 16 / 9
 	const SECTION_WIDTH = 360
 	const DRAKE = 2.8
-	const RADIUS_FACTOR = 1.75
+	const RADIUS_FACTOR = 1.5
 
 	const audioElement = document.querySelector('.sample')
 
@@ -79,19 +79,23 @@
 	}
 
 	function addStretches(values) {
-		let active = false
+		let active = 0
 		return values.map(season => {
 			const { bottom, top } = season
 			if (bottom && !active) {
 				season.start = true
 				season.stretch = true
-				active = true
+				active += 1
 			} else if (top && active) {
 				season.stop = true
 				season.stretch = true
-				active = false
+				season.stopCount = active
+				active = 0
 			}
-			if (active) season.stretch = true
+			if (active) {
+				season.stretch = true
+				active +=1
+			}
 			return season
 		})
 	}
@@ -158,9 +162,14 @@
 				.filter(s => s.length)
 				.reduce((previous, current) => previous.concat(current))
 
+			const wins = stretches.reduce((previous, current) => {
+				const startAndStop = [current[0], current[current.length - 1]]
+				return previous.concat(startAndStop)
+			}, [])
+
 			return {
 				all: [],
-				wins: data.filter(d => d.wins && d.stretch && d.stop),
+				wins,
 				stretches,
 			}
 		}	
@@ -171,9 +180,14 @@
 				.filter(s => s.length)
 				.reduce((previous, current) => previous.concat(current))
 
+			const wins = stretches.reduce((previous, current) => {
+				const startAndStop = [current[0], current[current.length - 1]]
+				return previous.concat(startAndStop)
+			}, [])
+
 			return {
 				all: [],
-				wins: [],
+				wins,
 				stretches,
 			}
 		}
@@ -284,7 +298,7 @@
 			stretchSelection.enter()
 				.append('path')
 					.attr('class', 'stretch')
-					.attr('stroke-width', `${radiusLarge * 2}px`)
+					.attr('stroke-width', `${radiusSmall}px`)
 
 			stretchSelection.attr('d', createLine)
 				.attr('stroke-dasharray', emptyDash)
@@ -323,11 +337,12 @@
 					.attr('stroke-width', '2px')
 					.style('opacity', 0)
 
-			stretchSelection.attr('d', createLine)
+			stretchSelection
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.ease('quad-in-out')
+				.attr('d', createLine)
 				.attr('stroke-width', '2px')
 				.style('opacity', 1)
 
@@ -337,14 +352,15 @@
 					.attr('r', 0)
 					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', d => yScale(d.rank))
-					.attr('cy', d => yScale(d.rank))
 
 			winsSelection
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.ease('elastic')
-				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
+				.attr('r', radiusSmall)
+				.attr('cx', d => xScale(d.seasonFormatted))
+				.attr('cy', d => yScale(d.rank))
 			
 			const xAxis = d3.svg.axis()
 				.scale(xScale)
@@ -352,6 +368,9 @@
 				.tickFormat(d3.time.format('‘%y'))
 
 			d3.select('.axis--x')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
 				.call(xAxis)
 
 			break
@@ -362,22 +381,41 @@
 				.append('path')
 					.attr('class', 'stretch')
 					.attr('stroke-width', '2px')
-					.style('opacity', 0)
 
 			const xAxis = d3.svg.axis()
 				.scale(xScaleNormalized)
 				.orient('bottom')
 
 			d3.select('.axis--x')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
 				.call(xAxis)
 
-			stretchSelection.attr('d', createNormalizedLine)
+			stretchSelection
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.ease('quad-in-out')
 				.attr('stroke-width', '2px')
-				.style('opacity', 1)
+				.attr('d', createNormalizedLine)
+
+			winsSelection.enter()
+				.append('circle')
+					.attr('class', d => `wins ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
+					.attr('r', 0)
+					.attr('cx', d => xScale(d.stopCount || 0))
+					.attr('cy', d => yScale(d.rank))
+
+			winsSelection
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('r', radiusSmall)
+				.attr('cx', d => xScaleNormalized(d.stopCount - 1 || 0))
+				.attr('cy', d => yScale(d.rank))
+			
 			break
 		}
 			
