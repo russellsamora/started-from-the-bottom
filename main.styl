@@ -72,7 +72,7 @@ main
 #container
 	position relative
 	width 100%
-	overflow auto
+	overflow hidden
 
 .sections
 	max-width $section-width
@@ -98,7 +98,7 @@ main
 	&.graph-scroll-below
 		position absolute
 		bottom 0px
-		margin-left $section-width + ($section-margin * 2)
+		margin-left $section-width + $section-margin
 
 .axis
 	font-size 11px
@@ -133,7 +133,7 @@ path.all
 	stroke-linejoin round
 	stroke-linecap round
 
-path.stretch 
+path.stretch-path
 	fill none
 	stroke $neutral
 	// stroke-width 4px

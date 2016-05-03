@@ -5,7 +5,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 (function () {
 	var TEAM_NAME_DICT = { 'ATL': 'Hawks', 'BOS': 'Celtics', 'BRK': 'Nets', 'CHI': 'Bulls', 'CHO': 'Hornets', 'CLE': 'Cavaliers', 'DAL': 'Mavericks', 'DEN': 'Nuggets', 'DET': 'Pistons', 'GSW': 'Warriors', 'HOU': 'Rockets', 'IND': 'Pacers', 'LAC': 'Clippers', 'LAL': 'Lakers', 'MEM': 'Grizzlies', 'MIA': 'Heat', 'MIL': 'Bucks', 'MIN': 'Timberwolves', 'NOP': 'Pelicans', 'NYK': 'Knicks', 'OKC': 'Thunder', 'ORL': 'Magic', 'PHI': '76ers', 'PHO': 'Suns', 'POR': 'Trail Blazers', 'SAC': 'Kings', 'SAS': 'Spurs', 'TOR': 'Raports', 'UTA': 'Jazz', WAS: 'Wizards' };
 	var COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five'];
-	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-normalized', 'stretch-duration'];
+	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration'];
 	var SECOND = 1000;
 	var EXIT_DURATION = SECOND;
 	var MARGIN = { top: 20, right: 40, bottom: 40, left: 40 };
@@ -36,6 +36,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var xScale = d3.time.scale();
 	var yScale = d3.scale.linear();
 	var xScaleNormalized = d3.scale.linear();
+	var yScaleLinear = d3.scale.linear();
 	var yearFormat = d3.time.format('%Y');
 
 	var createLine = d3.svg.line().defined(function (d) {
@@ -52,6 +53,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		return xScaleNormalized(i);
 	}).y(function (d) {
 		return yScale(d.rank);
+	});
+
+	var createLineDuration = d3.svg.line().defined(function (d) {
+		return d.rank;
+	}).interpolate('linear').x(function (d) {
+		return xScale(d.seasonFormatted);
+	}).y(function (d) {
+		return 0;
 	});
 
 	function translate(x, y) {
@@ -225,7 +234,25 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				}
 
 			case 'stretch-duration':
-				{}
+				{
+					var _stretches2 = dataByTeam.map(getStretches).filter(function (s) {
+						return s.length;
+					}).reduce(function (previous, current) {
+						return previous.concat(current);
+					}).map(function (s) {
+						return [s[0], s[s.length - 1]];
+					});
+
+					var _wins2 = _stretches2.reduce(function (previous, current) {
+						return previous.concat(current);
+					}, []);
+
+					return {
+						all: [],
+						wins: _wins2,
+						stretches: _stretches2
+					};
+				}
 
 			default:
 				return {};
@@ -327,11 +354,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return createLine(d.values);
 					});
 
-					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', radiusSmall + 'px');
+					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', radiusSmall + 'px');
 
-					stretchSelection.attr('d', createLine).attr('stroke-dasharray', emptyDash);
+					stretchSelection.select('path').attr('d', createLine).attr('stroke-dasharray', emptyDash);
 
-					stretchSelection.attr('d', createLine).transition().duration(SECOND * DRAKE).ease('quad-in-out').attrTween('stroke-dasharray', tweenDash);
+					stretchSelection.select('path').attr('d', createLine).transition().duration(SECOND * DRAKE).ease('quad-in-out').attrTween('stroke-dasharray', tweenDash);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -356,9 +383,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			case 'stretch-all':
 				{
-					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', '2px').style('opacity', 0);
+					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px').style('opacity', 0);
 
-					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('d', createLine).attr('stroke-width', '2px').style('opacity', 1);
+					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('d', createLine).attr('stroke-width', '2px').style('opacity', 1);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -383,13 +410,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			case 'stretch-normalized':
 				{
-					stretchSelection.enter().append('path').attr('class', 'stretch').attr('stroke-width', '2px');
+					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
 
 					var _xAxis = d3.svg.axis().scale(xScaleNormalized).orient('bottom');
 
 					d3.select('.axis--x').transition().delay(EXIT_DURATION).duration(SECOND).call(_xAxis);
 
-					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createNormalizedLine);
+					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', translate(0, 0)).attr('stroke-width', '2px').attr('d', createNormalizedLine);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -410,6 +437,35 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			case 'stretch-duration':
 				{
+					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
+
+					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+						return translate(0, yScaleLinear(i));
+					}).attr('stroke-width', '2px').attr('d', createLineDuration);
+
+					// const xAxis = d3.svg.axis()
+					// 	.scale(xScale)
+					// 	.orient('bottom')
+
+					// d3.select('.axis--x')
+					// 	.transition()
+					// 	.delay(EXIT_DURATION)
+					// 	.duration(SECOND)
+					// 	.call(xAxis)
+
+					winsSelection.enter().append('circle').attr('class', function (d) {
+						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
+					}).attr('r', 0).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d, i) {
+						return yScaleLinear(Math.floor(i / 2));
+					});
+
+					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d, i) {
+						return yScaleLinear(Math.floor(i / 2));
+					});
 					break;
 				}
 
@@ -480,6 +536,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		// shortest to longest stretch
 		xScaleNormalized.domain([0, d3.max(completed)]).range([0, chartWidth]);
 
+		// ordered
+		yScaleLinear.domain([0, stretchesCompleted]).range([0, chartHeight]);
+
 		// create axis
 		var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('‘%y'));
 
@@ -516,11 +575,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		updateMadlib(getStretches(team[0]));
 		// total madlib
 		document.querySelector('.madlib-total').textContent = stretchesCompleted;
+		document.querySelector('.madlib-median').textContent = stretchesMedian;
 	}
 
 	function init() {
 		var w = document.getElementById('container').offsetWidth;
+		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
 		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN;
+		// outerHeight = outerWidth * ratio
 		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2);
 		radiusSmall = Math.max(4, Math.round(outerHeight / 200));
 		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR);

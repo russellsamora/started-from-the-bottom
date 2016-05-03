@@ -62,7 +62,7 @@ main {
 #container {
   position: relative;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 .sections {
   max-width: 360px;
@@ -92,7 +92,7 @@ main {
 #graphic.graph-scroll-below {
   position: absolute;
   bottom: 0px;
-  margin-left: 400px;
+  margin-left: 380px;
 }
 .axis {
   font-size: 11px;
@@ -130,7 +130,7 @@ path.all {
   stroke-linejoin: round;
   stroke-linecap: round;
 }
-path.stretch {
+path.stretch-path {
   fill: none;
   stroke: #a08c78;
   stroke-opacity: 0.2;

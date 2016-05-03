@@ -1,7 +1,7 @@
 (function() {
 	const TEAM_NAME_DICT = { 'ATL': 'Hawks','BOS': 'Celtics','BRK': 'Nets','CHI': 'Bulls','CHO': 'Hornets','CLE': 'Cavaliers','DAL': 'Mavericks','DEN': 'Nuggets','DET': 'Pistons','GSW': 'Warriors','HOU': 'Rockets','IND': 'Pacers','LAC': 'Clippers','LAL': 'Lakers','MEM': 'Grizzlies','MIA': 'Heat','MIL': 'Bucks','MIN': 'Timberwolves','NOP': 'Pelicans','NYK': 'Knicks','OKC': 'Thunder','ORL': 'Magic','PHI': '76ers','PHO': 'Suns','POR': 'Trail Blazers','SAC': 'Kings','SAS': 'Spurs','TOR': 'Raports','UTA': 'Jazz', WAS: 'Wizards' }
 	const COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five']
-	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-normalized', 'stretch-duration']
+	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration']
 	const SECOND = 1000
 	const EXIT_DURATION = SECOND
 	const MARGIN = { top: 20, right: 40, bottom: 40, left: 40 }
@@ -32,6 +32,7 @@
 	const xScale = d3.time.scale()
 	const yScale = d3.scale.linear()
 	const xScaleNormalized = d3.scale.linear()
+	const yScaleLinear = d3.scale.linear()
 	const yearFormat = d3.time.format('%Y')
 
 	const createLine = d3.svg.line()
@@ -45,6 +46,13 @@
 		.interpolate(INTERPOLATE)
 		.x((d, i) => xScaleNormalized(i))
 		.y(d => yScale(d.rank))
+
+	const createLineDuration = d3.svg.line()
+		.defined(d => d.rank)
+		.interpolate('linear')
+		.x(d => xScale(d.seasonFormatted))
+		.y(d => 0)
+			
 
 	function translate(x, y) { 
 		return `translate(${x},${y})`
@@ -127,7 +135,7 @@
 		}
 	}
 
-	function getStepData(step) {	
+	function getStepData(step) {
 		switch(step) {
 		case 'top-and-bottom': {
 			return {
@@ -193,7 +201,19 @@
 		}
 			
 		case 'stretch-duration': {
+			const stretches = dataByTeam
+				.map(getStretches)
+				.filter(s => s.length)
+				.reduce((previous, current) => previous.concat(current))
+				.map(s => [s[0], s[s.length - 1]])
 
+			const wins = stretches.reduce((previous, current) => previous.concat(current), [])
+
+			return {
+				all: [],
+				wins,
+				stretches,
+			}
 		}
 			
 		default: return {}
@@ -296,14 +316,17 @@
 				.attr('d', d => createLine(d.values))
 
 			stretchSelection.enter()
+				.append('g').attr('class', 'stretch')
 				.append('path')
-					.attr('class', 'stretch')
+					.attr('class', 'stretch-path')
 					.attr('stroke-width', `${radiusSmall}px`)
 
-			stretchSelection.attr('d', createLine)
+			stretchSelection.select('path')
+				.attr('d', createLine)
 				.attr('stroke-dasharray', emptyDash)
 			
-			stretchSelection.attr('d', createLine)
+			stretchSelection.select('path')
+				.attr('d', createLine)
 				.transition()
 				.duration(SECOND * DRAKE)
 				.ease('quad-in-out')
@@ -332,12 +355,13 @@
 
 		case 'stretch-all': {
 			stretchSelection.enter()
+				.append('g').attr('class', 'stretch')
 				.append('path')
-					.attr('class', 'stretch')
+					.attr('class', 'stretch-path')
 					.attr('stroke-width', '2px')
 					.style('opacity', 0)
 
-			stretchSelection
+			stretchSelection.select('path')
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
@@ -378,8 +402,9 @@
 			
 		case 'stretch-normalized': {
 			stretchSelection.enter()
+				.append('g').attr('class', 'stretch')
 				.append('path')
-					.attr('class', 'stretch')
+					.attr('class', 'stretch-path')
 					.attr('stroke-width', '2px')
 
 			const xAxis = d3.svg.axis()
@@ -392,11 +417,12 @@
 				.duration(SECOND)
 				.call(xAxis)
 
-			stretchSelection
+			stretchSelection.select('path')
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.ease('quad-in-out')
+				.attr('transform', translate(0, 0))
 				.attr('stroke-width', '2px')
 				.attr('d', createNormalizedLine)
 
@@ -420,6 +446,48 @@
 		}
 			
 		case 'stretch-duration': {
+			stretchSelection.enter()
+				.append('g').attr('class', 'stretch')
+				.append('path')
+					.attr('class', 'stretch-path')
+					.attr('stroke-width', '2px')
+
+			stretchSelection.select('path')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('transform', (d, i) => translate(0, yScaleLinear(i)))
+				.attr('stroke-width', '2px')
+				.attr('d', createLineDuration)
+
+			// const xAxis = d3.svg.axis()
+			// 	.scale(xScale)
+			// 	.orient('bottom')
+
+			// d3.select('.axis--x')
+			// 	.transition()
+			// 	.delay(EXIT_DURATION)
+			// 	.duration(SECOND)
+			// 	.call(xAxis)
+
+			
+
+			winsSelection.enter()
+				.append('circle')
+					.attr('class', d => `wins ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
+					.attr('r', 0)
+					.attr('cx', d => xScale(d.seasonFormatted))
+					.attr('cy', (d, i) => yScaleLinear(Math.floor(i / 2)))
+
+			winsSelection
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('r', radiusSmall)
+				.attr('cx', d => xScale(d.seasonFormatted))
+				.attr('cy', (d, i) => yScaleLinear(Math.floor(i / 2)))
 			break
 		}
 			
@@ -444,7 +512,6 @@
 			.duration(dir === 0 ? 0 : EXIT_DURATION)
 			.style('opacity', 0)
 			.remove()
-
 	}
 
 	function updateSingleStep() {
@@ -508,6 +575,11 @@
 			.domain([0, d3.max(completed)])
 			.range([0, chartWidth])
 
+		// ordered
+		yScaleLinear
+			.domain([0, stretchesCompleted])
+			.range([0, chartHeight])
+
 		// create axis
 		const xAxis = d3.svg.axis()
 			.scale(xScale)
@@ -557,11 +629,14 @@
 		updateMadlib(getStretches(team[0]))
 		// total madlib
 		document.querySelector('.madlib-total').textContent = stretchesCompleted
+		document.querySelector('.madlib-median').textContent = stretchesMedian
 	}
 
 	function init() {
 		const w = document.getElementById('container').offsetWidth
+		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
 		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN
+		// outerHeight = outerWidth * ratio
 		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2)
 		radiusSmall = Math.max(4, Math.round(outerHeight / 200))
 		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)
