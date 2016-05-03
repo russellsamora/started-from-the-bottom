@@ -41,10 +41,10 @@ main {
   display: none;
 }
 .bottom {
-  color: #61a8ac;
+  color: #649696;
 }
 .top {
-  color: #c84440;
+  color: #e66464;
 }
 .intro {
   max-width: 35em;
@@ -115,12 +115,12 @@ circle.wins {
   stroke-opacity: 1;
 }
 circle.wins.bottom {
-  fill: #61a8ac;
-  stroke: #61a8ac;
+  fill: #649696;
+  stroke: #649696;
 }
 circle.wins.top {
-  fill: #c84440;
-  stroke: #c84440;
+  fill: #e66464;
+  stroke: #e66464;
 }
 path.all {
   fill: none;
