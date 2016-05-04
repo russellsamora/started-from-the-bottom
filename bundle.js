@@ -5,7 +5,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 (function () {
 	var TEAM_NAME_DICT = { 'ATL': 'Hawks', 'BOS': 'Celtics', 'BRK': 'Nets', 'CHI': 'Bulls', 'CHO': 'Hornets', 'CLE': 'Cavaliers', 'DAL': 'Mavericks', 'DEN': 'Nuggets', 'DET': 'Pistons', 'GSW': 'Warriors', 'HOU': 'Rockets', 'IND': 'Pacers', 'LAC': 'Clippers', 'LAL': 'Lakers', 'MEM': 'Grizzlies', 'MIA': 'Heat', 'MIL': 'Bucks', 'MIN': 'Timberwolves', 'NOP': 'Pelicans', 'NYK': 'Knicks', 'OKC': 'Thunder', 'ORL': 'Magic', 'PHI': '76ers', 'PHO': 'Suns', 'POR': 'Trail Blazers', 'SAC': 'Kings', 'SAS': 'Spurs', 'TOR': 'Raports', 'UTA': 'Jazz', WAS: 'Wizards' };
 	var COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five'];
-	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration'];
+	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete'];
 	var SECOND = 1000;
 	var EXIT_DURATION = SECOND;
 	var MARGIN = { top: 20, right: 40, bottom: 40, left: 40 };
@@ -30,6 +30,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var dataByTeam = [];
 	var svg = null;
 	var stretchesCompleted = 0;
+	var stretchesIncomplete = 0;
 	var stretchesMedian = 0;
 
 	var INTERPOLATE = 'step';
@@ -74,6 +75,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				id: id
 			});
 		});
+	}
+
+	function calculateIncompleteStretch(indices) {
+		if (indices.length % 2 === 1) return indices[indices.length - 1];
+		return null;
 	}
 
 	function calculateStretch(team) {
@@ -241,6 +247,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return previous.concat(current);
 					}).map(function (s) {
 						return [s[0], s[s.length - 1]];
+					}).sort(function (a, b) {
+						return +a[0].seasonYear - +b[0].seasonYear;
 					});
 
 					var _wins2 = _stretches2.reduce(function (previous, current) {
@@ -251,6 +259,28 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						all: [],
 						wins: _wins2,
 						stretches: _stretches2
+					};
+				}
+
+			case 'stretch-incomplete':
+				{
+					console.log(dataByTeam);
+					var _stretches3 = dataByTeam.filter(function (d) {
+						return d.incomplete !== null;
+					}).map(function (d) {
+						return [d.values[d.incomplete], d.values[d.values.length - 1]];
+					}).sort(function (a, b) {
+						return +a[0].seasonYear - +b[0].seasonYear;
+					});
+
+					var _wins3 = _stretches3.map(function (s) {
+						return s[0];
+					});
+
+					return {
+						all: [],
+						wins: _wins3,
+						stretches: _stretches3
 					};
 				}
 
@@ -276,7 +306,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		document.querySelector('.madlib-count').innerHTML = count ? 'have made their journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed their quest to finish in the top four after starting from the bottom.';
 
 		var recent = count ? stretches[count - 1].length - 1 : 0;
-		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' average, spanning <strong class=\'bottom\'>' + recent + '</strong> seasons.' : 'Maybe next year will be their year...';
+		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' average, spanning <strong>' + recent + '</strong> seasons.' : 'Maybe next year will be their year...';
 	}
 
 	function stepGraphic(step) {
@@ -401,7 +431,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScale(d.rank);
 					});
 
-					var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('‘%y'));
+					var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('%Y'));
 
 					d3.select('.axis--x').transition().delay(EXIT_DURATION).duration(SECOND).call(xAxis);
 
@@ -443,16 +473,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return translate(0, yScaleLinear(i));
 					}).attr('stroke-width', '2px').attr('d', createLineDuration);
 
-					// const xAxis = d3.svg.axis()
-					// 	.scale(xScale)
-					// 	.orient('bottom')
-
-					// d3.select('.axis--x')
-					// 	.transition()
-					// 	.delay(EXIT_DURATION)
-					// 	.duration(SECOND)
-					// 	.call(xAxis)
-
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
 					}).attr('r', 0).attr('cx', function (d) {
@@ -465,6 +485,30 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d, i) {
 						return yScaleLinear(Math.floor(i / 2));
+					});
+					break;
+				}
+
+			case 'stretch-incomplete':
+				{
+					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
+
+					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+						return translate(0, yScaleLinear(i));
+					}).attr('stroke-width', '2px').attr('d', createLineDuration);
+
+					winsSelection.enter().append('circle').attr('class', function (d) {
+						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
+					}).attr('r', 0).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d, i) {
+						return yScaleLinear(i);
+					});
+
+					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d, i) {
+						return yScaleLinear(i);
 					});
 					break;
 				}
@@ -498,23 +542,31 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		}).entries(data);
 
 		dataByTeam = byTeam.map(function (d) {
-			d.values = addStretches(d.values);
-			return d;
+			return _extends({}, d, {
+				values: addStretches(d.values)
+			});
 		}).map(function (d) {
-			var _calculateStretch = calculateStretch(d);
-
-			var indices = _calculateStretch.indices;
-			var completed = _calculateStretch.completed;
-
-			d.stretches = { indices: indices, completed: completed };
-			return d;
+			return _extends({}, d, {
+				stretches: calculateStretch(d)
+			});
+		}).map(function (d) {
+			return _extends({}, d, {
+				incomplete: calculateIncompleteStretch(d.stretches.indices)
+			});
 		});
 
+		console.log(dataByTeam);
 		var completed = dataByTeam.reduce(function (previous, current) {
 			return previous.concat(current.stretches.completed);
 		}, []);
+		var incomplete = dataByTeam.reduce(function (previous, current) {
+			return current.incomplete !== null ? previous += 1 : previous;
+		}, 0);
 		stretchesMedian = d3.median(completed);
 		stretchesCompleted = completed.length;
+		stretchesIncomplete = incomplete;
+
+		console.log(stretchesIncomplete);
 
 		// setup chart
 		chartWidth = outerWidth - MARGIN.left - MARGIN.right;
@@ -540,7 +592,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		yScaleLinear.domain([0, stretchesCompleted]).range([0, chartHeight]);
 
 		// create axis
-		var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('‘%y'));
+		var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('%Y'));
 
 		var yAxis = d3.svg.axis().scale(yScale).orient('left').tickValues([1, 5, 10, 15, 20, 25, 30]);
 

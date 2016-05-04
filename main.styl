@@ -74,15 +74,14 @@ main
 	width 100%
 	overflow hidden
 
-.sections
+#sections
 	max-width $section-width
 	float left
-	margin-top 1em
+	margin-top $section-margin
 	section
 		background-color $bg
 		opacity 0.35
-		min-height 50vh
-		padding-top 2em
+		min-height 67vh
 		transition opacity 250ms ease-in-out
 		&.graph-scroll-active 
 			opacity 1
@@ -90,7 +89,7 @@ main
 #graphic
 	float left
 	margin-left $section-margin
-	margin-top 1em
+	margin-top $section-margin
 	&.graph-scroll-fixed
 		position fixed
 		top 0px

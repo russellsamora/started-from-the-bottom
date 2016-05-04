@@ -1,7 +1,7 @@
 (function() {
 	const TEAM_NAME_DICT = { 'ATL': 'Hawks','BOS': 'Celtics','BRK': 'Nets','CHI': 'Bulls','CHO': 'Hornets','CLE': 'Cavaliers','DAL': 'Mavericks','DEN': 'Nuggets','DET': 'Pistons','GSW': 'Warriors','HOU': 'Rockets','IND': 'Pacers','LAC': 'Clippers','LAL': 'Lakers','MEM': 'Grizzlies','MIA': 'Heat','MIL': 'Bucks','MIN': 'Timberwolves','NOP': 'Pelicans','NYK': 'Knicks','OKC': 'Thunder','ORL': 'Magic','PHI': '76ers','PHO': 'Suns','POR': 'Trail Blazers','SAC': 'Kings','SAS': 'Spurs','TOR': 'Raports','UTA': 'Jazz', WAS: 'Wizards' }
 	const COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five']
-	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration']
+	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete']
 	const SECOND = 1000
 	const EXIT_DURATION = SECOND
 	const MARGIN = { top: 20, right: 40, bottom: 40, left: 40 }
@@ -26,6 +26,7 @@
 	let dataByTeam = []
 	let svg = null
 	let stretchesCompleted = 0
+	let stretchesIncomplete = 0
 	let stretchesMedian = 0
 	
 	const INTERPOLATE = 'step'
@@ -64,6 +65,11 @@
 			seasonFormatted: yearFormat.parse(d.seasonYear),
 			id,
 		}))
+	}
+
+	function calculateIncompleteStretch(indices) {
+		if (indices.length % 2 === 1) return indices[indices.length - 1]
+		return null
 	}
 
 	function calculateStretch(team) {
@@ -206,8 +212,25 @@
 				.filter(s => s.length)
 				.reduce((previous, current) => previous.concat(current))
 				.map(s => [s[0], s[s.length - 1]])
+				.sort((a, b) => +a[0].seasonYear - +b[0].seasonYear)
 
 			const wins = stretches.reduce((previous, current) => previous.concat(current), [])
+
+			return {
+				all: [],
+				wins,
+				stretches,
+			}
+		}
+
+		case 'stretch-incomplete': {
+			console.log(dataByTeam)
+			const stretches = dataByTeam
+				.filter(d => d.incomplete !== null)
+				.map(d => [d.values[d.incomplete], d.values[d.values.length - 1]])
+				.sort((a, b) => +a[0].seasonYear - +b[0].seasonYear)
+
+			const wins = stretches.map(s => s[0])
 
 			return {
 				all: [],
@@ -238,7 +261,7 @@
 
 		const recent = count ? stretches[count - 1].length  - 1 : 0
 		document.querySelector('.madlib-detail').innerHTML = count
-			? `Their most recent ascent was ${getAverageDiff(recent)} average, spanning <strong class='bottom'>${recent}</strong> seasons.`
+			? `Their most recent ascent was ${getAverageDiff(recent)} average, spanning <strong>${recent}</strong> seasons.`
 			: 'Maybe next year will be their year...'
 	}
 
@@ -389,7 +412,7 @@
 			const xAxis = d3.svg.axis()
 				.scale(xScale)
 				.orient('bottom')
-				.tickFormat(d3.time.format('‘%y'))
+				.tickFormat(d3.time.format('%Y'))
 
 			d3.select('.axis--x')
 				.transition()
@@ -459,19 +482,7 @@
 				.ease('quad-in-out')
 				.attr('transform', (d, i) => translate(0, yScaleLinear(i)))
 				.attr('stroke-width', '2px')
-				.attr('d', createLineDuration)
-
-			// const xAxis = d3.svg.axis()
-			// 	.scale(xScale)
-			// 	.orient('bottom')
-
-			// d3.select('.axis--x')
-			// 	.transition()
-			// 	.delay(EXIT_DURATION)
-			// 	.duration(SECOND)
-			// 	.call(xAxis)
-
-			
+				.attr('d', createLineDuration)			
 
 			winsSelection.enter()
 				.append('circle')
@@ -488,6 +499,40 @@
 				.attr('r', radiusSmall)
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', (d, i) => yScaleLinear(Math.floor(i / 2)))
+			break
+		}
+
+		case 'stretch-incomplete': {
+			stretchSelection.enter()
+				.append('g').attr('class', 'stretch')
+				.append('path')
+					.attr('class', 'stretch-path')
+					.attr('stroke-width', '2px')
+
+			stretchSelection.select('path')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('transform', (d, i) => translate(0, yScaleLinear(i)))
+				.attr('stroke-width', '2px')
+				.attr('d', createLineDuration)			
+
+			winsSelection.enter()
+				.append('circle')
+					.attr('class', d => `wins ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
+					.attr('r', 0)
+					.attr('cx', d => xScale(d.seasonFormatted))
+					.attr('cy', (d, i) => yScaleLinear(i))
+
+			winsSelection
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('r', radiusSmall)
+				.attr('cx', d => xScale(d.seasonFormatted))
+				.attr('cy', (d, i) => yScaleLinear(i))
 			break
 		}
 			
@@ -535,19 +580,27 @@
 			.entries(data)
 
 		dataByTeam = byTeam
-			.map(d => {
-				d.values = addStretches(d.values)
-				return d
-			})
-			.map(d => {
-				const { indices, completed } = calculateStretch(d)
-				d.stretches = { indices, completed } 
-				return d
-			})
+			.map(d => ({
+				...d,
+				values: addStretches(d.values),
+			}))
+			.map(d => ({
+				...d,
+				stretches: calculateStretch(d),
+			}))
+			.map(d => ({
+				...d,
+				incomplete: calculateIncompleteStretch(d.stretches.indices),
+			}))
 
+		console.log(dataByTeam)
 		const completed = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.completed), [])
+		const incomplete = dataByTeam.reduce((previous, current) => current.incomplete !== null ? previous += 1 : previous, 0)
 		stretchesMedian = d3.median(completed)
 		stretchesCompleted = completed.length
+		stretchesIncomplete = incomplete
+
+		console.log(stretchesIncomplete)
 
 		// setup chart
 		chartWidth = outerWidth - MARGIN.left - MARGIN.right
@@ -584,7 +637,7 @@
 		const xAxis = d3.svg.axis()
 			.scale(xScale)
 			.orient('bottom')
-			.tickFormat(d3.time.format('‘%y'))
+			.tickFormat(d3.time.format('%Y'))
 
 		const yAxis = d3.svg.axis()
 			.scale(yScale)
