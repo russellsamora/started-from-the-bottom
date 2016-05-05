@@ -151,3 +151,15 @@ path.stretch-path {
   color: #454545;
   border-bottom: 1px dashed #000;
 }
+.annotations path {
+  fill: none;
+  stroke: #a08c78;
+}
+.annotations text {
+  fill: #a08c78;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+}
+#arrow {
+  fill: #a08c78;
+}

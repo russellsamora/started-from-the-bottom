@@ -275,8 +275,7 @@
 
 
 		// DATA
-		const stepData = getStepData(STEPS[step])		
-		console.log(stepData)
+		const stepData = getStepData(STEPS[step])
 		const allSelection = allGroup.selectAll('.all').data(stepData.all, (d,i) => d.key ? `${d.key}-${i}` : i)
 		const winsSelection = winsGroup.selectAll('.wins').data(stepData.wins, d => d.id)
 		const stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, (d,i) => d.length ? `${d[0].id}` : i)
@@ -660,6 +659,7 @@
 
 		setupGraphScroll()
 		createDropdown()
+		setupSwoopyDrag()
 	}
 
 	function createDropdown() {
@@ -680,7 +680,60 @@
 		document.querySelector('.madlib-median').textContent = stretchesMedian
 	}
 
-	function init() {
+	function setupSwoopyDrag() {
+		d3.select('.chart').append('marker')
+		    .attr('id', 'arrow')
+		    .attr('viewBox', '-10 -10 20 20')
+		    .attr('markerWidth', 20)
+		    .attr('markerHeight', 20)
+		    .attr('orient', 'auto')
+		  .append('path')
+		    .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
+
+		window.annotations = [
+  {
+    "x": "1977",
+    "y": 2,
+    "path": "M152,10C96,-17,50,-16,16,-5",
+    "text": "Paul Pierce enters the world",
+    "textOffset": [
+      155,
+      17
+    ]
+  },
+  {
+    "x": "2016",
+    "y": 1,
+    "path": "M-113,55C-62,55,-21,45,0,9",
+    "text": "73 wins!",
+    "textOffset": [
+      -165,
+      59
+    ]
+  },
+  {
+    "x": "1998",
+    "y": 28,
+    "path": "M0,0C0,0,0,0,9,0",
+    "text": "The Spurs pretend to be bad for two years",
+    "textOffset": [
+      -41,
+      47
+    ]
+  }
+]
+		// NEED different yscales :(
+		const swoopy = d3.swoopyDrag()
+		    .x(d => xScale(yearFormat.parse(d.x)))
+		    .y(d => yScale(d.y))
+		    .draggable(true)
+		    .annotations(annotations)
+
+		const swoopySel = d3.select('.chart').append('g').attr('class', 'annotations').call(swoopy)
+
+		swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+	}
+ 	function init() {
 		const w = document.getElementById('container').offsetWidth
 		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
 		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN
