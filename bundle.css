@@ -107,6 +107,10 @@ main {
 .axis--y line {
   stroke: none;
 }
+.axis--y-label {
+  font-size: 13px;
+  fill: #888;
+}
 circle.wins {
   fill: #a08c78;
   fill-opacity: 0.33;

@@ -305,7 +305,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		document.querySelector('.madlib-count').innerHTML = count ? 'have completed the journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed a journey to the top after starting from the bottom.';
 
 		var recent = count ? stretches[count - 1].length - 1 : 0;
-		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' average, spanning <strong>' + recent + '</strong> seasons.' : 'Maybe next year fellas...';
+		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' league average, spanning <strong>' + recent + '</strong> seasons.' : 'Maybe next year fellas...';
 	}
 
 	function stepGraphic(step) {
@@ -435,7 +435,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScale(d.rank);
 					});
 
-					d3.select('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 1);
+					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 1);
 
 					break;
 				}
@@ -464,7 +464,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScaleLinear(Math.floor(i / 2));
 					});
 
-					d3.select('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
+					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
 					break;
 				}
 
@@ -492,7 +492,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScaleLinear(i);
 					});
 
-					d3.select('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
+					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
 					break;
 				}
 
@@ -579,6 +579,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		chartGroup.append('g').attr('class', 'axis axis--x').attr('transform', translate(0, chartHeight)).call(xAxis);
 
 		chartGroup.append('g').attr('class', 'axis axis--y').attr('transform', translate(0, 0)).call(yAxis);
+
+		chartGroup.append('g').attr('class', 'axis axis--y axis--y-label').attr('transform', 'rotate(-90)').append('text').text('Rank (regular season)').attr('x', -chartHeight / 2).attr('y', 0).attr('dy', '-2em').style('text-anchor', 'middle');
 
 		chartGroup.append('g').attr('class', 'all-group');
 

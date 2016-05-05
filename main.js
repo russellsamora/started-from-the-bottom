@@ -260,7 +260,7 @@
 
 		const recent = count ? stretches[count - 1].length  - 1 : 0
 		document.querySelector('.madlib-detail').innerHTML = count
-			? `Their most recent ascent was ${getAverageDiff(recent)} average, spanning <strong>${recent}</strong> seasons.`
+			? `Their most recent ascent was ${getAverageDiff(recent)} league average, spanning <strong>${recent}</strong> seasons.`
 			: 'Maybe next year fellas...'
 	}
 
@@ -419,7 +419,7 @@
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', d => yScale(d.rank))
 			
-			d3.select('.axis--y')
+			d3.selectAll('.axis--y')
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
@@ -468,7 +468,7 @@
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', (d, i) => yScaleLinear(Math.floor(i / 2)))
 			
-			d3.select('.axis--y')
+			d3.selectAll('.axis--y')
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
@@ -516,7 +516,7 @@
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', (d, i) => yScaleLinear(i))
 			
-			d3.select('.axis--y')
+			d3.selectAll('.axis--y')
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
@@ -638,6 +638,16 @@
 			.attr('class', 'axis axis--y')
 			.attr('transform', translate(0, 0))
 			.call(yAxis)
+
+		chartGroup.append('g')
+			.attr('class', 'axis axis--y axis--y-label')
+			.attr('transform', 'rotate(-90)')
+			.append('text')
+				.text('Rank (regular season)')
+				.attr('x', -chartHeight / 2)
+				.attr('y', 0)
+				.attr('dy', '-2em')
+				.style('text-anchor', 'middle')
 
 		chartGroup.append('g')
 			.attr('class', 'all-group')
