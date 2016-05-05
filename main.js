@@ -133,7 +133,7 @@
 	function getAverageDiff(count) {
 		const diff = count - stretchesMedian
 		if (diff < 2) {
-			return 'shorter than'
+			return 'quicker than'
 		} else if (diff > 2) {
 			return 'longer than'
 		} else {
@@ -224,7 +224,6 @@
 		}
 
 		case 'stretch-incomplete': {
-			console.log(dataByTeam)
 			const stretches = dataByTeam
 				.filter(d => d.incomplete !== null)
 				.map(d => [d.values[d.incomplete], d.values[d.values.length - 1]])
@@ -256,13 +255,13 @@
 	function updateMadlib(stretches) {
 		const count = stretches.length
 		document.querySelector('.madlib-count').innerHTML = count
-			? `have made their journey from the bottom to the top <strong class='top'>${COUNT_TO_WORD[count]}</strong> time${count === 1 ? '' : 's'} in franchise history.`
-			: 'have never completed their quest to finish in the top four after starting from the bottom.'
+			? `have completed the journey from the bottom to the top <strong class='top'>${COUNT_TO_WORD[count]}</strong> time${count === 1 ? '' : 's'} in franchise history.`
+			: 'have never completed a journey to the top after starting from the bottom.'
 
 		const recent = count ? stretches[count - 1].length  - 1 : 0
 		document.querySelector('.madlib-detail').innerHTML = count
 			? `Their most recent ascent was ${getAverageDiff(recent)} average, spanning <strong>${recent}</strong> seasons.`
-			: 'Maybe next year will be their year...'
+			: 'Maybe next year fellas...'
 	}
 
 	function stepGraphic(step) {
@@ -274,13 +273,13 @@
 		const winsGroup = chartGroup.select('.wins-group')
 		const stretchGroup = chartGroup.select('.stretch-group')
 
+
 		// DATA
 		const stepData = getStepData(STEPS[step])		
+		console.log(stepData)
 		const allSelection = allGroup.selectAll('.all').data(stepData.all, (d,i) => d.key ? `${d.key}-${i}` : i)
 		const winsSelection = winsGroup.selectAll('.wins').data(stepData.wins, d => d.id)
-		const stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, (d,i) => d.length ? `${d[0].name}-${i}` : i)
-
-		console.log(stepData)
+		const stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, (d,i) => d.length ? `${d[0].id}` : i)
 
 		// UPDATE
 		switch(STEPS[step]) {
@@ -294,10 +293,12 @@
 
 			winsSelection
 				.transition()
-				.duration(SECOND * 2)
-				.delay(d => d.rank * 75 + (dir === 0 ? 0 : EXIT_DURATION))
+				.duration(SECOND)
+				.delay(d => d.rank * 50 + (dir === 0 ? 0 : EXIT_DURATION))
 				.ease('quad-in-out')
 				.attr('r', radiusSmall)
+				.attr('cx', d => xScale(d.seasonFormatted))
+				.attr('cy', d => yScale(d.rank))
 			break
 		}
 			
@@ -310,18 +311,19 @@
 			allSelection.attr('d', d => createLine(d.values))
 				.transition('quad-in-out')
 				.delay(EXIT_DURATION)
-				.duration(SECOND * 0.75)
+				.duration(SECOND)
 				.style('opacity', 1)
 
 			winsSelection.enter()
 				.append('circle')
 					.attr('class', d => `wins ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
 					.attr('r', 0)
+					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', d => yScale(d.rank))
 
 			winsSelection
 				.transition()
-				.delay((d, i) => EXIT_DURATION * 2 + (i * 100))
+				.delay((d, i) => EXIT_DURATION * 1.5 + (i * 50))
 				.duration(SECOND * DRAKE)
 				.ease('elastic')
 				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
@@ -353,6 +355,7 @@
 				.transition()
 				.duration(SECOND * DRAKE)
 				.ease('quad-in-out')
+				.attr('stroke-width', `${radiusSmall}px`)
 				.attrTween('stroke-dasharray', tweenDash)
 
 			winsSelection.enter()
@@ -379,19 +382,26 @@
 		case 'stretch-all': {
 			stretchSelection.enter()
 				.append('g').attr('class', 'stretch')
+				.attr('transform', translate(0, 0))
+				.style('opacity', 0)
 				.append('path')
 					.attr('class', 'stretch-path')
 					.attr('stroke-width', '2px')
-					.style('opacity', 0)
 
-			stretchSelection.select('path')
+			stretchSelection
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.ease('quad-in-out')
-				.attr('d', createLine)
-				.attr('stroke-width', '2px')
+				.attr('transform', translate(0, 0))
 				.style('opacity', 1)
+			.select('path')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
+				.attr('stroke-width', '2px')
+				.attr('d', createLine)
 
 			winsSelection.enter()
 				.append('circle')
@@ -404,85 +414,43 @@
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
-				.ease('elastic')
+				.ease('quad-in-out')
 				.attr('r', radiusSmall)
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', d => yScale(d.rank))
 			
-			const xAxis = d3.svg.axis()
-				.scale(xScale)
-				.orient('bottom')
-				.tickFormat(d3.time.format('%Y'))
-
-			d3.select('.axis--x')
+			d3.select('.axis--y')
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
-				.call(xAxis)
+				.style('opacity', 1)
 
-			break
-		}
-			
-		case 'stretch-normalized': {
-			stretchSelection.enter()
-				.append('g').attr('class', 'stretch')
-				.append('path')
-					.attr('class', 'stretch-path')
-					.attr('stroke-width', '2px')
-
-			const xAxis = d3.svg.axis()
-				.scale(xScaleNormalized)
-				.orient('bottom')
-
-			d3.select('.axis--x')
-				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND)
-				.call(xAxis)
-
-			stretchSelection.select('path')
-				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND)
-				.ease('quad-in-out')
-				.attr('transform', translate(0, 0))
-				.attr('stroke-width', '2px')
-				.attr('d', createNormalizedLine)
-
-			winsSelection.enter()
-				.append('circle')
-					.attr('class', d => `wins ${d.bottom ? 'bottom' : ''} ${d.top ? 'top' : ''}`)
-					.attr('r', 0)
-					.attr('cx', d => xScale(d.stopCount || 0))
-					.attr('cy', d => yScale(d.rank))
-
-			winsSelection
-				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND)
-				.ease('quad-in-out')
-				.attr('r', radiusSmall)
-				.attr('cx', d => xScaleNormalized(d.stopCount - 1 || 0))
-				.attr('cy', d => yScale(d.rank))
-			
 			break
 		}
 			
 		case 'stretch-duration': {
 			stretchSelection.enter()
 				.append('g').attr('class', 'stretch')
+				.attr('transform', (d, i) => translate(0, yScaleLinear(i)))
+				.style('opacity', 0)
 				.append('path')
 					.attr('class', 'stretch-path')
 					.attr('stroke-width', '2px')
 
-			stretchSelection.select('path')
+			stretchSelection
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.ease('quad-in-out')
 				.attr('transform', (d, i) => translate(0, yScaleLinear(i)))
+				.style('opacity', 1)
+			.select('path')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
 				.attr('stroke-width', '2px')
-				.attr('d', createLineDuration)			
+				.attr('d', createLineDuration)		
 
 			winsSelection.enter()
 				.append('circle')
@@ -499,22 +467,36 @@
 				.attr('r', radiusSmall)
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', (d, i) => yScaleLinear(Math.floor(i / 2)))
+			
+			d3.select('.axis--y')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.style('opacity', 0)
 			break
 		}
 
 		case 'stretch-incomplete': {
 			stretchSelection.enter()
 				.append('g').attr('class', 'stretch')
+				.attr('transform', (d, i) => translate(0, yScaleLinear(i)))
+				.style('opacity', 0)
 				.append('path')
 					.attr('class', 'stretch-path')
 					.attr('stroke-width', '2px')
 
-			stretchSelection.select('path')
+			stretchSelection
 				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.ease('quad-in-out')
 				.attr('transform', (d, i) => translate(0, yScaleLinear(i)))
+				.style('opacity', 1)
+			.select('path')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('quad-in-out')
 				.attr('stroke-width', '2px')
 				.attr('d', createLineDuration)			
 
@@ -533,6 +515,12 @@
 				.attr('r', radiusSmall)
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', (d, i) => yScaleLinear(i))
+			
+			d3.select('.axis--y')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.style('opacity', 0)
 			break
 		}
 			
@@ -549,7 +537,7 @@
 		winsSelection.exit()
 			.transition()
 			.duration(dir === 0 ? 0 : EXIT_DURATION)
-			.style('opacity', 0)
+			.attr('r', 0)
 			.remove()
 
 		stretchSelection.exit()
@@ -593,14 +581,11 @@
 				incomplete: calculateIncompleteStretch(d.stretches.indices),
 			}))
 
-		console.log(dataByTeam)
 		const completed = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.completed), [])
 		const incomplete = dataByTeam.reduce((previous, current) => current.incomplete !== null ? previous += 1 : previous, 0)
 		stretchesMedian = d3.median(completed)
 		stretchesCompleted = completed.length
 		stretchesIncomplete = incomplete
-
-		console.log(stretchesIncomplete)
 
 		// setup chart
 		chartWidth = outerWidth - MARGIN.left - MARGIN.right

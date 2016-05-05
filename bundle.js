@@ -149,7 +149,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	function getAverageDiff(count) {
 		var diff = count - stretchesMedian;
 		if (diff < 2) {
-			return 'shorter than';
+			return 'quicker than';
 		} else if (diff > 2) {
 			return 'longer than';
 		} else {
@@ -264,7 +264,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			case 'stretch-incomplete':
 				{
-					console.log(dataByTeam);
 					var _stretches3 = dataByTeam.filter(function (d) {
 						return d.incomplete !== null;
 					}).map(function (d) {
@@ -303,10 +302,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 	function updateMadlib(stretches) {
 		var count = stretches.length;
-		document.querySelector('.madlib-count').innerHTML = count ? 'have made their journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed their quest to finish in the top four after starting from the bottom.';
+		document.querySelector('.madlib-count').innerHTML = count ? 'have completed the journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed a journey to the top after starting from the bottom.';
 
 		var recent = count ? stretches[count - 1].length - 1 : 0;
-		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' average, spanning <strong>' + recent + '</strong> seasons.' : 'Maybe next year will be their year...';
+		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' average, spanning <strong>' + recent + '</strong> seasons.' : 'Maybe next year fellas...';
 	}
 
 	function stepGraphic(step) {
@@ -320,6 +319,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 		// DATA
 		var stepData = getStepData(STEPS[step]);
+		console.log(stepData);
 		var allSelection = allGroup.selectAll('.all').data(stepData.all, function (d, i) {
 			return d.key ? d.key + '-' + i : i;
 		});
@@ -327,10 +327,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			return d.id;
 		});
 		var stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, function (d, i) {
-			return d.length ? d[0].name + '-' + i : i;
+			return d.length ? '' + d[0].id : i;
 		});
-
-		console.log(stepData);
 
 		// UPDATE
 		switch (STEPS[step]) {
@@ -344,9 +342,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScale(d.rank);
 					});
 
-					winsSelection.transition().duration(SECOND * 2).delay(function (d) {
-						return d.rank * 75 + (dir === 0 ? 0 : EXIT_DURATION);
-					}).ease('quad-in-out').attr('r', radiusSmall);
+					winsSelection.transition().duration(SECOND).delay(function (d) {
+						return d.rank * 50 + (dir === 0 ? 0 : EXIT_DURATION);
+					}).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d) {
+						return yScale(d.rank);
+					});
 					break;
 				}
 
@@ -356,16 +358,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 					allSelection.attr('d', function (d) {
 						return createLine(d.values);
-					}).transition('quad-in-out').delay(EXIT_DURATION).duration(SECOND * 0.75).style('opacity', 1);
+					}).transition('quad-in-out').delay(EXIT_DURATION).duration(SECOND).style('opacity', 1);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
-					}).attr('r', 0).attr('cy', function (d) {
+					}).attr('r', 0).attr('cx', function (d) {
+						return xScale(d.seasonFormatted);
+					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
 
 					winsSelection.transition().delay(function (d, i) {
-						return EXIT_DURATION * 2 + i * 100;
+						return EXIT_DURATION * 1.5 + i * 50;
 					}).duration(SECOND * DRAKE).ease('elastic').attr('r', function (d) {
 						return d.bottom || d.top ? radiusLarge : radiusSmall;
 					}).attr('cx', function (d) {
@@ -388,7 +392,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 					stretchSelection.select('path').attr('d', createLine).attr('stroke-dasharray', emptyDash);
 
-					stretchSelection.select('path').attr('d', createLine).transition().duration(SECOND * DRAKE).ease('quad-in-out').attrTween('stroke-dasharray', tweenDash);
+					stretchSelection.select('path').attr('d', createLine).transition().duration(SECOND * DRAKE).ease('quad-in-out').attr('stroke-width', radiusSmall + 'px').attrTween('stroke-dasharray', tweenDash);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -413,65 +417,38 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			case 'stretch-all':
 				{
-					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px').style('opacity', 0);
+					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', translate(0, 0)).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
 
-					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('d', createLine).attr('stroke-width', '2px').style('opacity', 1);
+					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', translate(0, 0)).style('opacity', 1).select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLine);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
 					}).attr('r', 0).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
-					}).attr('cy', function (d) {
-						return yScale(d.rank);
-					});
-
-					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').attr('r', radiusSmall).attr('cx', function (d) {
-						return xScale(d.seasonFormatted);
-					}).attr('cy', function (d) {
-						return yScale(d.rank);
-					});
-
-					var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('%Y'));
-
-					d3.select('.axis--x').transition().delay(EXIT_DURATION).duration(SECOND).call(xAxis);
-
-					break;
-				}
-
-			case 'stretch-normalized':
-				{
-					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
-
-					var _xAxis = d3.svg.axis().scale(xScaleNormalized).orient('bottom');
-
-					d3.select('.axis--x').transition().delay(EXIT_DURATION).duration(SECOND).call(_xAxis);
-
-					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', translate(0, 0)).attr('stroke-width', '2px').attr('d', createNormalizedLine);
-
-					winsSelection.enter().append('circle').attr('class', function (d) {
-						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
-					}).attr('r', 0).attr('cx', function (d) {
-						return xScale(d.stopCount || 0);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
 
 					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
-						return xScaleNormalized(d.stopCount - 1 || 0);
+						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
+
+					d3.select('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 1);
 
 					break;
 				}
 
 			case 'stretch-duration':
 				{
-					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
-
-					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).attr('stroke-width', '2px').attr('d', createLineDuration);
+					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
+
+					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+						return translate(0, yScaleLinear(i));
+					}).style('opacity', 1).select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -486,16 +463,20 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					}).attr('cy', function (d, i) {
 						return yScaleLinear(Math.floor(i / 2));
 					});
+
+					d3.select('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
 					break;
 				}
 
 			case 'stretch-incomplete':
 				{
-					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
-
-					stretchSelection.select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).attr('stroke-width', '2px').attr('d', createLineDuration);
+					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
+
+					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+						return translate(0, yScaleLinear(i));
+					}).style('opacity', 1).select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -510,6 +491,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					}).attr('cy', function (d, i) {
 						return yScaleLinear(i);
 					});
+
+					d3.select('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
 					break;
 				}
 
@@ -520,7 +503,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		// EXIT
 		allSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
 
-		winsSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
+		winsSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).attr('r', 0).remove();
 
 		stretchSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
 	}
@@ -555,7 +538,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			});
 		});
 
-		console.log(dataByTeam);
 		var completed = dataByTeam.reduce(function (previous, current) {
 			return previous.concat(current.stretches.completed);
 		}, []);
@@ -565,8 +547,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		stretchesMedian = d3.median(completed);
 		stretchesCompleted = completed.length;
 		stretchesIncomplete = incomplete;
-
-		console.log(stretchesIncomplete);
 
 		// setup chart
 		chartWidth = outerWidth - MARGIN.left - MARGIN.right;
