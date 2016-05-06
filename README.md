@@ -1,5 +1,4 @@
-# Worst to first
-Started from the bottom...
+# Started from the bottom
 
 ### Anomalies
 * 1998-99 and 2011-12 had shortened seasons

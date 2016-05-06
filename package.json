@@ -1,5 +1,5 @@
 {
-  "name": "worst-to-first",
+  "name": "started-from-the-bottom",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/russellgoldenberg/worst-to-first.git"
+    "url": "git+https://github.com/russellgoldenberg/started-from-the-bottom.git"
   },
   "author": "Russell Goldenberg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/russellgoldenberg/worst-to-first/issues"
+    "url": "https://github.com/russellgoldenberg/started-from-the-bottom/issues"
   },
-  "homepage": "https://github.com/russellgoldenberg/worst-to-first#readme",
+  "homepage": "https://github.com/russellgoldenberg/started-from-the-bottom#readme",
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-preset-es2015": "^6.5.0",
