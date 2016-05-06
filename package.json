@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --silent --parallel babel stylus server open",
-    "babel": "babel main.js --out-file bundle.js",
-    "stylus": "stylus main.styl -o bundle.css",
-    "server": "light-server -q -s . -w 'main.js # npm run babel' -w 'main.styl # npm run stylus' -w 'bundle.css # # reloadcss' -w 'index.html'",
+    "babel": "babel js/main.js --out-file js/bundle.js",
+    "stylus": "stylus css/main.styl -o css/bundle.css",
+    "server": "light-server -q -s . -w 'js/main.js # npm run babel' -w 'css/main.styl # npm run stylus' -w 'css/bundle.css # # reloadcss' -w 'index.html'",
     "open": "open http://localhost:4000"
   },
   "repository": {
@@ -20,9 +20,6 @@
     "url": "https://github.com/russellgoldenberg/worst-to-first/issues"
   },
   "homepage": "https://github.com/russellgoldenberg/worst-to-first#readme",
-  "dependencies": {
-    "d3": "^3.5.15"
-  },
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-preset-es2015": "^6.5.0",

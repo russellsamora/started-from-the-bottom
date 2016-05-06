@@ -2,19 +2,19 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url("fonts/roboto-v15-latin-300.woff2") format('woff2'), url("fonts/roboto-v15-latin-300.woff") format('woff');
+  src: local('Roboto Light'), local('Roboto-Light'), url("../fonts/roboto-v15-latin-300.woff2") format('woff2'), url("../fonts/roboto-v15-latin-300.woff") format('woff');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url("fonts/roboto-v15-latin-regular.woff2") format('woff2'), url("fonts/roboto-v15-latin-regular.woff") format('woff');
+  src: local('Roboto Regular'), local('Roboto-Regular'), url("../fonts/roboto-v15-latin-regular.woff2") format('woff2'), url("../fonts/roboto-v15-latin-regular.woff") format('woff');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url("fonts/roboto-v15-latin-700.woff2") format('woff2'), url("fonts/roboto-v15-latin-700.woff") format('woff');
+  src: local('Roboto Bold'), local('Roboto-Bold'), url("../fonts/roboto-v15-latin-700.woff2") format('woff2'), url("../fonts/roboto-v15-latin-700.woff") format('woff');
 }
 body {
   background: #fffaf0;
