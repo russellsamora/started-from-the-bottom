@@ -14,6 +14,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var SECTION_WIDTH = 360;
 	var DRAKE = 2.8;
 	var RADIUS_FACTOR = 1.5;
+	var DRAGGABLE = false;
 
 	var audioElement = document.querySelector('.sample');
 
@@ -32,6 +33,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var stretchesCompleted = 0;
 	var stretchesIncomplete = 0;
 	var stretchesMedian = 0;
+	var draked = false;
 
 	var INTERPOLATE = 'step';
 	var xScale = d3.time.scale();
@@ -149,11 +151,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	function getAverageDiff(count) {
 		var diff = count - stretchesMedian;
 		if (diff < 2) {
-			return 'quicker than';
+			return 'was <strong class="top">quicker</strong> than';
 		} else if (diff > 2) {
-			return 'longer than';
+			return 'took <strong class="bottom">longer</strong> than';
 		} else {
-			return 'about';
+			return 'was about';
 		}
 	}
 
@@ -305,7 +307,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		document.querySelector('.madlib-count').innerHTML = count ? 'have completed the journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed a journey to the top after starting from the bottom.';
 
 		var recent = count ? stretches[count - 1].length - 1 : 0;
-		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent was ' + getAverageDiff(recent) + ' league average, spanning <strong>' + recent + '</strong> seasons.' : 'Maybe next year fellas...';
+		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent ' + getAverageDiff(recent) + ' league average, spanning ' + recent + ' seasons.' : 'Maybe next year fellas...';
+	}
+
+	function hideAnnotations() {
+		d3.selectAll('.annotation').transition().duration(SECOND).ease('elastic').style('opacity', 0);
 	}
 
 	function stepGraphic(step) {
@@ -328,6 +334,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		var stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, function (d, i) {
 			return d.length ? '' + d[0].id : i;
 		});
+
+		// hide all annotations
+		hideAnnotations();
 
 		// UPDATE
 		switch (STEPS[step]) {
@@ -376,6 +385,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
+
+					d3.select('.annotation-73').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
+
 					break;
 				}
 
@@ -408,7 +420,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					});
 
 					// drake!
-					// if (stepData.stretches.length) audioElement.play()
+					if (stepData.stretches.length && !draked) {
+						draked = true;
+						audioElement.play();
+					}
 
 					updateMadlib(stepData.stretches);
 					break;
@@ -464,6 +479,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					});
 
 					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
+
+					d3.select('.annotation-paul').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
+
+					d3.select('.annotation-spurs').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
+
 					break;
 				}
 
@@ -615,36 +635,109 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	function setupSwoopyDrag() {
 		d3.select('.chart').append('marker').attr('id', 'arrow').attr('viewBox', '-10 -10 20 20').attr('markerWidth', 20).attr('markerHeight', 20).attr('orient', 'auto').append('path').attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75');
 
-		window.annotations = [{
+		window.annotationsRank = [{
 			"x": "1977",
 			"y": 2,
 			"path": "M152,10C96,-17,50,-16,16,-5",
-			"text": "Paul Pierce enters the world",
+			"text": "Paul Pierce is born",
+			"className": "annotation annotation-paul",
 			"textOffset": [155, 17]
 		}, {
 			"x": "2016",
 			"y": 1,
 			"path": "M-113,55C-62,55,-21,45,0,9",
 			"text": "73 wins!",
-			"textOffset": [-165, 59]
-		}, {
-			"x": "1998",
-			"y": 28,
-			"path": "M0,0C0,0,0,0,9,0",
-			"text": "The Spurs pretend to be bad for two years",
-			"textOffset": [-41, 47]
+			"className": "annotation annotation-73",
+			"textOffset": [-160, 58]
 		}];
-		// NEED different yscales :(
-		var swoopy = d3.swoopyDrag().x(function (d) {
+
+		window.annotationsOrder = [{
+			"x": "1997",
+			"y": 27,
+			"path": "M-31,35C-13,36,9,28,9,0",
+			"text": "The Spurs get right back up",
+			"className": "annotation annotation-spurs",
+			"textOffset": [-173, 38]
+		}];
+		var swoopyRank = d3.swoopyDrag().x(function (d) {
 			return xScale(yearFormat.parse(d.x));
 		}).y(function (d) {
 			return yScale(d.y);
-		}).draggable(true).annotations(annotations);
+		}).draggable(DRAGGABLE).annotations(annotationsRank).className(function (d) {
+			return d.className;
+		});
 
-		var swoopySel = d3.select('.chart').append('g').attr('class', 'annotations').call(swoopy);
+		var swoopyRankSel = d3.select('.chart').append('g').attr('class', 'annotations').call(swoopyRank);
 
-		swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)');
+		swoopyRankSel.selectAll('path').attr('marker-end', 'url(#arrow)');
+
+		var swoopyOrder = d3.swoopyDrag().x(function (d) {
+			return xScale(yearFormat.parse(d.x));
+		}).y(function (d) {
+			return yScaleLinear(d.y);
+		}).draggable(DRAGGABLE).annotations(annotationsOrder).className(function (d) {
+			return d.className;
+		});
+
+		var swoopyOrderSel = d3.select('.chart').append('g').attr('class', 'annotations').call(swoopyOrder);
+
+		swoopyOrderSel.selectAll('path').attr('marker-end', 'url(#arrow)');
 	}
+
+	function setupYoutube() {
+		var tag = document.createElement('script');
+
+		tag.src = 'https://www.youtube.com/iframe_api';
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		var player = null;
+		var ready = false;
+
+		var setupStephEvents = function setupStephEvents() {
+			console.log('setup steph');
+			var steph = document.querySelector('.stephen-curry');
+			var youtube = document.querySelector('.youtube');
+			steph.addEventListener('mouseenter', function (event) {
+				youtube.classList.remove('transparent');
+				player.playVideo();
+			});
+			steph.addEventListener('mouseout', function (event) {
+				youtube.classList.add('transparent');
+				player.pauseVideo();
+			});
+		};
+
+		var onPlayerReady = function onPlayerReady(event) {
+			console.log('player ready', event);
+			player.mute();
+			player.playVideo();
+		};
+
+		var onPlayerStateChange = function onPlayerStateChange(event) {
+			console.log('player statechange', event);
+			if (!ready && event.data === 1) {
+				ready = true;
+				player.pauseVideo();
+				player.unMute();
+				player.setVolume(50);
+				setupStephEvents();
+			}
+		};
+
+		window.onYouTubeIframeAPIReady = function () {
+			player = new YT.Player('player', {
+				height: '100%',
+				width: '100%',
+				videoId: 'tvN-EYgYSZI',
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+		};
+	}
+
 	function init() {
 		var w = document.getElementById('container').offsetWidth;
 		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
@@ -655,6 +748,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR);
 
 		d3.json('data/output.json', handleDataLoaded);
+
+		setupYoutube();
 	}
 
 	init();

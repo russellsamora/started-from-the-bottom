@@ -9,11 +9,17 @@
         <link rel='stylesheet' href='./css/bundle.css' />
     </head>
     <body>
-    <main>
-        <div class='intro'>
+    <div class='intro'>
+        <div class='intro-content'>
             <h1 class='intro-hed'>Started from the bottom</h1>
-            <p class='intro-byline'>By <a href='http://russellgoldenberg.com'>Russell Goldenberg</a></p>
-            <p class='intro-dek'>It has been 39 years since the ABA-NBA merger of 1976. In that time, every team (without exception) has descended to the depths of the rankings. Here is a closer look at the various paths NBA franchises have taken to get from the bottom to the top of league.</p>
+            <p class='intro-byline'><a href='http://russellgoldenberg.com'>Russell Goldenberg</a></p>
+            <p class='intro-date'>May 2016</p>
+            <p class='intro-dek'>It has been 39 years since the ABA-NBA merger of 1976. Each and every team has finished with one of the worst records in the league at least once. Every franchise hits a rough patch once in a while, but how (or when) they turn things around is what matters. Here is a closer look at the various paths NBA franchises have taken to get from the bottom to the top of league.</p>
+        </div>
+    </div>
+    <main>
+        <div class='youtube transparent'>
+            <div id='player'></div>
         </div>
         <div id='container'>
             <div id='sections'>
@@ -24,7 +30,7 @@
                 </section>
                 <section>
                     <p>
-                        The Golden State Warriors finished the 2015-16 season atop the rankings for the second consecutive year, passing the Chicago Bulls record with 73 wins.
+                        The Golden State Warriors finished the 2015-16 season atop the rankings for the second consecutive year. They passed the Chicago Bulls record with 73 wins, driven in large part by Stephen Curry&rsquo;s unprecidented <span class='stephen-curry'>402 three-pointers.</span>
                     </p>
                 </section>
                 <section>
@@ -52,24 +58,20 @@
                 <svg></svg>
             </div>
         </div>
-        <div class='outro'>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-            <p>Tk.</p>
-        </div>
         <audio class='sample hide' src='./audio/sample.mp3' preload></audio>
     </main>
+    <div class='outro'>
+        <ul>
+            <li>
+                Thoughts and feedback &rarr; <a href='https://twitter.com/codenberg'>@codenberg</a>
+            </li>
+            <li>
+                Data &rarr; <a href='http://www.basketball-reference.com/leagues/NBA_wins.html'>basketball-reference.com</a>
+            </li>
+            <li>Video of all 402 Stephen Curry three-pointers &rarr; <a href='https://www.youtube.com/watch?v=tvN-EYgYSZI'>youtube</a>
+            </li>
+        </ul>
+    </div>
     <script src='./js/d3.min.js'></script>
     <script src='./js/graph-scroll.js'></script>
     <script src='./js/swoopy-drag.js'></script>

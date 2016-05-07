@@ -10,6 +10,7 @@
 	const SECTION_WIDTH = 360
 	const DRAKE = 2.8
 	const RADIUS_FACTOR = 1.5
+	const DRAGGABLE = false
 
 	const audioElement = document.querySelector('.sample')
 
@@ -28,6 +29,7 @@
 	let stretchesCompleted = 0
 	let stretchesIncomplete = 0
 	let stretchesMedian = 0
+	let draked = false
 	
 	const INTERPOLATE = 'step'
 	const xScale = d3.time.scale()
@@ -133,11 +135,11 @@
 	function getAverageDiff(count) {
 		const diff = count - stretchesMedian
 		if (diff < 2) {
-			return 'quicker than'
+			return 'was <strong class="top">quicker</strong> than'
 		} else if (diff > 2) {
-			return 'longer than'
+			return 'took <strong class="bottom">longer</strong> than'
 		} else {
-			return 'about'
+			return 'was about'
 		}
 	}
 
@@ -260,8 +262,16 @@
 
 		const recent = count ? stretches[count - 1].length  - 1 : 0
 		document.querySelector('.madlib-detail').innerHTML = count
-			? `Their most recent ascent was ${getAverageDiff(recent)} league average, spanning <strong>${recent}</strong> seasons.`
+			? `Their most recent ascent ${getAverageDiff(recent)} league average, spanning ${recent} seasons.`
 			: 'Maybe next year fellas...'
+	}
+
+	function hideAnnotations() {
+		d3.selectAll('.annotation')
+			.transition()
+			.duration(SECOND)
+			.ease('elastic')
+			.style('opacity', 0)
 	}
 
 	function stepGraphic(step) {
@@ -279,6 +289,9 @@
 		const allSelection = allGroup.selectAll('.all').data(stepData.all, (d,i) => d.key ? `${d.key}-${i}` : i)
 		const winsSelection = winsGroup.selectAll('.wins').data(stepData.wins, d => d.id)
 		const stretchSelection = stretchGroup.selectAll('.stretch').data(stepData.stretches, (d,i) => d.length ? `${d[0].id}` : i)
+
+		// hide all annotations 
+		hideAnnotations()
 
 		// UPDATE
 		switch(STEPS[step]) {
@@ -328,6 +341,14 @@
 				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', d => yScale(d.rank))
+
+			d3.select('.annotation-73')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('elastic')
+				.style('opacity', 1)
+
 			break
 		}
 		
@@ -372,7 +393,10 @@
 				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
 				
 			// drake!
-			// if (stepData.stretches.length) audioElement.play()
+			if (stepData.stretches.length && !draked) {
+				draked = true
+				audioElement.play()
+			}
 
 			updateMadlib(stepData.stretches)
 			break
@@ -472,6 +496,21 @@
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.style('opacity', 0)
+
+			d3.select('.annotation-paul')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('elastic')
+				.style('opacity', 1)
+
+			d3.select('.annotation-spurs')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('elastic')
+				.style('opacity', 1)
+
 			break
 		}
 
@@ -690,12 +729,13 @@
 		  .append('path')
 		    .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
 
-		window.annotations = [
+		window.annotationsRank = [
   {
     "x": "1977",
     "y": 2,
     "path": "M152,10C96,-17,50,-16,16,-5",
-    "text": "Paul Pierce enters the world",
+    "text": "Paul Pierce is born",
+    "className": "annotation annotation-paul",
     "textOffset": [
       155,
       17
@@ -706,33 +746,111 @@
     "y": 1,
     "path": "M-113,55C-62,55,-21,45,0,9",
     "text": "73 wins!",
+    "className": "annotation annotation-73",
     "textOffset": [
-      -165,
-      59
-    ]
-  },
-  {
-    "x": "1998",
-    "y": 28,
-    "path": "M0,0C0,0,0,0,9,0",
-    "text": "The Spurs pretend to be bad for two years",
-    "textOffset": [
-      -41,
-      47
+      -160,
+      58
     ]
   }
 ]
-		// NEED different yscales :(
-		const swoopy = d3.swoopyDrag()
+
+window.annotationsOrder =
+[
+  {
+    "x": "1997",
+    "y": 27,
+    "path": "M-31,35C-13,36,9,28,9,0",
+    "text": "The Spurs get right back up",
+    "className": "annotation annotation-spurs",
+    "textOffset": [
+      -173,
+      38
+    ]
+  }
+]
+		const swoopyRank = d3.swoopyDrag()
 		    .x(d => xScale(yearFormat.parse(d.x)))
 		    .y(d => yScale(d.y))
-		    .draggable(true)
-		    .annotations(annotations)
+		    .draggable(DRAGGABLE)
+		    .annotations(annotationsRank)
+		    .className(d => d.className)
 
-		const swoopySel = d3.select('.chart').append('g').attr('class', 'annotations').call(swoopy)
+		const swoopyRankSel = d3.select('.chart').append('g')
+				.attr('class', 'annotations')
+				.call(swoopyRank)
 
-		swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+		swoopyRankSel.selectAll('path')
+			.attr('marker-end', 'url(#arrow)')
+
+		const swoopyOrder = d3.swoopyDrag()
+		    .x(d => xScale(yearFormat.parse(d.x)))
+		    .y(d => yScaleLinear(d.y))
+		    .draggable(DRAGGABLE)
+		    .annotations(annotationsOrder)
+		    .className(d => d.className)
+
+		const swoopyOrderSel = d3.select('.chart').append('g')
+				.attr('class', 'annotations')
+				.call(swoopyOrder)
+
+		swoopyOrderSel.selectAll('path')
+			.attr('marker-end', 'url(#arrow)')
 	}
+
+	function setupYoutube() {
+		const tag = document.createElement('script')
+
+		tag.src = 'https://www.youtube.com/iframe_api'
+		const firstScriptTag = document.getElementsByTagName('script')[0]
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		let player = null
+		let ready = false
+		
+		const setupStephEvents = () => {
+			console.log('setup steph')
+			const steph = document.querySelector('.stephen-curry')
+			const youtube = document.querySelector('.youtube')
+			steph.addEventListener('mouseenter', (event) => {
+				youtube.classList.remove('transparent')
+				player.playVideo()
+			})
+			steph.addEventListener('mouseout', (event) => {
+				youtube.classList.add('transparent')
+				player.pauseVideo()
+			})
+		}
+		
+		const onPlayerReady = (event) => {
+			console.log('player ready', event)
+		  	player.mute()
+		  	player.playVideo()
+		}
+
+		const onPlayerStateChange = (event) => {
+			console.log('player statechange' , event)
+			if (!ready && event.data === 1) {
+				ready = true
+				player.pauseVideo()
+				player.unMute()
+				player.setVolume(50)
+				setupStephEvents()
+			}
+		}
+
+		window.onYouTubeIframeAPIReady = () => {
+			player = new YT.Player('player', {
+				height: '100%',
+				width: '100%',
+				videoId: 'tvN-EYgYSZI',
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange,
+				},
+			})
+		}
+	}
+	
  	function init() {
 		const w = document.getElementById('container').offsetWidth
 		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
@@ -743,6 +861,8 @@
 		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)
 
 		d3.json('data/output.json', handleDataLoaded)
+
+		setupYoutube()
 	}
 
 	init()

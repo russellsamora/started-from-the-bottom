@@ -7,6 +7,8 @@ d3.swoopyDrag = function(){
 
   var draggable = false
 
+  var className = 'annotation'
+
   var dispatch = d3.dispatch('drag')
 
   var textDrag = d3.behavior.drag()
@@ -45,7 +47,7 @@ d3.swoopyDrag = function(){
   var rv = function(sel){
     annotationSel = sel.selectAll('g').data(annotations)
     annotationSel.exit().remove()
-    annotationSel.enter().append('g')
+    annotationSel.enter().append('g').attr('class', className).style('opacity', 0)
     annotationSel.call(translate, function(d){ return [x(d), y(d)] })
     
     var textSel = annotationSel.append('text')
@@ -109,6 +111,12 @@ d3.swoopyDrag = function(){
     draggable = _x
     return rv
   }
+  rv.className = function(_x){
+    if(typeof(_x) == 'undefined') return className
+    className = _x
+    return rv
+  }
+
 
   return d3.rebind(rv, dispatch, 'on')
 

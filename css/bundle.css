@@ -34,6 +34,12 @@ em {
 p {
   margin-bottom: 1em;
 }
+a {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
 main {
   padding: 0 1em;
 }
@@ -47,17 +53,26 @@ main {
   color: #e66464;
 }
 .intro {
+  background-color: #e66464;
+  padding: 2em 1em;
+  color: #8e1717;
+}
+.intro-content {
   max-width: 35em;
-  margin: 2em auto;
+  margin: 0 auto;
 }
 .intro-hed {
   font-weight: 700;
-  font-size: 2em;
+  font-size: 1.6em;
   text-align: center;
   margin-bottom: 0.5em;
 }
 .intro-byline {
   text-align: center;
+}
+.intro-date {
+  text-align: center;
+  font-size: 0.8em;
 }
 #container {
   position: relative;
@@ -65,20 +80,29 @@ main {
   overflow: hidden;
 }
 #sections {
-  max-width: 360px;
-  float: left;
   margin-top: 20px;
 }
+@media only screen and (min-width: 850px) {
+  #sections {
+    max-width: 360px;
+    float: left;
+  }
+}
 #sections section {
-  background-color: #fffaf0;
-  opacity: 0.35;
-  min-height: 67vh;
   transition: opacity 250ms ease-in-out;
+}
+@media only screen and (min-width: 850px) {
+  #sections section {
+    opacity: 0.35;
+    min-height: 67vh;
+    margin-top: 0.25em;
+  }
 }
 #sections section.graph-scroll-active {
   opacity: 1;
 }
 #graphic {
+  display: none;
   float: left;
   margin-left: 20px;
   margin-top: 20px;
@@ -92,6 +116,11 @@ main {
   position: absolute;
   bottom: 0px;
   margin-left: 380px;
+}
+@media only screen and (min-width: 850px) {
+  #graphic {
+    display: block;
+  }
 }
 .axis {
   font-size: 11px;
@@ -162,4 +191,36 @@ path.stretch-path {
 }
 #arrow {
   fill: #a08c78;
+}
+.youtube {
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  position: fixed;
+  z-index: -1;
+  opacity: 0.3;
+  transition: opacity 250ms linear;
+}
+.youtube.transparent {
+  opacity: 0;
+}
+.stephen-curry {
+  background-color: rgba(230,100,100,0.2);
+  padding: 0 0.25em;
+  cursor: pointer;
+  border: 1px dashed #e66464;
+}
+.outro {
+  margin-top: 2em;
+  background-color: #649696;
+  color: #324b4b;
+  padding: 4em 1em;
+}
+.outro ul {
+  max-width: 35em;
+  margin: 0 auto;
+}
+.outro ul li {
+  text-align: center;
 }

@@ -48,6 +48,11 @@ em
 
 p 
 	margin-bottom 1em
+
+a 
+	color white
+	&:visited 
+		color white
 main 
 	padding 0 1em
 
@@ -61,15 +66,22 @@ main
 	color $top
 
 .intro
-	max-width 35em
-	margin 2em auto
+	background-color $top
+	padding 2em 1em
+	color darken($top, 50%)
+	&-content
+		max-width 35em
+		margin 0 auto
 	&-hed
 		font-weight 700
-		font-size 2em
+		font-size 1.6em
 		text-align center
 		margin-bottom 0.5em
 	&-byline
 		text-align center
+	&-date
+		text-align center
+		font-size 0.8em
 
 #container
 	position relative
@@ -77,18 +89,22 @@ main
 	overflow hidden
 
 #sections
-	max-width $section-width
-	float left
 	margin-top $section-margin
+	@media only screen and (min-width: 850px)
+		max-width $section-width
+		float left
 	section
-		background-color $bg
-		opacity 0.35
-		min-height 67vh
+		// background-color $bg
 		transition opacity 250ms ease-in-out
+		@media only screen and (min-width: 850px)
+			opacity 0.35
+			min-height 67vh
+			margin-top 0.25em
 		&.graph-scroll-active 
 			opacity 1
 
 #graphic
+	display none
 	float left
 	margin-left $section-margin
 	margin-top $section-margin
@@ -100,6 +116,8 @@ main
 		position absolute
 		bottom 0px
 		margin-left $section-width + $section-margin
+	@media only screen and (min-width: 850px)
+		display block
 
 .axis
 	font-size 11px
@@ -166,3 +184,32 @@ path.stretch-path
 		font-size 11px
 #arrow 
 	fill $neutral
+
+.youtube 
+	top -10%
+	left -10%
+	width 120%
+	height 120%
+	position fixed
+	z-index -1
+	opacity 0.3
+	transition opacity 250ms linear
+	&.transparent
+		opacity 0
+	
+.stephen-curry 
+	background-color rgba($top, 0.2)
+	padding 0 0.25em
+	cursor pointer
+	border 1px dashed $top
+	
+.outro
+	margin-top 2em
+	background-color $bottom
+	color darken($bottom, 50%)
+	padding 4em 1em
+	ul 
+		max-width 35em
+		margin 0 auto
+		li 
+			text-align center
