@@ -3,6 +3,7 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 (function () {
+	var DRAGGABLE = true;
 	var TEAM_NAME_DICT = { 'ATL': 'Hawks', 'BOS': 'Celtics', 'BRK': 'Nets', 'CHI': 'Bulls', 'CHO': 'Hornets', 'CLE': 'Cavaliers', 'DAL': 'Mavericks', 'DEN': 'Nuggets', 'DET': 'Pistons', 'GSW': 'Warriors', 'HOU': 'Rockets', 'IND': 'Pacers', 'LAC': 'Clippers', 'LAL': 'Lakers', 'MEM': 'Grizzlies', 'MIA': 'Heat', 'MIL': 'Bucks', 'MIN': 'Timberwolves', 'NOP': 'Pelicans', 'NYK': 'Knicks', 'OKC': 'Thunder', 'ORL': 'Magic', 'PHI': '76ers', 'PHO': 'Suns', 'POR': 'Trail Blazers', 'SAC': 'Kings', 'SAS': 'Spurs', 'TOR': 'Raports', 'UTA': 'Jazz', WAS: 'Wizards' };
 	var COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five'];
 	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete'];
@@ -14,23 +15,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var SECTION_WIDTH = 360;
 	var DRAKE = 2.8;
 	var RADIUS_FACTOR = 1.5;
-	var DRAGGABLE = false;
 	var TOOLTIP_HEIGHT = 18;
 
 	var audioElement = document.querySelector('.sample');
 
 	var singleTeam = 'GSW';
-	var outerWidth = 0;
-	var outerHeight = 0;
 	var radiusSmall = 0;
 	var radiusLarge = 0;
 	var previousStep = 0;
 	var dir = 0;
-	var chartWidth = 0;
-	var chartHeight = 0;
 	var data = [];
 	var dataByTeam = [];
-	var svg = null;
 	var stretchesCompleted = 0;
 	var stretchesIncomplete = 0;
 	var stretchesMedian = 0;
@@ -39,22 +34,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var INTERPOLATE = 'step';
 	var xScale = d3.time.scale();
 	var yScale = d3.scale.linear();
-	var xScaleNormalized = d3.scale.linear();
 	var yScaleLinear = d3.scale.linear();
 	var yearFormat = d3.time.format('%Y');
+
+	var xAxis = null;
+	var yAxis = null;
 
 	var createLine = d3.svg.line().defined(function (d) {
 		return d.rank;
 	}).interpolate(INTERPOLATE).x(function (d) {
 		return xScale(d.seasonFormatted);
-	}).y(function (d) {
-		return yScale(d.rank);
-	});
-
-	var createNormalizedLine = d3.svg.line().defined(function (d) {
-		return d.rank;
-	}).interpolate(INTERPOLATE).x(function (d, i) {
-		return xScaleNormalized(i);
 	}).y(function (d) {
 		return yScale(d.rank);
 	});
@@ -355,7 +344,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		dir = step - previousStep;
 		previousStep = step;
 
-		var chartGroup = svg.select('.chart');
+		var chartGroup = d3.select('.chart');
 		var allGroup = chartGroup.select('.all-group');
 		var winsGroup = chartGroup.select('.wins-group');
 		var stretchGroup = chartGroup.select('.stretch-group');
@@ -549,6 +538,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					});
 
 					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
+
+					d3.select('.annotation-brooklyn').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
 					break;
 				}
 
@@ -573,6 +564,55 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		var gs = graphScroll().container(d3.select('#container')).graph(d3.select('#graphic')).sections(d3.selectAll('section')).on('active', stepGraphic);
 	}
 
+	function setupChart() {
+		var svg = d3.select('svg');
+
+		var chartGroup = svg.append('g').attr('class', 'chart');
+
+		chartGroup.append('g').attr('class', 'axis axis--x');
+
+		chartGroup.append('g').attr('class', 'axis axis--y');
+
+		chartGroup.append('g').attr('class', 'axis axis--y axis--y-label').append('text').text('Rank (regular season)').attr('dy', '-2em').style('text-anchor', 'middle');
+
+		chartGroup.append('g').attr('class', 'all-group');
+
+		chartGroup.append('g').attr('class', 'stretch-group');
+
+		chartGroup.append('g').attr('class', 'wins-group');
+
+		chartGroup.append('rect').attr('class', 'tooltip-rect').attr('rx', 2).attr('ry', 2);
+
+		chartGroup.append('text').attr('class', 'tooltip-text');
+	}
+
+	function resizeChart(w) {
+		var outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN;
+		var outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT);
+		var chartWidth = outerWidth - MARGIN.left - MARGIN.right;
+		var chartHeight = outerHeight - MARGIN.top - MARGIN.bottom;
+		radiusSmall = Math.max(4, Math.round(outerHeight / 200));
+		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR);
+
+		d3.select('svg').attr('width', outerWidth).attr('height', outerHeight);
+
+		d3.select('.chart').attr('transform', translate(MARGIN.left, MARGIN.top));
+
+		xScale.range([0, chartWidth]);
+
+		yScale.range([0, chartHeight]);
+
+		yScaleLinear.range([0, chartHeight]);
+
+		d3.select('.axis--x').attr('transform', translate(0, chartHeight)).call(xAxis);
+
+		d3.select('.axis--y').attr('transform', translate(0, 0)).call(yAxis);
+
+		d3.select('.axis--y-label').attr('transform', translate(0, Math.floor(chartHeight / 2)) + ' rotate(-90)');
+
+		setupGraphScroll();
+	}
+
 	function handleDataLoaded(err, result) {
 		data = cleanData(result);
 
@@ -594,62 +634,29 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			});
 		});
 
-		var completed = dataByTeam.reduce(function (previous, current) {
-			return previous.concat(current.stretches.completed);
+		var complete = dataByTeam.reduce(function (previous, current) {
+			return previous.concat(current.stretches.complete);
 		}, []);
-		var incomplete = dataByTeam.reduce(function (previous, current) {
+		stretchesCompleted = complete.length;
+		stretchesMedian = d3.median(complete);
+		stretchesIncomplete = dataByTeam.reduce(function (previous, current) {
 			return current.incomplete !== null ? previous += 1 : previous;
 		}, 0);
-		stretchesMedian = d3.median(completed);
-		stretchesCompleted = completed.length;
-		stretchesIncomplete = incomplete;
-
-		// setup chart
-		chartWidth = outerWidth - MARGIN.left - MARGIN.right;
-		chartHeight = outerHeight - MARGIN.top - MARGIN.bottom;
-
-		// create containers
-		svg = d3.select('svg').attr('width', outerWidth).attr('height', outerHeight);
-
-		var chartGroup = svg.append('g').attr('class', 'chart').attr('transform', translate(MARGIN.left, MARGIN.top));
 
 		xScale.domain(d3.extent(data, function (d) {
 			return d.seasonFormatted;
-		})).range([0, chartWidth]);
-
+		}));
 		yScale.domain([1, data.filter(function (d) {
 			return d.season === '2015-16';
-		}).length + 1]).range([0, chartHeight]);
+		}).length + 1]);
+		yScaleLinear.domain([0, stretchesCompleted]);
 
-		// shortest to longest stretch
-		xScaleNormalized.domain([0, d3.max(completed)]).range([0, chartWidth]);
+		xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('%Y'));
 
-		// ordered
-		yScaleLinear.domain([0, stretchesCompleted]).range([0, chartHeight]);
+		yAxis = d3.svg.axis().scale(yScale).orient('left').tickValues([1, 5, 10, 15, 20, 25, 30]);
 
-		// create axis
-		var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickFormat(d3.time.format('%Y'));
-
-		var yAxis = d3.svg.axis().scale(yScale).orient('left').tickValues([1, 5, 10, 15, 20, 25, 30]);
-
-		chartGroup.append('g').attr('class', 'axis axis--x').attr('transform', translate(0, chartHeight)).call(xAxis);
-
-		chartGroup.append('g').attr('class', 'axis axis--y').attr('transform', translate(0, 0)).call(yAxis);
-
-		chartGroup.append('g').attr('class', 'axis axis--y axis--y-label').attr('transform', 'rotate(-90)').append('text').text('Rank (regular season)').attr('x', -chartHeight / 2).attr('y', 0).attr('dy', '-2em').style('text-anchor', 'middle');
-
-		chartGroup.append('g').attr('class', 'all-group');
-
-		chartGroup.append('g').attr('class', 'stretch-group');
-
-		chartGroup.append('g').attr('class', 'wins-group');
-
-		chartGroup.append('rect').attr('class', 'tooltip-rect').attr('rx', 2).attr('ry', 2);
-
-		chartGroup.append('text').attr('class', 'tooltip-text');
-
-		setupGraphScroll();
 		createDropdown();
+		handleResize();
 		setupSwoopyDrag();
 	}
 
@@ -673,33 +680,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		document.querySelector('.madlib-median').textContent = stretchesMedian;
 	}
 
+	function handleResize() {
+		var w = document.getElementById('container').offsetWidth;
+		if (data.length) resizeChart(w);
+	}
+
 	function setupSwoopyDrag() {
 		d3.select('.chart').append('marker').attr('id', 'arrow').attr('viewBox', '-10 -10 20 20').attr('markerWidth', 20).attr('markerHeight', 20).attr('orient', 'auto').append('path').attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75');
 
-		window.annotationsRank = [{
-			"x": "1977",
-			"y": 2,
-			"path": "M152,10C96,-17,50,-16,16,-5",
-			"text": "Paul Pierce is born",
-			"className": "annotation annotation-paul",
-			"textOffset": [155, 17]
-		}, {
-			"x": "2016",
-			"y": 1,
-			"path": "M-113,55C-62,55,-21,45,0,9",
-			"text": "73 wins!",
-			"className": "annotation annotation-73",
-			"textOffset": [-160, 58]
-		}];
-
-		window.annotationsOrder = [{
-			"x": "1997",
-			"y": 27,
-			"path": "M-31,35C-13,36,9,28,9,0",
-			"text": "The Spurs get right back up",
-			"className": "annotation annotation-spurs",
-			"textOffset": [-173, 38]
-		}];
 		var swoopyRank = d3.swoopyDrag().x(function (d) {
 			return xScale(yearFormat.parse(d.x));
 		}).y(function (d) {
@@ -779,16 +767,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	}
 
 	function init() {
-		var w = document.getElementById('container').offsetWidth;
-		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
-		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN;
-		// outerHeight = outerWidth * ratio
-		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT);
-		radiusSmall = Math.max(4, Math.round(outerHeight / 200));
-		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR);
-
+		setupChart();
+		window.addEventListener('resize', handleResize);
 		d3.json('data/output.json', handleDataLoaded);
-
 		setupYoutube();
 	}
 

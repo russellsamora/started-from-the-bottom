@@ -1,4 +1,5 @@
 (function() {
+	const DRAGGABLE = true
 	const TEAM_NAME_DICT = { 'ATL': 'Hawks','BOS': 'Celtics','BRK': 'Nets','CHI': 'Bulls','CHO': 'Hornets','CLE': 'Cavaliers','DAL': 'Mavericks','DEN': 'Nuggets','DET': 'Pistons','GSW': 'Warriors','HOU': 'Rockets','IND': 'Pacers','LAC': 'Clippers','LAL': 'Lakers','MEM': 'Grizzlies','MIA': 'Heat','MIL': 'Bucks','MIN': 'Timberwolves','NOP': 'Pelicans','NYK': 'Knicks','OKC': 'Thunder','ORL': 'Magic','PHI': '76ers','PHO': 'Suns','POR': 'Trail Blazers','SAC': 'Kings','SAS': 'Spurs','TOR': 'Raports','UTA': 'Jazz', WAS: 'Wizards' }
 	const COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five']
 	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete']
@@ -10,23 +11,17 @@
 	const SECTION_WIDTH = 360
 	const DRAKE = 2.8
 	const RADIUS_FACTOR = 1.5
-	const DRAGGABLE = false
 	const TOOLTIP_HEIGHT = 18
 
 	const audioElement = document.querySelector('.sample')
 
 	let singleTeam = 'GSW'
-	let outerWidth = 0
-	let outerHeight = 0
 	let radiusSmall = 0
 	let radiusLarge = 0
 	let previousStep = 0
 	let dir = 0
-	let chartWidth = 0
-	let chartHeight = 0
 	let data = []
 	let dataByTeam = []
-	let svg = null
 	let stretchesCompleted = 0
 	let stretchesIncomplete = 0
 	let stretchesMedian = 0
@@ -35,20 +30,16 @@
 	const INTERPOLATE = 'step'
 	const xScale = d3.time.scale()
 	const yScale = d3.scale.linear()
-	const xScaleNormalized = d3.scale.linear()
 	const yScaleLinear = d3.scale.linear()
 	const yearFormat = d3.time.format('%Y')
+
+	let xAxis = null
+	let yAxis = null
 
 	const createLine = d3.svg.line()
 		.defined(d => d.rank)
 		.interpolate(INTERPOLATE)
 		.x(d => xScale(d.seasonFormatted))
-		.y(d => yScale(d.rank))
-
-	const createNormalizedLine = d3.svg.line()
-		.defined(d => d.rank)
-		.interpolate(INTERPOLATE)
-		.x((d, i) => xScaleNormalized(i))
 		.y(d => yScale(d.rank))
 
 	const createLineDuration = d3.svg.line()
@@ -323,7 +314,7 @@
 		dir = step - previousStep
 		previousStep = step
 
-		const chartGroup = svg.select('.chart')
+		const chartGroup = d3.select('.chart')
 		const allGroup = chartGroup.select('.all-group')
 		const winsGroup = chartGroup.select('.wins-group')
 		const stretchGroup = chartGroup.select('.stretch-group')
@@ -610,6 +601,13 @@
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
 				.style('opacity', 0)
+
+			d3.select('.annotation-brooklyn')
+				.transition()
+				.delay(EXIT_DURATION)
+				.duration(SECOND)
+				.ease('elastic')
+				.style('opacity', 1)
 			break
 		}
 			
@@ -649,6 +647,79 @@
 			.on('active', stepGraphic)
 	}
 
+	function setupChart() {
+		const svg = d3.select('svg')
+
+		const chartGroup = svg.append('g')
+			.attr('class', 'chart')
+
+		chartGroup.append('g')
+			.attr('class', 'axis axis--x')
+
+		chartGroup.append('g')
+			.attr('class', 'axis axis--y')
+			
+
+		chartGroup.append('g')
+			.attr('class', 'axis axis--y axis--y-label')
+			.append('text')
+				.text('Rank (regular season)')
+				.attr('dy', '-2em')
+				.style('text-anchor', 'middle')
+
+		chartGroup.append('g')
+			.attr('class', 'all-group')
+
+		chartGroup.append('g')
+			.attr('class', 'stretch-group')
+
+		chartGroup.append('g')
+			.attr('class', 'wins-group')
+
+		chartGroup.append('rect')
+			.attr('class', 'tooltip-rect')
+			.attr('rx', 2)
+			.attr('ry', 2)
+
+		chartGroup.append('text')
+			.attr('class', 'tooltip-text')
+	}
+
+	function resizeChart(w) {
+		const outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN
+		const outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT)
+		const chartWidth = outerWidth - MARGIN.left - MARGIN.right
+		const chartHeight = outerHeight - MARGIN.top - MARGIN.bottom
+		radiusSmall = Math.max(4, Math.round(outerHeight / 200))
+		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)		
+
+		d3.select('svg')
+			.attr('width', outerWidth)
+			.attr('height', outerHeight)
+
+		d3.select('.chart')
+			.attr('transform', translate(MARGIN.left, MARGIN.top))
+		
+		xScale.range([0, chartWidth])
+
+		yScale.range([0, chartHeight])
+
+		yScaleLinear.range([0, chartHeight])
+
+		d3.select('.axis--x')
+			.attr('transform', translate(0, chartHeight))
+			.call(xAxis)
+
+		d3.select('.axis--y')
+			.attr('transform', translate(0, 0))
+			.call(yAxis)
+
+		d3.select('.axis--y-label')
+			.attr('transform', translate(0, Math.floor(chartHeight / 2)) + ' rotate(-90)')
+
+		setupGraphScroll()
+	}
+
 	function handleDataLoaded(err, result) {
 		data = cleanData(result)
 		
@@ -670,93 +741,27 @@
 				incomplete: calculateIncompleteStretch(d.stretches.indices),
 			}))
 
-		const completed = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.completed), [])
-		const incomplete = dataByTeam.reduce((previous, current) => current.incomplete !== null ? previous += 1 : previous, 0)
-		stretchesMedian = d3.median(completed)
-		stretchesCompleted = completed.length
-		stretchesIncomplete = incomplete
+		const complete = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.complete), [])
+		stretchesCompleted = complete.length
+		stretchesMedian = d3.median(complete)
+		stretchesIncomplete = dataByTeam.reduce((previous, current) => current.incomplete !== null ? previous += 1 : previous, 0)
 
-		// setup chart
-		chartWidth = outerWidth - MARGIN.left - MARGIN.right
-		chartHeight = outerHeight - MARGIN.top - MARGIN.bottom
+		xScale.domain(d3.extent(data, d => d.seasonFormatted))
+		yScale.domain([1, data.filter(d => d.season === '2015-16').length + 1])
+		yScaleLinear.domain([0, stretchesCompleted])
 
-		// create containers
-		svg = d3.select('svg')
-			.attr('width', outerWidth)
-			.attr('height', outerHeight)
-
-		const chartGroup = svg.append('g')
-			.attr('class', 'chart')
-			.attr('transform', translate(MARGIN.left, MARGIN.top))
-		
-		xScale
-			.domain(d3.extent(data, d => d.seasonFormatted))
-			.range([0, chartWidth])
-
-		yScale
-			.domain([1, data.filter(d => d.season === '2015-16').length + 1])
-			.range([0, chartHeight])
-
-		// shortest to longest stretch
-		xScaleNormalized
-			.domain([0, d3.max(completed)])
-			.range([0, chartWidth])
-
-		// ordered
-		yScaleLinear
-			.domain([0, stretchesCompleted])
-			.range([0, chartHeight])
-
-		// create axis
-		const xAxis = d3.svg.axis()
+		xAxis = d3.svg.axis()
 			.scale(xScale)
 			.orient('bottom')
 			.tickFormat(d3.time.format('%Y'))
 
-		const yAxis = d3.svg.axis()
+		yAxis = d3.svg.axis()
 			.scale(yScale)
 			.orient('left')
 			.tickValues([1, 5, 10, 15, 20, 25, 30])
 
-		chartGroup.append('g')
-			.attr('class', 'axis axis--x')
-			.attr('transform', translate(0, chartHeight))
-			.call(xAxis)
-
-		chartGroup.append('g')
-			.attr('class', 'axis axis--y')
-			.attr('transform', translate(0, 0))
-			.call(yAxis)
-
-		chartGroup.append('g')
-			.attr('class', 'axis axis--y axis--y-label')
-			.attr('transform', 'rotate(-90)')
-			.append('text')
-				.text('Rank (regular season)')
-				.attr('x', -chartHeight / 2)
-				.attr('y', 0)
-				.attr('dy', '-2em')
-				.style('text-anchor', 'middle')
-
-		chartGroup.append('g')
-			.attr('class', 'all-group')
-
-		chartGroup.append('g')
-			.attr('class', 'stretch-group')
-
-		chartGroup.append('g')
-			.attr('class', 'wins-group')
-
-		chartGroup.append('rect')
-			.attr('class', 'tooltip-rect')
-			.attr('rx', 2)
-			.attr('ry', 2)
-
-		chartGroup.append('text')
-			.attr('class', 'tooltip-text')
-
-		setupGraphScroll()
 		createDropdown()
+		handleResize()
 		setupSwoopyDrag()
 	}
 
@@ -778,6 +783,11 @@
 		document.querySelector('.madlib-median').textContent = stretchesMedian
 	}
 
+	function handleResize() {
+		const w = document.getElementById('container').offsetWidth
+		if(data.length) resizeChart(w)
+	}
+
 	function setupSwoopyDrag() {
 		d3.select('.chart').append('marker')
 		    .attr('id', 'arrow')
@@ -788,45 +798,7 @@
 		  .append('path')
 		    .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
 
-		window.annotationsRank = [
-  {
-    "x": "1977",
-    "y": 2,
-    "path": "M152,10C96,-17,50,-16,16,-5",
-    "text": "Paul Pierce is born",
-    "className": "annotation annotation-paul",
-    "textOffset": [
-      155,
-      17
-    ]
-  },
-  {
-    "x": "2016",
-    "y": 1,
-    "path": "M-113,55C-62,55,-21,45,0,9",
-    "text": "73 wins!",
-    "className": "annotation annotation-73",
-    "textOffset": [
-      -160,
-      58
-    ]
-  }
-]
-
-window.annotationsOrder =
-[
-  {
-    "x": "1997",
-    "y": 27,
-    "path": "M-31,35C-13,36,9,28,9,0",
-    "text": "The Spurs get right back up",
-    "className": "annotation annotation-spurs",
-    "textOffset": [
-      -173,
-      38
-    ]
-  }
-]
+		
 		const swoopyRank = d3.swoopyDrag()
 		    .x(d => xScale(yearFormat.parse(d.x)))
 		    .y(d => yScale(d.y))
@@ -910,16 +882,9 @@ window.annotationsOrder =
 	}
 
  	function init() {
-		const w = document.getElementById('container').offsetWidth
-		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
-		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN
-		// outerHeight = outerWidth * ratio
-		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT)
-		radiusSmall = Math.max(4, Math.round(outerHeight / 200))
-		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)
-
+ 		setupChart()
+ 		window.addEventListener('resize', handleResize)
 		d3.json('data/output.json', handleDataLoaded)
-
 		setupYoutube()
 	}
 
