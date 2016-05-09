@@ -8,13 +8,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete'];
 	var SECOND = 1000;
 	var EXIT_DURATION = SECOND;
-	var MARGIN = { top: 20, right: 40, bottom: 40, left: 40 };
+	var MARGIN = { top: 40, right: 40, bottom: 40, left: 40 };
 	var GRAPHIC_MARGIN = 20;
 	var RATIO = 16 / 9;
 	var SECTION_WIDTH = 360;
 	var DRAKE = 2.8;
 	var RADIUS_FACTOR = 1.5;
 	var DRAGGABLE = false;
+	var TOOLTIP_HEIGHT = 18;
 
 	var audioElement = document.querySelector('.sample');
 
@@ -314,6 +315,42 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		d3.selectAll('.annotation').transition().duration(SECOND).ease('elastic').style('opacity', 0);
 	}
 
+	// show tooltip
+	function enterCircle(d) {
+		var tooltipText = d3.select('.tooltip-text');
+		var tooltipRect = d3.select('.tooltip-rect');
+		var cx = d3.select(this).attr('cx');
+		var cy = d3.select(this).attr('cy');
+		var r = d3.select(this).attr('r');
+		var name = TEAM_NAME_DICT[d.name];
+		var year = d.season.substring(2, d.season.length);
+
+		var yr = +d.seasonYear;
+		var anchor = yr < 1986 ? 'left' : yr > 2006 ? 'end' : 'middle';
+
+		tooltipText.text(year + ' ' + name + ': ').attr('x', cx).attr('y', cy).attr('dy', -r * 2).attr('text-anchor', anchor).append('tspan').text(d.wins + ' wins');
+
+		var _tooltipText$0$0$getB = tooltipText[0][0].getBBox();
+
+		var x = _tooltipText$0$0$getB.x;
+		var y = _tooltipText$0$0$getB.y;
+		var width = _tooltipText$0$0$getB.width;
+		var height = _tooltipText$0$0$getB.height;
+
+
+		tooltipRect.attr('x', x - 4).attr('y', y).attr('width', width + 8).attr('height', height).attr('class', 'tooltip-rect');
+	}
+
+	// hide tooltip
+	function exitCircle() {
+		d3.select('.tooltip-text').text('');
+		d3.select('.tooltip-rect').attr('class', 'tooltip-rect hide');
+	}
+
+	function bindTip(selection) {
+		selection.on('mouseenter', enterCircle).on('mouseout', exitCircle);
+	}
+
 	function stepGraphic(step) {
 		dir = step - previousStep;
 		previousStep = step;
@@ -348,7 +385,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
-					});
+					}).call(bindTip);
 
 					winsSelection.transition().duration(SECOND).delay(function (d) {
 						return d.rank * 50 + (dir === 0 ? 0 : EXIT_DURATION);
@@ -374,7 +411,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
-					});
+					}).call(bindTip);
 
 					winsSelection.transition().delay(function (d, i) {
 						return EXIT_DURATION * 1.5 + i * 50;
@@ -413,7 +450,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScale(d.rank);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
-					});
+					}).call(bindTip);
 
 					winsSelection.transition().duration(SECOND).ease('elastic').attr('r', function (d) {
 						return d.bottom || d.top ? radiusLarge : radiusSmall;
@@ -441,7 +478,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
-					});
+					}).call(bindTip);
 
 					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
@@ -470,7 +507,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d, i) {
 						return yScaleLinear(Math.floor(i / 2));
-					});
+					}).call(bindTip);
 
 					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
@@ -503,7 +540,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d, i) {
 						return yScaleLinear(i);
-					});
+					}).call(bindTip);
 
 					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
@@ -607,6 +644,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 		chartGroup.append('g').attr('class', 'wins-group');
 
+		chartGroup.append('rect').attr('class', 'tooltip-rect').attr('rx', 2).attr('ry', 2);
+
+		chartGroup.append('text').attr('class', 'tooltip-text');
+
 		setupGraphScroll();
 		createDropdown();
 		setupSwoopyDrag();
@@ -695,7 +736,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		var ready = false;
 
 		var setupStephEvents = function setupStephEvents() {
-			console.log('setup steph');
 			var steph = document.querySelector('.stephen-curry');
 			var youtube = document.querySelector('.youtube');
 			steph.addEventListener('mouseenter', function (event) {
@@ -709,13 +749,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 
 		var onPlayerReady = function onPlayerReady(event) {
-			console.log('player ready', event);
+			// console.log('player ready', event)
 			player.mute();
 			player.playVideo();
 		};
 
 		var onPlayerStateChange = function onPlayerStateChange(event) {
-			console.log('player statechange', event);
+			// console.log('player statechange' , event)
 			if (!ready && event.data === 1) {
 				ready = true;
 				player.pauseVideo();
@@ -743,7 +783,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
 		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN;
 		// outerHeight = outerWidth * ratio
-		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2);
+		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT);
 		radiusSmall = Math.max(4, Math.round(outerHeight / 200));
 		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR);
 

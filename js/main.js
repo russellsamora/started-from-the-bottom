@@ -4,13 +4,14 @@
 	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete']
 	const SECOND = 1000
 	const EXIT_DURATION = SECOND
-	const MARGIN = { top: 20, right: 40, bottom: 40, left: 40 }
+	const MARGIN = { top: 40, right: 40, bottom: 40, left: 40 }
 	const GRAPHIC_MARGIN = 20
 	const RATIO = 16 / 9
 	const SECTION_WIDTH = 360
 	const DRAKE = 2.8
 	const RADIUS_FACTOR = 1.5
 	const DRAGGABLE = false
+	const TOOLTIP_HEIGHT = 18
 
 	const audioElement = document.querySelector('.sample')
 
@@ -273,6 +274,50 @@
 			.ease('elastic')
 			.style('opacity', 0)
 	}
+	
+	// show tooltip
+	function enterCircle(d) {
+		const tooltipText = d3.select('.tooltip-text')
+		const tooltipRect = d3.select('.tooltip-rect')
+		const cx = d3.select(this).attr('cx')
+		const cy = d3.select(this).attr('cy')
+		const r = d3.select(this).attr('r')
+		const name = TEAM_NAME_DICT[d.name]
+		const year = d.season.substring(2, d.season.length)
+
+		const yr = +d.seasonYear
+		const anchor =  yr < 1986 ? 'left' : (yr > 2006 ? 'end' : 'middle')
+		
+		tooltipText
+			.text(`${year} ${name}: `)
+			.attr('x', cx)
+			.attr('y', cy)
+			.attr('dy', -r * 2)
+			.attr('text-anchor', anchor)
+			.append('tspan')
+				.text(`${d.wins} wins`)
+
+		const { x, y, width, height } = tooltipText[0][0].getBBox()
+
+		tooltipRect
+			.attr('x', x - 4)
+			.attr('y', y)
+			.attr('width', width + 8)
+			.attr('height', height)
+			.attr('class', 'tooltip-rect')
+	}
+
+	// hide tooltip
+	function exitCircle() {
+		d3.select('.tooltip-text').text('')
+		d3.select('.tooltip-rect').attr('class', 'tooltip-rect hide')
+	}
+
+	function bindTip(selection) {
+		selection
+			.on('mouseenter', enterCircle)
+			.on('mouseout', exitCircle)
+	}
 
 	function stepGraphic(step) {
 		dir = step - previousStep
@@ -302,6 +347,7 @@
 					.attr('r', 0)
 					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', d => yScale(d.rank))
+					.call(bindTip)
 
 			winsSelection
 				.transition()
@@ -332,6 +378,7 @@
 					.attr('r', 0)
 					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', d => yScale(d.rank))
+					.call(bindTip)
 
 			winsSelection
 				.transition()
@@ -385,6 +432,7 @@
 					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', d => yScale(d.rank))
 					.attr('cy', d => yScale(d.rank))
+					.call(bindTip)
 
 			winsSelection
 				.transition()
@@ -432,6 +480,7 @@
 					.attr('r', 0)
 					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', d => yScale(d.rank))
+					.call(bindTip)
 
 			winsSelection
 				.transition()
@@ -481,6 +530,7 @@
 					.attr('r', 0)
 					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', (d, i) => yScaleLinear(Math.floor(i / 2)))
+					.call(bindTip)
 
 			winsSelection
 				.transition()
@@ -544,6 +594,7 @@
 					.attr('r', 0)
 					.attr('cx', d => xScale(d.seasonFormatted))
 					.attr('cy', (d, i) => yScaleLinear(i))
+					.call(bindTip)
 
 			winsSelection
 				.transition()
@@ -696,6 +747,14 @@
 		chartGroup.append('g')
 			.attr('class', 'wins-group')
 
+		chartGroup.append('rect')
+			.attr('class', 'tooltip-rect')
+			.attr('rx', 2)
+			.attr('ry', 2)
+
+		chartGroup.append('text')
+			.attr('class', 'tooltip-text')
+
 		setupGraphScroll()
 		createDropdown()
 		setupSwoopyDrag()
@@ -808,7 +867,6 @@ window.annotationsOrder =
 		let ready = false
 		
 		const setupStephEvents = () => {
-			console.log('setup steph')
 			const steph = document.querySelector('.stephen-curry')
 			const youtube = document.querySelector('.youtube')
 			steph.addEventListener('mouseenter', (event) => {
@@ -822,13 +880,13 @@ window.annotationsOrder =
 		}
 		
 		const onPlayerReady = (event) => {
-			console.log('player ready', event)
+			// console.log('player ready', event)
 		  	player.mute()
 		  	player.playVideo()
 		}
 
 		const onPlayerStateChange = (event) => {
-			console.log('player statechange' , event)
+			// console.log('player statechange' , event)
 			if (!ready && event.data === 1) {
 				ready = true
 				player.pauseVideo()
@@ -850,13 +908,13 @@ window.annotationsOrder =
 			})
 		}
 	}
-	
+
  	function init() {
 		const w = document.getElementById('container').offsetWidth
 		// const ratio = window.innerHeight > window.innerWidth ? 1 : 0.5625
 		outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN
 		// outerHeight = outerWidth * ratio
-		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2)
+		outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT)
 		radiusSmall = Math.max(4, Math.round(outerHeight / 200))
 		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)
 

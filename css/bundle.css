@@ -53,9 +53,10 @@ main {
   color: #e66464;
 }
 .intro {
-  background-color: #e66464;
+  background-color: #649696;
   padding: 2em 1em;
-  color: #8e1717;
+  color: #283c3c;
+  margin-bottom: 2em;
 }
 .intro-content {
   max-width: 35em;
@@ -213,8 +214,8 @@ path.stretch-path {
 }
 .outro {
   margin-top: 2em;
-  background-color: #649696;
-  color: #324b4b;
+  background-color: #e66464;
+  color: #721212;
   padding: 4em 1em;
 }
 .outro ul {
@@ -223,4 +224,14 @@ path.stretch-path {
 }
 .outro ul li {
   text-align: center;
+}
+.tooltip-text {
+  font-size: 13px;
+  fill: #ece8e4;
+}
+.tooltip-text tspan {
+  font-weight: 700;
+}
+.tooltip-rect {
+  fill: rgba(148,126,104,0.8);
 }

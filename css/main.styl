@@ -66,9 +66,10 @@ main
 	color $top
 
 .intro
-	background-color $top
+	background-color $bottom
 	padding 2em 1em
-	color darken($top, 50%)
+	color darken($bottom, 60%)
+	margin-bottom 2em
 	&-content
 		max-width 35em
 		margin 0 auto
@@ -205,11 +206,20 @@ path.stretch-path
 	
 .outro
 	margin-top 2em
-	background-color $bottom
-	color darken($bottom, 50%)
+	background-color $top
+	color darken($top, 60%)
 	padding 4em 1em
 	ul 
 		max-width 35em
 		margin 0 auto
 		li 
 			text-align center
+
+.tooltip-text
+	font-size 13px
+	fill lighten($neutral, 80%)
+	tspan 
+		font-weight 700
+
+.tooltip-rect 
+	fill rgba(darken($neutral, 10%), 0.8)
