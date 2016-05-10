@@ -8,10 +8,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five'];
 	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete'];
 	var SECOND = 1000;
-	var EXIT_DURATION = SECOND;
 	var MARGIN = { top: 40, right: 40, bottom: 40, left: 40 };
 	var GRAPHIC_MARGIN = 20;
-	var RATIO = 16 / 9;
 	var DRAKE = 2.8;
 	var RADIUS_FACTOR = 1.5;
 	var TOOLTIP_HEIGHT = 18;
@@ -32,7 +30,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var stretchesMedian = 0;
 	var draked = false;
 
-	var INTERPOLATE = 'step';
 	var xScale = d3.time.scale();
 	var yScale = d3.scale.linear();
 	var yScaleLinear = d3.scale.linear();
@@ -43,7 +40,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 	var createLine = d3.svg.line().defined(function (d) {
 		return d.rank;
-	}).interpolate(INTERPOLATE).x(function (d) {
+	}).interpolate('step').x(function (d) {
 		return xScale(d.seasonFormatted);
 	}).y(function (d) {
 		return yScale(d.rank);
@@ -305,7 +302,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		d3.selectAll('.annotation').transition().duration(SECOND).ease('elastic').style('opacity', 0);
 	}
 
-	// show tooltip
 	function enterCircle(d) {
 		var tooltipText = d3.select('.tooltip-text');
 		var tooltipRect = d3.select('.tooltip-rect');
@@ -331,7 +327,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		tooltipRect.attr('x', x - 4).attr('y', y - 2).attr('width', width + 8).attr('height', height + 4).attr('class', 'tooltip-rect');
 	}
 
-	// hide tooltip
 	function exitCircle() {
 		d3.select('.tooltip-text').text('');
 		d3.select('.tooltip-rect').attr('class', 'tooltip-rect hide');
@@ -344,8 +339,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	}
 
 	function fadeInAnnotation(selection) {
-		selection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').style('opacity', 1);
+		if (!isMobile) {
+			selection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').style('opacity', 1);
+		}
 	}
+
 	function stepGraphic(step) {
 		dir = step - previousStep;
 		previousStep = step;
@@ -383,7 +381,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					}).call(bindTip);
 
 					winsSelection.transition().duration(SECOND).delay(function (d) {
-						return d.rank * 50 + (dir === 0 ? 0 : EXIT_DURATION);
+						return d.rank * 50 + (dir === 0 ? 0 : SECOND);
 					}).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
@@ -398,7 +396,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 					allSelection.attr('d', function (d) {
 						return createLine(d.values);
-					}).transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').style('opacity', 1);
+					}).transition().delay(SECOND).duration(SECOND).ease('quad-in-out').style('opacity', 1);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -409,7 +407,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					}).call(bindTip);
 
 					winsSelection.transition().delay(function (d, i) {
-						return EXIT_DURATION * 1.5 + i * 50;
+						return SECOND * 1.5 + i * 50;
 					}).duration(SECOND * DRAKE).ease('elastic').attr('r', function (d) {
 						return d.bottom || d.top ? radiusLarge : radiusSmall;
 					}).attr('cx', function (d) {
@@ -465,7 +463,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				{
 					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', translate(0, 0)).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
 
-					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', translate(0, 0)).style('opacity', 1).select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLine);
+					stretchSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('transform', translate(0, 0)).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLine);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -475,13 +473,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScale(d.rank);
 					}).call(bindTip);
 
-					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
+					winsSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d) {
 						return yScale(d.rank);
 					});
 
-					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 1);
+					d3.selectAll('.axis--y').transition().delay(SECOND).duration(SECOND).style('opacity', 1);
 
 					break;
 				}
@@ -492,9 +490,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return translate(0, yScaleLinear(i));
 					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
 
-					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+					stretchSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).style('opacity', 1).select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
+					}).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -504,13 +502,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScaleLinear(Math.floor(i / 2));
 					}).call(bindTip);
 
-					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
+					winsSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d, i) {
 						return yScaleLinear(Math.floor(i / 2));
 					});
 
-					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
+					d3.selectAll('.axis--y').transition().delay(SECOND).duration(SECOND).style('opacity', 0);
 
 					d3.select('.annotation-paul').call(fadeInAnnotation);
 
@@ -525,9 +523,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return translate(0, yScaleLinear(i));
 					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
 
-					stretchSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
+					stretchSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).style('opacity', 1).select('path').transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
+					}).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -537,13 +535,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScaleLinear(i);
 					}).call(bindTip);
 
-					winsSelection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
+					winsSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('r', radiusSmall).attr('cx', function (d) {
 						return xScale(d.seasonFormatted);
 					}).attr('cy', function (d, i) {
 						return yScaleLinear(i);
 					});
 
-					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
+					d3.selectAll('.axis--y').transition().delay(SECOND).duration(SECOND).style('opacity', 0);
 
 					d3.select('.annotation-brooklyn').call(fadeInAnnotation);
 					break;
@@ -554,16 +552,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		}
 
 		// EXIT
-		allSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
+		allSelection.exit().transition().duration(dir === 0 ? 0 : SECOND).style('opacity', 0).remove();
 
-		winsSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).attr('r', 0).remove();
+		winsSelection.exit().transition().duration(dir === 0 ? 0 : SECOND).attr('r', 0).remove();
 
-		stretchSelection.exit().transition().duration(dir === 0 ? 0 : EXIT_DURATION).style('opacity', 0).remove();
-	}
-
-	function updateSingleStep() {
-		singleTeam = this.value;
-		if (previousStep === 2) stepGraphic(2);
+		stretchSelection.exit().transition().duration(dir === 0 ? 0 : SECOND).style('opacity', 0).remove();
 	}
 
 	function setupGraphScroll() {
@@ -685,13 +678,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		}).join('\n');
 		el.innerHTML = html;
 
-		el.addEventListener('change', updateSingleStep);
+		el.addEventListener('change', function () {
+			// only change if on 2nd slide
+			singleTeam = this.value;
+			if (previousStep === 2) stepGraphic(2);
+		});
 
 		// set first madlib
 		var team = dataByTeam.filter(function (d) {
 			return d.key === 'GSW';
 		});
 		updateMadlib(getStretches(team[0]));
+
 		// total madlib
 		document.querySelector('.madlib-total').textContent = stretchesCompleted;
 		document.querySelector('.madlib-median').textContent = stretchesMedian;

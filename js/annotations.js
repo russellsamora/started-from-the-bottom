@@ -17,29 +17,29 @@ window.annotationsOrder =
   {
     "x": "1977",
     "y": 1,
-    "path": "M93,15C70,-12,31,-13,0,0",
+    "path": "M179,17C154,-17,33,-9,0,0",
     "text": "Paul Pierce is born",
     "className": "annotation annotation-paul",
     "textOffset": [
-      96,
-      19
+      187,
+      20
     ]
   },
   {
     "x": "1998",
     "y": 27,
-    "path": "M-44,16C-30,33,-9,25,0,0",
+    "path": "M-69,10C-47,30,-16,23,0,0",
     "text": "The Spurs get right back up",
     "className": "annotation annotation-spurs",
     "textOffset": [
-      -157,
+      -211,
       11
     ]
   },
   {
     "x": "1984",
     "y": 0,
-    "path": "M0,42L0,0",
+    "path": "M0,42L-1,4",
     "text": "Where Brooklyn at?",
     "className": "annotation annotation-brooklyn",
     "textOffset": [
