@@ -7,8 +7,9 @@
     "start": "npm-run-all --silent --parallel babel stylus server open",
     "babel": "babel js/main.js --out-file js/bundle.js",
     "stylus": "stylus css/main.styl -o css/bundle.css",
-    "server": "light-server -q -s . -w 'js/main.js # npm run babel' -w 'css/main.styl # npm run stylus' -w 'css/bundle.css # # reloadcss' -w 'index.html'",
-    "open": "open http://localhost:4000"
+    "server": "light-server -q -s . -w 'js/main.js # npm run babel' -w 'css/main.styl # npm run stylus' -w 'css/bundle.css # # reloadcss' -w 'index.html' -w 'js/bundle.js # npm run uglify'",
+    "open": "open http://localhost:4000",
+    "uglify": "uglifyjs js/bundle.js --compress --mangle --output js/bundle.min.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "d3-dsv": "^0.3.2",
     "light-server": "^1.1.5",
     "npm-run-all": "^1.5.1",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "uglify-js": "^2.6.2"
   }
 }
