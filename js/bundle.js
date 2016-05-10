@@ -619,6 +619,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 		d3.select('.axis--y-label').attr('transform', translate(0, Math.floor(chartHeight / 2)) + ' rotate(-90)');
 
+		// d3.selectAll('.annotations-rank')
+		// .attr('transform', function(d) {
+		// 	return 'translate(' + xScale(yearFormat.parse(d.x) + ',' + yScale(d.yVal) + ')'
+		// })
+		// 	.x(d => ))
+		// 	.y(d => yScale(d.y))
+
+		// d3.selectAll('.annotations-order')
+		//     .x(d => xScale(yearFormat.parse(d.x)))
+		//     .y(d => yScaleLinear(d.y))
+
 		setupGraphScroll();
 	}
 
@@ -712,7 +723,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			return d.className;
 		});
 
-		var swoopyRankSel = d3.select('.chart').append('g').attr('class', 'annotations').call(swoopyRank);
+		var swoopyRankSel = d3.select('.chart').append('g').attr('class', 'annotations annotations-rank').call(swoopyRank);
 
 		swoopyRankSel.selectAll('path').attr('marker-end', 'url(#arrow)');
 
@@ -724,7 +735,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			return d.className;
 		});
 
-		var swoopyOrderSel = d3.select('.chart').append('g').attr('class', 'annotations').call(swoopyOrder);
+		var swoopyOrderSel = d3.select('.chart').append('g').attr('class', 'annotations annotations-order').call(swoopyOrder);
 
 		swoopyOrderSel.selectAll('path').attr('marker-end', 'url(#arrow)');
 	}

@@ -12,3 +12,7 @@
 
 ### Resources
 [http://bl.ocks.org/mbostock/3035090](gaps in line chart)
+
+### Dev
+* `npm i`
+* `npm run start`

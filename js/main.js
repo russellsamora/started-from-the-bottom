@@ -711,6 +711,18 @@
 		d3.select('.axis--y-label')
 			.attr('transform', translate(0, Math.floor(chartHeight / 2)) + ' rotate(-90)')
 
+		// d3.selectAll('.annotations-rank')
+		// .attr('transform', function(d) {
+		// 	return 'translate(' + xScale(yearFormat.parse(d.x) + ',' + yScale(d.yVal) + ')'
+		// })
+		// 	.x(d => ))
+		// 	.y(d => yScale(d.y))
+
+		// d3.selectAll('.annotations-order')
+		//     .x(d => xScale(yearFormat.parse(d.x)))
+		//     .y(d => yScaleLinear(d.y))
+
+
 		setupGraphScroll()
 	}
 
@@ -808,7 +820,7 @@
 		    .className(d => d.className)
 
 		const swoopyRankSel = d3.select('.chart').append('g')
-				.attr('class', 'annotations')
+				.attr('class', 'annotations annotations-rank')
 				.call(swoopyRank)
 
 		swoopyRankSel.selectAll('path')
@@ -822,7 +834,7 @@
 		    .className(d => d.className)
 
 		const swoopyOrderSel = d3.select('.chart').append('g')
-				.attr('class', 'annotations')
+				.attr('class', 'annotations annotations-order')
 				.call(swoopyOrder)
 
 		swoopyOrderSel.selectAll('path')

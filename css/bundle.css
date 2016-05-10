@@ -92,6 +92,7 @@ main {
   #sections {
     max-width: 360px;
     float: left;
+    padding-left: 0.5em;
   }
 }
 #sections section {
