@@ -118,7 +118,7 @@ main {
   padding-top: 10px;
   padding-left: 10px;
   display: none;
-  border-top: 2px dashed #a08c78;
+  border-top: 1px dotted #a08c78;
 }
 #graphic.graph-scroll-fixed {
   display: block;
