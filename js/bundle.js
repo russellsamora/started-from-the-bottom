@@ -3,7 +3,7 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 (function () {
-	var DRAGGABLE = true;
+	var DRAGGABLE = false;
 	var TEAM_NAME_DICT = { 'ATL': 'Hawks', 'BOS': 'Celtics', 'BRK': 'Nets', 'CHI': 'Bulls', 'CHO': 'Hornets', 'CLE': 'Cavaliers', 'DAL': 'Mavericks', 'DEN': 'Nuggets', 'DET': 'Pistons', 'GSW': 'Warriors', 'HOU': 'Rockets', 'IND': 'Pacers', 'LAC': 'Clippers', 'LAL': 'Lakers', 'MEM': 'Grizzlies', 'MIA': 'Heat', 'MIL': 'Bucks', 'MIN': 'Timberwolves', 'NOP': 'Pelicans', 'NYK': 'Knicks', 'OKC': 'Thunder', 'ORL': 'Magic', 'PHI': '76ers', 'PHO': 'Suns', 'POR': 'Trail Blazers', 'SAC': 'Kings', 'SAS': 'Spurs', 'TOR': 'Raports', 'UTA': 'Jazz', WAS: 'Wizards' };
 	var COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five'];
 	var STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete'];
@@ -12,13 +12,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	var MARGIN = { top: 40, right: 40, bottom: 40, left: 40 };
 	var GRAPHIC_MARGIN = 20;
 	var RATIO = 16 / 9;
-	var SECTION_WIDTH = 360;
 	var DRAKE = 2.8;
 	var RADIUS_FACTOR = 1.5;
 	var TOOLTIP_HEIGHT = 18;
+	var SECTION_WIDTH = 360;
 
 	var audioElement = document.querySelector('.sample');
 
+	var isMobile = false;
 	var singleTeam = 'GSW';
 	var radiusSmall = 0;
 	var radiusLarge = 0;
@@ -312,12 +313,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		var cy = d3.select(this).attr('cy');
 		var r = d3.select(this).attr('r');
 		var name = TEAM_NAME_DICT[d.name];
-		var year = d.season.substring(2, d.season.length);
+		var year = '‘' + d.season.substring(2, d.season.length);
 
 		var yr = +d.seasonYear;
 		var anchor = yr < 1986 ? 'left' : yr > 2006 ? 'end' : 'middle';
 
-		tooltipText.text(year + ' ' + name + ': ').attr('x', cx).attr('y', cy).attr('dy', -r * 2).attr('text-anchor', anchor).append('tspan').text(d.wins + ' wins');
+		tooltipText.text(year + ' ' + name + ': ').attr('x', cx).attr('y', cy).attr('dy', -r * 3).attr('text-anchor', anchor).append('tspan').text(d.wins + ' wins');
 
 		var _tooltipText$0$0$getB = tooltipText[0][0].getBBox();
 
@@ -327,7 +328,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		var height = _tooltipText$0$0$getB.height;
 
 
-		tooltipRect.attr('x', x - 4).attr('y', y).attr('width', width + 8).attr('height', height).attr('class', 'tooltip-rect');
+		tooltipRect.attr('x', x - 4).attr('y', y - 2).attr('width', width + 8).attr('height', height + 4).attr('class', 'tooltip-rect');
 	}
 
 	// hide tooltip
@@ -337,9 +338,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	}
 
 	function bindTip(selection) {
-		selection.on('mouseenter', enterCircle).on('mouseout', exitCircle);
+		if (!isMobile) {
+			selection.on('mouseenter', enterCircle).on('mouseout', exitCircle);
+		}
 	}
 
+	function fadeInAnnotation(selection) {
+		selection.transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').style('opacity', 1);
+	}
 	function stepGraphic(step) {
 		dir = step - previousStep;
 		previousStep = step;
@@ -392,7 +398,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 					allSelection.attr('d', function (d) {
 						return createLine(d.values);
-					}).transition('quad-in-out').delay(EXIT_DURATION).duration(SECOND).style('opacity', 1);
+					}).transition().delay(EXIT_DURATION).duration(SECOND).ease('quad-in-out').style('opacity', 1);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -412,7 +418,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return yScale(d.rank);
 					});
 
-					d3.select('.annotation-73').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
+					d3.select('.annotation-73').call(fadeInAnnotation);
 
 					break;
 				}
@@ -446,7 +452,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					});
 
 					// drake!
-					if (stepData.stretches.length && !draked) {
+					if (stepData.stretches.length && !draked && !isMobile) {
 						draked = true;
 						audioElement.play();
 					}
@@ -506,9 +512,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
 
-					d3.select('.annotation-paul').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
+					d3.select('.annotation-paul').call(fadeInAnnotation);
 
-					d3.select('.annotation-spurs').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
+					d3.select('.annotation-spurs').call(fadeInAnnotation);
 
 					break;
 				}
@@ -539,7 +545,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 					d3.selectAll('.axis--y').transition().delay(EXIT_DURATION).duration(SECOND).style('opacity', 0);
 
-					d3.select('.annotation-brooklyn').transition().delay(EXIT_DURATION).duration(SECOND).ease('elastic').style('opacity', 1);
+					d3.select('.annotation-brooklyn').call(fadeInAnnotation);
 					break;
 				}
 
@@ -587,16 +593,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	}
 
 	function resizeChart(w) {
-		var outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN;
-		var outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT);
-		var chartWidth = outerWidth - MARGIN.left - MARGIN.right;
-		var chartHeight = outerHeight - MARGIN.top - MARGIN.bottom;
-		radiusSmall = Math.max(4, Math.round(outerHeight / 200));
+		var sectionWidth = isMobile ? 0 : SECTION_WIDTH;
+		var graphicMargin = isMobile ? 0 : GRAPHIC_MARGIN;
+		var tooltipHeight = isMobile ? 0 : TOOLTIP_HEIGHT;
+		var margin = {
+			top: isMobile ? 10 : MARGIN.top,
+			left: MARGIN.left,
+			bottom: MARGIN.bottom,
+			right: isMobile ? 10 : MARGIN.right
+		};
+
+		var outerWidth = w - sectionWidth - graphicMargin;
+		var outerHeight = isMobile ? w : Math.round(window.innerHeight - graphicMargin * 2 - tooltipHeight);
+		var chartWidth = outerWidth - margin.left - margin.right;
+		var chartHeight = outerHeight - margin.top - margin.bottom;
+		radiusSmall = Math.max(2, Math.round(outerHeight / 200));
 		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR);
 
 		d3.select('svg').attr('width', outerWidth).attr('height', outerHeight);
 
-		d3.select('.chart').attr('transform', translate(MARGIN.left, MARGIN.top));
+		d3.select('.chart').attr('transform', translate(margin.left, margin.top));
 
 		xScale.range([0, chartWidth]);
 
@@ -635,8 +651,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		});
 
 		var complete = dataByTeam.reduce(function (previous, current) {
-			return previous.concat(current.stretches.complete);
+			return previous.concat(current.stretches.completed);
 		}, []);
+
 		stretchesCompleted = complete.length;
 		stretchesMedian = d3.median(complete);
 		stretchesIncomplete = dataByTeam.reduce(function (previous, current) {
@@ -682,6 +699,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 	function handleResize() {
 		var w = document.getElementById('container').offsetWidth;
+		isMobile = w < 850;
 		if (data.length) resizeChart(w);
 	}
 
@@ -770,7 +788,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		setupChart();
 		window.addEventListener('resize', handleResize);
 		d3.json('data/output.json', handleDataLoaded);
-		setupYoutube();
+		if (!isMobile) setupYoutube();
 	}
 
 	init();

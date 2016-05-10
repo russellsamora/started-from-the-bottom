@@ -8,6 +8,7 @@ $neutral = rgb(160, 140, 120)
 $bg = rgb(255, 250, 240)
 $section-width = 360px
 $section-margin = 20px
+$container-margin = 10px
 
 $path = '../fonts'
 
@@ -30,15 +31,18 @@ $path = '../fonts'
 	src local('Roboto Bold'), local('Roboto-Bold'), url($path + '/roboto-v15-latin-700.woff2') format('woff2'), url($path + '/roboto-v15-latin-700.woff') format('woff')
 
 $roboto = 'Roboto', Helvetica, Arial, sans-serif
+$desktop = 850px
 
 body
 	background $bg
 	color #454545
-	font-size 19px
 	line-height 1.4
+	font-size 16px
 	font-family $roboto
 	font-weight 400
 	-webkit-font-smoothing antialiased
+	@media only screen and (min-width: $desktop)
+		font-size 19px
 
 strong 
 	font-weight 700
@@ -54,7 +58,7 @@ a
 	&:visited 
 		color white
 main 
-	padding 0 1em
+	padding 0 10px
 
 .hide 
 	display none
@@ -90,13 +94,14 @@ main
 	overflow hidden
 
 #sections
-	margin-top $section-margin
+	margin-top 45px
 	@media only screen and (min-width: 850px)
 		max-width $section-width
 		float left
 	section
-		// background-color $bg
 		transition opacity 250ms ease-in-out
+		min-height 75vh
+		opacity 0
 		@media only screen and (min-width: 850px)
 			opacity 0.35
 			min-height 67vh
@@ -105,20 +110,39 @@ main
 			opacity 1
 
 #graphic
+	background-color $bg
+	width 100%
+	position fixed
+	bottom 0
+	left 0
+	padding-top 10px
+	padding-left 10px
 	display none
-	float left
-	margin-left $section-margin
-	margin-top $section-margin
+	border-top 2px dashed $neutral
 	&.graph-scroll-fixed
-		position fixed
-		top 0px
-		left $section-width + $section-margin
-	&.graph-scroll-below
-		position absolute
-		bottom 0px
-		margin-left $section-width + $section-margin
-	@media only screen and (min-width: 850px)
 		display block
+	&.graph-scroll-below
+		display none
+	@media only screen and (min-width: 850px)
+		border none
+		background-color transparent
+		display block
+		float left 
+		margin-left $section-margin
+		margin-top $section-margin
+		position static
+		padding 0
+		width auto
+		&.graph-scroll-fixed
+			display block
+			position fixed
+			top 0px
+			left $section-width + $section-margin - $container-margin
+		&.graph-scroll-below
+			display block
+			position absolute
+			bottom 0px
+			margin-left $section-width + $section-margin
 
 .axis
 	font-size 11px
@@ -142,6 +166,7 @@ circle.wins
 	fill-opacity 0.33
 	stroke none
 	stroke-opacity 1
+	cursor pointer
 	&.bottom
 		fill $bottom
 		stroke $bottom
@@ -198,11 +223,12 @@ path.stretch-path
 	&.transparent
 		opacity 0
 	
-.stephen-curry 
-	background-color rgba($top, 0.2)
-	padding 0 0.25em
-	cursor pointer
-	border 1px dashed $top
+.stephen-curry
+	@media only screen and (min-width: $desktop)
+		background-color rgba($top, 0.2)
+		padding 0 0.25em
+		cursor pointer
+		border 1px dashed $top
 	
 .outro
 	margin-top 2em

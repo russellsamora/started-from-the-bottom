@@ -1,24 +1,13 @@
 window.annotationsRank = [
   {
-    "x": "1977",
-    "y": 2,
-    "path": "M152,10C96,-17,50,-16,16,-5",
-    "text": "Paul Pierce is born",
-    "className": "annotation annotation-paul",
-    "textOffset": [
-      155,
-      17
-    ]
-  },
-  {
     "x": "2016",
     "y": 1,
-    "path": "M-113,55C-62,55,-21,45,0,9",
+    "path": "M-85,55C-62,55,-21,45,0,0",
     "text": "73 wins!",
     "className": "annotation annotation-73",
     "textOffset": [
-      -160,
-      58
+      -134,
+      59
     ]
   }
 ]
@@ -26,25 +15,36 @@ window.annotationsRank = [
 window.annotationsOrder =
 [
   {
-    "x": "1997",
-    "y": 27,
-    "path": "M-0,0C-13,36,9,28,9,0",
-    "text": "The Spurs get right back up",
-    "className": "annotation annotation-spurs",
+    "x": "1977",
+    "y": 1,
+    "path": "M93,15C70,-12,31,-13,0,0",
+    "text": "Paul Pierce is born",
+    "className": "annotation annotation-paul",
     "textOffset": [
-      -173,
-      38
+      96,
+      19
     ]
   },
   {
-    "x": "1980",
+    "x": "1998",
+    "y": 27,
+    "path": "M-44,16C-30,33,-9,25,0,0",
+    "text": "The Spurs get right back up",
+    "className": "annotation annotation-spurs",
+    "textOffset": [
+      -157,
+      11
+    ]
+  },
+  {
+    "x": "1984",
     "y": 0,
-    "path": "M0,01L-6,-8",
+    "path": "M0,42L0,0",
     "text": "Where Brooklyn at?",
     "className": "annotation annotation-brooklyn",
     "textOffset": [
-      -173,
-      38
+      -43,
+      60
     ]
   }
 ]

@@ -1,5 +1,5 @@
 (function() {
-	const DRAGGABLE = true
+	const DRAGGABLE = false
 	const TEAM_NAME_DICT = { 'ATL': 'Hawks','BOS': 'Celtics','BRK': 'Nets','CHI': 'Bulls','CHO': 'Hornets','CLE': 'Cavaliers','DAL': 'Mavericks','DEN': 'Nuggets','DET': 'Pistons','GSW': 'Warriors','HOU': 'Rockets','IND': 'Pacers','LAC': 'Clippers','LAL': 'Lakers','MEM': 'Grizzlies','MIA': 'Heat','MIL': 'Bucks','MIN': 'Timberwolves','NOP': 'Pelicans','NYK': 'Knicks','OKC': 'Thunder','ORL': 'Magic','PHI': '76ers','PHO': 'Suns','POR': 'Trail Blazers','SAC': 'Kings','SAS': 'Spurs','TOR': 'Raports','UTA': 'Jazz', WAS: 'Wizards' }
 	const COUNT_TO_WORD = ['zero', 'one', 'two', 'three', 'four', 'five']
 	const STEPS = ['top-and-bottom', 'warriors', 'stretch-single', 'stretch-all', 'stretch-duration', 'stretch-incomplete']
@@ -8,13 +8,14 @@
 	const MARGIN = { top: 40, right: 40, bottom: 40, left: 40 }
 	const GRAPHIC_MARGIN = 20
 	const RATIO = 16 / 9
-	const SECTION_WIDTH = 360
 	const DRAKE = 2.8
 	const RADIUS_FACTOR = 1.5
 	const TOOLTIP_HEIGHT = 18
+	const SECTION_WIDTH = 360
 
 	const audioElement = document.querySelector('.sample')
 
+	let isMobile = false
 	let singleTeam = 'GSW'
 	let radiusSmall = 0
 	let radiusLarge = 0
@@ -274,7 +275,7 @@
 		const cy = d3.select(this).attr('cy')
 		const r = d3.select(this).attr('r')
 		const name = TEAM_NAME_DICT[d.name]
-		const year = d.season.substring(2, d.season.length)
+		const year = `‘${d.season.substring(2, d.season.length)}`
 
 		const yr = +d.seasonYear
 		const anchor =  yr < 1986 ? 'left' : (yr > 2006 ? 'end' : 'middle')
@@ -283,7 +284,7 @@
 			.text(`${year} ${name}: `)
 			.attr('x', cx)
 			.attr('y', cy)
-			.attr('dy', -r * 2)
+			.attr('dy', -r * 3)
 			.attr('text-anchor', anchor)
 			.append('tspan')
 				.text(`${d.wins} wins`)
@@ -292,9 +293,9 @@
 
 		tooltipRect
 			.attr('x', x - 4)
-			.attr('y', y)
+			.attr('y', y - 2)
 			.attr('width', width + 8)
-			.attr('height', height)
+			.attr('height', height + 4)
 			.attr('class', 'tooltip-rect')
 	}
 
@@ -305,11 +306,21 @@
 	}
 
 	function bindTip(selection) {
-		selection
-			.on('mouseenter', enterCircle)
-			.on('mouseout', exitCircle)
+		if (!isMobile) {
+			selection
+				.on('mouseenter', enterCircle)
+				.on('mouseout', exitCircle)	
+		}
 	}
 
+	function fadeInAnnotation(selection) {
+		selection
+		.transition()
+		.delay(EXIT_DURATION)
+		.duration(SECOND)
+		.ease('quad-in-out')
+		.style('opacity', 1)
+	}
 	function stepGraphic(step) {
 		dir = step - previousStep
 		previousStep = step
@@ -358,9 +369,10 @@
 					.style('opacity', 0)
 
 			allSelection.attr('d', d => createLine(d.values))
-				.transition('quad-in-out')
+				.transition()
 				.delay(EXIT_DURATION)
 				.duration(SECOND)
+				.ease('quad-in-out')
 				.style('opacity', 1)
 
 			winsSelection.enter()
@@ -380,12 +392,7 @@
 				.attr('cx', d => xScale(d.seasonFormatted))
 				.attr('cy', d => yScale(d.rank))
 
-			d3.select('.annotation-73')
-				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND)
-				.ease('elastic')
-				.style('opacity', 1)
+			d3.select('.annotation-73').call(fadeInAnnotation)
 
 			break
 		}
@@ -432,7 +439,7 @@
 				.attr('r', d => d.bottom || d.top ? radiusLarge : radiusSmall)
 				
 			// drake!
-			if (stepData.stretches.length && !draked) {
+			if (stepData.stretches.length && !draked && !isMobile) {
 				draked = true
 				audioElement.play()
 			}
@@ -538,19 +545,9 @@
 				.duration(SECOND)
 				.style('opacity', 0)
 
-			d3.select('.annotation-paul')
-				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND)
-				.ease('elastic')
-				.style('opacity', 1)
+			d3.select('.annotation-paul').call(fadeInAnnotation)
 
-			d3.select('.annotation-spurs')
-				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND)
-				.ease('elastic')
-				.style('opacity', 1)
+			d3.select('.annotation-spurs').call(fadeInAnnotation)
 
 			break
 		}
@@ -602,12 +599,7 @@
 				.duration(SECOND)
 				.style('opacity', 0)
 
-			d3.select('.annotation-brooklyn')
-				.transition()
-				.delay(EXIT_DURATION)
-				.duration(SECOND)
-				.ease('elastic')
-				.style('opacity', 1)
+			d3.select('.annotation-brooklyn').call(fadeInAnnotation)
 			break
 		}
 			
@@ -686,19 +678,29 @@
 	}
 
 	function resizeChart(w) {
-		const outerWidth = w - SECTION_WIDTH - GRAPHIC_MARGIN
-		const outerHeight = Math.round(window.innerHeight - GRAPHIC_MARGIN * 2 - TOOLTIP_HEIGHT)
-		const chartWidth = outerWidth - MARGIN.left - MARGIN.right
-		const chartHeight = outerHeight - MARGIN.top - MARGIN.bottom
-		radiusSmall = Math.max(4, Math.round(outerHeight / 200))
-		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)		
+		const sectionWidth = isMobile ? 0 : SECTION_WIDTH
+		const graphicMargin = isMobile ? 0 : GRAPHIC_MARGIN
+		const tooltipHeight = isMobile ? 0 : TOOLTIP_HEIGHT
+		const margin = {
+			top: isMobile ? 10 : MARGIN.top,
+			left: MARGIN.left,
+			bottom: MARGIN.bottom,
+			right: isMobile ? 10 : MARGIN.right,
+		}		
+
+		const outerWidth = w - sectionWidth - graphicMargin
+		const outerHeight = isMobile ? w : Math.round(window.innerHeight - graphicMargin * 2 - tooltipHeight)
+		const chartWidth = outerWidth - margin.left - margin.right
+		const chartHeight = outerHeight - margin.top - margin.bottom
+		radiusSmall = Math.max(2, Math.round(outerHeight / 200))
+		radiusLarge = Math.round(radiusSmall * RADIUS_FACTOR)
 
 		d3.select('svg')
 			.attr('width', outerWidth)
 			.attr('height', outerHeight)
 
 		d3.select('.chart')
-			.attr('transform', translate(MARGIN.left, MARGIN.top))
+			.attr('transform', translate(margin.left, margin.top))
 		
 		xScale.range([0, chartWidth])
 
@@ -741,7 +743,8 @@
 				incomplete: calculateIncompleteStretch(d.stretches.indices),
 			}))
 
-		const complete = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.complete), [])
+		const complete = dataByTeam.reduce((previous, current) => previous.concat(current.stretches.completed), [])
+
 		stretchesCompleted = complete.length
 		stretchesMedian = d3.median(complete)
 		stretchesIncomplete = dataByTeam.reduce((previous, current) => current.incomplete !== null ? previous += 1 : previous, 0)
@@ -785,6 +788,7 @@
 
 	function handleResize() {
 		const w = document.getElementById('container').offsetWidth
+		isMobile = w < 850
 		if(data.length) resizeChart(w)
 	}
 
@@ -885,7 +889,7 @@
  		setupChart()
  		window.addEventListener('resize', handleResize)
 		d3.json('data/output.json', handleDataLoaded)
-		setupYoutube()
+		if (!isMobile) setupYoutube()
 	}
 
 	init()
