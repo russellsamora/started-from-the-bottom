@@ -1,45 +1,55 @@
-$bottom = rgb(97, 168, 172)
-$bottom = rgb(109, 123, 132)
-$bottom = rgb(100, 150, 150)
-$top = rgb(200, 68, 64)
-$top = rgb(255, 130, 136)
-$top = rgb(230, 100, 100)
-$neutral = rgb(160, 140, 120)
-$bg = rgb(255, 250, 240)
+$bottom = #a9e5d9
+$offblack = #333
+$top = #f64b35
+$neutral = #867550
 $section-width = 360px
 $section-margin = 20px
 $container-margin = 10px
 
 $path = '../fonts'
 
-@font-face
-	font-family 'Roboto'
-	font-style normal
-	font-weight 300
-	src local('Roboto Light'), local('Roboto-Light'), url($path + '/roboto-v15-latin-300.woff2') format('woff2'), url($path + '/roboto-v15-latin-300.woff') format('woff')
+// Roboto
+// @font-face
+// 	font-family 'Roboto'
+// 	font-style normal
+// 	font-weight 300
+// 	src local('Roboto Light'), local('Roboto-Light'), url($path + '/roboto-v15-latin-300.woff2') format('woff2'), url($path + '/roboto-v15-latin-300.woff') format('woff')
 
+// @font-face
+// 	font-family 'Roboto'
+// 	font-style normal
+// 	font-weight 400
+// 	src local('Roboto Regular'), local('Roboto-Regular'), url($path + '/roboto-v15-latin-regular.woff2') format('woff2'), url($path + '/roboto-v15-latin-regular.woff') format('woff')
+
+// @font-face
+// 	font-family 'Roboto'
+// 	font-style normal
+// 	font-weight 700
+// 	src local('Roboto Bold'), local('Roboto-Bold'), url($path + '/roboto-v15-latin-700.woff2') format('woff2'), url($path + '/roboto-v15-latin-700.woff') format('woff')
+
+// Merriweather
 @font-face
-	font-family 'Roboto'
+	font-family 'Merriweather'
 	font-style normal
 	font-weight 400
-	src local('Roboto Regular'), local('Roboto-Regular'), url($path + '/roboto-v15-latin-regular.woff2') format('woff2'), url($path + '/roboto-v15-latin-regular.woff') format('woff')
+	src url($path + '/merriweather-regular.woff2') format('woff2'), url($path + '/merriweather-regular.woff') format('woff')
 
 @font-face
-	font-family 'Roboto'
+	font-family 'Merriweather'
 	font-style normal
 	font-weight 700
-	src local('Roboto Bold'), local('Roboto-Bold'), url($path + '/roboto-v15-latin-700.woff2') format('woff2'), url($path + '/roboto-v15-latin-700.woff') format('woff')
+	src url($path + '/merriweather-bold.woff2') format('woff2'), url($path + '/merriweather-bold.woff') format('woff')	
 
 $roboto = 'Roboto', Helvetica, Arial, sans-serif
+$merriweather = 'Merriweather', Georgia, Times, serif
 $desktop = 850px
 
 body
-	background $bg
+	font-family $merriweather
+	background white
 	color #454545
-	line-height 1.4
+	line-height 1.8
 	font-size 16px
-	font-family $roboto
-	font-weight 400
 	-webkit-font-smoothing antialiased
 	@media only screen and (min-width: $desktop)
 		font-size 19px
@@ -60,34 +70,52 @@ a
 main 
 	padding 0 10px
 
+select
+	cursor pointer
+
 .hide 
 	display none
+
+.highlight
+	padding 0.15em 0.25em
+	border-radius 3px
 	
 .bottom 
-	color $bottom
+	background-color $bottom
 
 .top
-	color $top
+	background-color $top
+	color white
 
 .intro
-	background-color $bottom
+	background-color #efefef
 	padding 2em 1em
-	color darken($bottom, 60%)
-	margin-bottom 2em
 	&-content
-		max-width 35em
+		max-width 30em
 		margin 0 auto
+		@media only screen and (min-width: 850px)
+			max-width 40em
 	&-hed
+		color $neutral
+		font-size 2.5em
+		line-height 1.2
 		font-weight 700
-		font-size 1.6em
-		text-align center
-		margin-bottom 0.5em
-	&-byline
-		text-align center
-	&-date
-		text-align center
+		margin-bottom 0.25em
+		@media only screen and (min-width: 850px)
+			font-size 4.5em
+	&-dek
+		color $offblack
 		font-size 0.8em
-
+		font-weight 400
+		@media only screen and (min-width: 850px)
+			max-width 35em
+	&-date
+		margin-bottom 1.2em
+		color lighten($offblack, 20)
+		font-size 0.7em
+		display block
+		font-weight 700
+		border-bottom 1px solid #ccc
 #container
 	position relative
 	width 100%
@@ -196,7 +224,8 @@ path.stretch-path
 	background none
 	text-align center
 	display inline-block
-	font-family $roboto 
+	font-weight 700
+	font-family $merriweather
 	font-size 19px
 	color #454545
 	border-bottom 1px dashed black
@@ -207,7 +236,7 @@ path.stretch-path
 		stroke $neutral
 	text 
 		fill $neutral
-		font-family $roboto
+		font-family $merriweather
 		font-size 11px
 #arrow 
 	fill $neutral
@@ -230,6 +259,8 @@ path.stretch-path
 		padding 0 0.25em
 		cursor pointer
 		border 1px dashed $top
+		border-radius 3px
+		font-weight 700
 	
 .outro
 	margin-top 2em

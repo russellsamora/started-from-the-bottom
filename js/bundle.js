@@ -139,9 +139,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	function getAverageDiff(count) {
 		var diff = count - stretchesMedian;
 		if (diff < 2) {
-			return 'was <strong class="top">quicker</strong> than';
+			return 'was <strong class="highlight top">quicker</strong> than';
 		} else if (diff > 2) {
-			return 'took <strong class="bottom">longer</strong> than';
+			return 'took <strong class="highlight bottom">longer</strong> than';
 		} else {
 			return 'was about';
 		}
@@ -292,7 +292,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 	function updateMadlib(stretches) {
 		var count = stretches.length;
-		document.querySelector('.madlib-count').innerHTML = count ? 'have completed the journey from the bottom to the top <strong class=\'top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed a journey to the top after starting from the bottom.';
+		document.querySelector('.madlib-count').innerHTML = count ? 'have completed the journey from the bottom to the top <strong class=\'highlight top\'>' + COUNT_TO_WORD[count] + '</strong> time' + (count === 1 ? '' : 's') + ' in franchise history.' : 'have never completed a journey to the top after starting from the bottom.';
 
 		var recent = count ? stretches[count - 1].length - 1 : 0;
 		document.querySelector('.madlib-detail').innerHTML = count ? 'Their most recent ascent ' + getAverageDiff(recent) + ' league average, spanning ' + recent + ' seasons.' : 'Maybe next year fellas...';

@@ -1,28 +1,21 @@
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url("../fonts/roboto-v15-latin-300.woff2") format('woff2'), url("../fonts/roboto-v15-latin-300.woff") format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
+  font-family: 'Merriweather';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url("../fonts/roboto-v15-latin-regular.woff2") format('woff2'), url("../fonts/roboto-v15-latin-regular.woff") format('woff');
+  src: url("../fonts/merriweather-regular.woff2") format('woff2'), url("../fonts/merriweather-regular.woff") format('woff');
 }
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Merriweather';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url("../fonts/roboto-v15-latin-700.woff2") format('woff2'), url("../fonts/roboto-v15-latin-700.woff") format('woff');
+  src: url("../fonts/merriweather-bold.woff2") format('woff2'), url("../fonts/merriweather-bold.woff") format('woff');
 }
 body {
-  background: #fffaf0;
+  font-family: 'Merriweather', Georgia, Times, serif;
+  background: #fff;
   color: #454545;
-  line-height: 1.4;
+  line-height: 1.8;
   font-size: 16px;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 @media only screen and (min-width: 850px) {
@@ -48,37 +41,65 @@ a:visited {
 main {
   padding: 0 10px;
 }
+select {
+  cursor: pointer;
+}
 .hide {
   display: none;
 }
+.highlight {
+  padding: 0.15em 0.25em;
+  border-radius: 3px;
+}
 .bottom {
-  color: #649696;
+  background-color: #a9e5d9;
 }
 .top {
-  color: #e66464;
+  background-color: #f64b35;
+  color: #fff;
 }
 .intro {
-  background-color: #649696;
+  background-color: #efefef;
   padding: 2em 1em;
-  color: #283c3c;
-  margin-bottom: 2em;
 }
 .intro-content {
-  max-width: 35em;
+  max-width: 30em;
   margin: 0 auto;
 }
-.intro-hed {
-  font-weight: 700;
-  font-size: 1.6em;
-  text-align: center;
-  margin-bottom: 0.5em;
+@media only screen and (min-width: 850px) {
+  .intro-content {
+    max-width: 40em;
+  }
 }
-.intro-byline {
-  text-align: center;
+.intro-hed {
+  color: #867550;
+  font-size: 2.5em;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+@media only screen and (min-width: 850px) {
+  .intro-hed {
+    font-size: 4.5em;
+  }
+}
+.intro-dek {
+  color: #333;
+  font-size: 0.8em;
+  font-weight: 400;
+}
+@media only screen and (min-width: 850px) {
+  .intro-dek {
+    max-width: 35em;
+  }
 }
 .intro-date {
-  text-align: center;
-  font-size: 0.8em;
+  margin-bottom: 1.2em;
+  color: #666;
+  font-size: 0.7em;
+  display: block;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
 }
 #container {
   position: relative;
@@ -111,7 +132,7 @@ main {
   opacity: 1;
 }
 #graphic {
-  background-color: #fffaf0;
+  background-color: $bg;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -119,7 +140,7 @@ main {
   padding-top: 10px;
   padding-left: 10px;
   display: none;
-  border-top: 1px dotted #a08c78;
+  border-top: 1px dotted #867550;
 }
 #graphic.graph-scroll-fixed {
   display: block;
@@ -171,23 +192,23 @@ main {
   fill: #888;
 }
 circle.wins {
-  fill: #a08c78;
+  fill: #867550;
   fill-opacity: 0.33;
   stroke: none;
   stroke-opacity: 1;
   cursor: pointer;
 }
 circle.wins.bottom {
-  fill: #649696;
-  stroke: #649696;
+  fill: #a9e5d9;
+  stroke: #a9e5d9;
 }
 circle.wins.top {
-  fill: #e66464;
-  stroke: #e66464;
+  fill: #f64b35;
+  stroke: #f64b35;
 }
 path.all {
   fill: none;
-  stroke: #a08c78;
+  stroke: #867550;
   stroke-width: 2px;
   stroke-opacity: 0.1;
   stroke-linejoin: round;
@@ -195,7 +216,7 @@ path.all {
 }
 path.stretch-path {
   fill: none;
-  stroke: #a08c78;
+  stroke: #867550;
   stroke-opacity: 0.2;
   stroke-linejoin: round;
   stroke-linecap: round;
@@ -206,22 +227,23 @@ path.stretch-path {
   background: none;
   text-align: center;
   display: inline-block;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-family: 'Merriweather', Georgia, Times, serif;
   font-size: 19px;
   color: #454545;
   border-bottom: 1px dashed #000;
 }
 .annotations path {
   fill: none;
-  stroke: #a08c78;
+  stroke: #867550;
 }
 .annotations text {
-  fill: #a08c78;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  fill: #867550;
+  font-family: 'Merriweather', Georgia, Times, serif;
   font-size: 11px;
 }
 #arrow {
-  fill: #a08c78;
+  fill: #867550;
 }
 .youtube {
   top: -10%;
@@ -238,16 +260,18 @@ path.stretch-path {
 }
 @media only screen and (min-width: 850px) {
   .stephen-curry {
-    background-color: rgba(230,100,100,0.2);
+    background-color: rgba(246,75,53,0.2);
     padding: 0 0.25em;
     cursor: pointer;
-    border: 1px dashed #e66464;
+    border: 1px dashed #f64b35;
+    border-radius: 3px;
+    font-weight: 700;
   }
 }
 .outro {
   margin-top: 2em;
-  background-color: #e66464;
-  color: #721212;
+  background-color: #f64b35;
+  color: #721205;
   padding: 4em 1em;
 }
 .outro ul {
@@ -259,11 +283,11 @@ path.stretch-path {
 }
 .tooltip-text {
   font-size: 13px;
-  fill: #ece8e4;
+  fill: #e9e4da;
 }
 .tooltip-text tspan {
   font-weight: 700;
 }
 .tooltip-rect {
-  fill: rgba(148,126,104,0.8);
+  fill: rgba(121,105,72,0.8);
 }

@@ -124,9 +124,9 @@
 	function getAverageDiff(count) {
 		const diff = count - stretchesMedian
 		if (diff < 2) {
-			return 'was <strong class="top">quicker</strong> than'
+			return 'was <strong class="highlight top">quicker</strong> than'
 		} else if (diff > 2) {
-			return 'took <strong class="bottom">longer</strong> than'
+			return 'took <strong class="highlight bottom">longer</strong> than'
 		} else {
 			return 'was about'
 		}
@@ -246,7 +246,7 @@
 	function updateMadlib(stretches) {
 		const count = stretches.length
 		document.querySelector('.madlib-count').innerHTML = count
-			? `have completed the journey from the bottom to the top <strong class='top'>${COUNT_TO_WORD[count]}</strong> time${count === 1 ? '' : 's'} in franchise history.`
+			? `have completed the journey from the bottom to the top <strong class='highlight top'>${COUNT_TO_WORD[count]}</strong> time${count === 1 ? '' : 's'} in franchise history.`
 			: 'have never completed a journey to the top after starting from the bottom.'
 
 		const recent = count ? stretches[count - 1].length  - 1 : 0
