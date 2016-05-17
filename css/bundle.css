@@ -20,7 +20,7 @@ body {
 }
 @media only screen and (min-width: 850px) {
   body {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 strong {
@@ -58,6 +58,21 @@ select {
   background-color: #f64b35;
   color: #fff;
 }
+.byline {
+  padding: 0.5em;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.8em;
+}
+.byline a {
+  color: #f64b35;
+}
+.byline a:hover,
+.byline a:visited {
+  color: #f64b35;
+}
 .intro {
   background-color: #efefef;
   padding: 2em 1em;
@@ -73,14 +88,14 @@ select {
 }
 .intro-hed {
   color: #867550;
-  font-size: 2.5em;
+  font-size: 2.2em;
   line-height: 1.2;
   font-weight: 700;
   margin-bottom: 0.25em;
 }
 @media only screen and (min-width: 850px) {
   .intro-hed {
-    font-size: 4.5em;
+    font-size: 4em;
   }
 }
 .intro-dek {
@@ -132,7 +147,7 @@ select {
   opacity: 1;
 }
 #graphic {
-  background-color: $bg;
+  background-color: #fff;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -258,12 +273,20 @@ path.stretch-path {
 .youtube.transparent {
   opacity: 0;
 }
+.stephen-curry {
+  display: inline-block;
+}
+.stephen-curry img {
+  height: 1.6em;
+  width: auto;
+  vertical-align: middle;
+}
 @media only screen and (min-width: 850px) {
   .stephen-curry {
-    background-color: rgba(246,75,53,0.2);
+    background-color: rgba(246,75,53,0.5);
     padding: 0 0.25em;
     cursor: pointer;
-    border: 1px dashed #f64b35;
+    border: 2px solid #f64b35;
     border-radius: 3px;
     font-weight: 700;
   }

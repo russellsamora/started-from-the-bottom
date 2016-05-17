@@ -5,27 +5,9 @@ $neutral = #867550
 $section-width = 360px
 $section-margin = 20px
 $container-margin = 10px
+$bg = white
 
 $path = '../fonts'
-
-// Roboto
-// @font-face
-// 	font-family 'Roboto'
-// 	font-style normal
-// 	font-weight 300
-// 	src local('Roboto Light'), local('Roboto-Light'), url($path + '/roboto-v15-latin-300.woff2') format('woff2'), url($path + '/roboto-v15-latin-300.woff') format('woff')
-
-// @font-face
-// 	font-family 'Roboto'
-// 	font-style normal
-// 	font-weight 400
-// 	src local('Roboto Regular'), local('Roboto-Regular'), url($path + '/roboto-v15-latin-regular.woff2') format('woff2'), url($path + '/roboto-v15-latin-regular.woff') format('woff')
-
-// @font-face
-// 	font-family 'Roboto'
-// 	font-style normal
-// 	font-weight 700
-// 	src local('Roboto Bold'), local('Roboto-Bold'), url($path + '/roboto-v15-latin-700.woff2') format('woff2'), url($path + '/roboto-v15-latin-700.woff') format('woff')
 
 // Merriweather
 @font-face
@@ -46,13 +28,13 @@ $desktop = 850px
 
 body
 	font-family $merriweather
-	background white
+	background $bg
 	color #454545
 	line-height 1.8
 	font-size 16px
 	-webkit-font-smoothing antialiased
 	@media only screen and (min-width: $desktop)
-		font-size 19px
+		font-size 18px
 
 strong 
 	font-weight 700
@@ -87,6 +69,17 @@ select
 	background-color $top
 	color white
 
+.byline
+	padding 0.5em
+	margin 0
+	position absolute
+	top 0 
+	right 0
+	font-size 0.8em
+	a 
+		color $top
+		&:hover, &:visited
+			color $top
 .intro
 	background-color #efefef
 	padding 2em 1em
@@ -97,12 +90,12 @@ select
 			max-width 40em
 	&-hed
 		color $neutral
-		font-size 2.5em
+		font-size 2.2em
 		line-height 1.2
 		font-weight 700
 		margin-bottom 0.25em
 		@media only screen and (min-width: 850px)
-			font-size 4.5em
+			font-size 4em
 	&-dek
 		color $offblack
 		font-size 0.8em
@@ -254,11 +247,16 @@ path.stretch-path
 		opacity 0
 	
 .stephen-curry
+	display inline-block
+	img  
+		height 1.6em
+		width auto
+		vertical-align middle
 	@media only screen and (min-width: $desktop)
-		background-color rgba($top, 0.2)
+		background-color rgba($top, 0.5)
 		padding 0 0.25em
 		cursor pointer
-		border 1px dashed $top
+		border 2px solid $top
 		border-radius 3px
 		font-weight 700
 	
