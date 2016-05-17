@@ -17,12 +17,34 @@ window.annotationsOrder =
   {
     "x": "1977",
     "y": 1,
-    "path": "M179,17C154,-17,33,-9,0,0",
+    "path": "M150,24C110,-20,24,-19,0,0",
     "text": "Paul Pierce is born",
     "className": "annotation annotation-paul",
     "textOffset": [
-      187,
-      20
+      156,
+      27
+    ]
+  },
+  {
+    "x": "2014",
+    "y": 1,
+    "path": "M-36,32L0,0",
+    "text": "Clippers rejoice",
+    "className": "annotation annotation-clippers",
+    "textOffset": [
+      -85,
+      45
+    ]
+  },
+  {
+    "x": "1980",
+    "y": 7,
+    "path": "M31,0L0,0",
+    "text": "Havlicek retires then  Bird is drafted",
+    "className": "annotation annotation-bird",
+    "textOffset": [
+      36,
+      4
     ]
   },
   {
@@ -33,18 +55,29 @@ window.annotationsOrder =
     "className": "annotation annotation-spurs",
     "textOffset": [
       -211,
-      11
+      3
     ]
   },
   {
     "x": "1984",
     "y": 0,
-    "path": "M0,42L-1,4",
+    "path": "M0,46L0,0",
     "text": "Where Brooklyn at?",
     "className": "annotation annotation-brooklyn",
     "textOffset": [
-      -43,
-      60
+      -53,
+      62
+    ]
+  },
+  {
+    "x": "2015",
+    "y": 15,
+    "path": "M-45,42L0,0",
+    "text": "Kobe leaves the team with room for improvement",
+    "className": "annotation annotation-kobe",
+    "textOffset": [
+      -278,
+      55
     ]
   }
 ]

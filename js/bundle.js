@@ -511,7 +511,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					d3.selectAll('.axis--y').transition().delay(SECOND).duration(SECOND).style('opacity', 0);
 
 					d3.select('.annotation-paul').call(fadeInAnnotation);
-
+					d3.select('.annotation-clippers').call(fadeInAnnotation);
+					d3.select('.annotation-bird').call(fadeInAnnotation);
 					d3.select('.annotation-spurs').call(fadeInAnnotation);
 
 					break;
@@ -544,6 +545,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 					d3.selectAll('.axis--y').transition().delay(SECOND).duration(SECOND).style('opacity', 0);
 
 					d3.select('.annotation-brooklyn').call(fadeInAnnotation);
+					d3.select('.annotation-kobe').call(fadeInAnnotation);
 					break;
 				}
 
