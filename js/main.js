@@ -205,6 +205,7 @@
 				.map(s => [s[0], s[s.length - 1]])
 				.sort((a, b) => +a[0].seasonYear - +b[0].seasonYear)
 
+			console.log(stretches)
 			const wins = stretches.reduce((previous, current) => previous.concat(current), [])
 
 			return {
