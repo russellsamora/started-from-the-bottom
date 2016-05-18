@@ -203,9 +203,16 @@
 				.filter(s => s.length)
 				.reduce((previous, current) => previous.concat(current))
 				.map(s => [s[0], s[s.length - 1]])
-				.sort((a, b) => +a[0].seasonYear - +b[0].seasonYear)
+				.map((s, i) => {
+					s[0].tempIndex = i
+					return s
+				})
+				.sort((a, b) => {
+					const diff = +a[0].seasonYear - +b[0].seasonYear
+					if (diff === 0) return a[0].tempIndex - b[0].tempIndex
+					else return diff
+				})
 
-			console.log(stretches)
 			const wins = stretches.reduce((previous, current) => previous.concat(current), [])
 
 			return {
@@ -219,7 +226,15 @@
 			const stretches = dataByTeam
 				.filter(d => d.incomplete !== null)
 				.map(d => [d.values[d.incomplete], d.values[d.values.length - 1]])
-				.sort((a, b) => +a[0].seasonYear - +b[0].seasonYear)
+				.map((s, i) => {
+					s[0].tempIndex = i
+					return s
+				})
+				.sort((a, b) => {
+					const diff = +a[0].seasonYear - +b[0].seasonYear
+					if (diff === 0) return a[0].tempIndex - b[0].tempIndex
+					else return diff
+				})
 
 			const wins = stretches.map(s => s[0])
 

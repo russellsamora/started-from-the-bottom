@@ -17,12 +17,12 @@ window.annotationsOrder =
   {
     "x": "1977",
     "y": 1,
-    "path": "M150,24C110,-20,24,-19,0,0",
+    "path": "M142,-19L0,0",
     "text": "Paul Pierce is born",
     "className": "annotation annotation-paul",
     "textOffset": [
-      156,
-      27
+      149,
+      -16
     ]
   },
   {
@@ -38,7 +38,7 @@ window.annotationsOrder =
   },
   {
     "x": "1980",
-    "y": 7,
+    "y": 9,
     "path": "M31,0L0,0",
     "text": "Havlicek retires then  Bird is drafted",
     "className": "annotation annotation-bird",
@@ -49,8 +49,8 @@ window.annotationsOrder =
   },
   {
     "x": "1998",
-    "y": 27,
-    "path": "M-69,10C-47,30,-16,23,0,0",
+    "y": 26,
+    "path": "M-54,2C-41,20,-13,20,0,0",
     "text": "The Spurs get right back up",
     "className": "annotation annotation-spurs",
     "textOffset": [

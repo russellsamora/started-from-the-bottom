@@ -237,11 +237,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return previous.concat(current);
 					}).map(function (s) {
 						return [s[0], s[s.length - 1]];
+					}).map(function (s, i) {
+						s[0].tempIndex = i;
+						return s;
 					}).sort(function (a, b) {
-						return +a[0].seasonYear - +b[0].seasonYear;
+						var diff = +a[0].seasonYear - +b[0].seasonYear;
+						if (diff === 0) return a[0].tempIndex - b[0].tempIndex;else return diff;
 					});
 
-					console.log(_stretches2);
 					var _wins2 = _stretches2.reduce(function (previous, current) {
 						return previous.concat(current);
 					}, []);
@@ -259,8 +262,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return d.incomplete !== null;
 					}).map(function (d) {
 						return [d.values[d.incomplete], d.values[d.values.length - 1]];
+					}).map(function (s, i) {
+						s[0].tempIndex = i;
+						return s;
 					}).sort(function (a, b) {
-						return +a[0].seasonYear - +b[0].seasonYear;
+						var diff = +a[0].seasonYear - +b[0].seasonYear;
+						if (diff === 0) return a[0].tempIndex - b[0].tempIndex;else return diff;
 					});
 
 					var _wins3 = _stretches3.map(function (s) {
