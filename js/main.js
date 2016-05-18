@@ -292,6 +292,16 @@
 			.attr('width', width + 8)
 			.attr('height', height + 4)
 			.attr('class', 'tooltip-rect')
+
+		// update line
+		// d3.selectAll('.stretch-path')
+		// 	.style('stroke-width', 2)
+		// 	.style('stroke-opacity', 0.2)
+
+		// d3.select(`.id-${d.id}`)
+		// 	.style('stroke-width', 5)
+		// 	.style('stroke-opacity', 0.5)
+		
 	}
 
 	function exitCircle() {
@@ -406,7 +416,7 @@
 				.append('g').attr('class', 'stretch')
 				.append('path')
 					.attr('class', 'stretch-path')
-					.attr('stroke-width', `${radiusSmall}px`)
+					.attr('stroke-width', radiusSmall)
 
 			stretchSelection.select('path')
 				.attr('d', createLine)
@@ -417,7 +427,7 @@
 				.transition()
 				.duration(SECOND * DRAKE)
 				.ease('quad-in-out')
-				.attr('stroke-width', `${radiusSmall}px`)
+				.attr('stroke-width', radiusSmall)
 				.attrTween('stroke-dasharray', tweenDash)
 
 			winsSelection.enter()
@@ -451,8 +461,8 @@
 				.attr('transform', translate(0, 0))
 				.style('opacity', 0)
 				.append('path')
-					.attr('class', 'stretch-path')
-					.attr('stroke-width', '2px')
+					.attr('class', d => `stretch-path id-${d[0].id} id-${d[d.length - 1].id}`)
+					.attr('stroke-width', 2)
 
 			stretchSelection
 				.transition()
@@ -466,7 +476,7 @@
 				.delay(SECOND)
 				.duration(SECOND)
 				.ease('quad-in-out')
-				.attr('stroke-width', '2px')
+				.attr('stroke-width', 2)
 				.attr('d', createLine)
 
 			winsSelection.enter()
@@ -502,7 +512,7 @@
 				.style('opacity', 0)
 				.append('path')
 					.attr('class', 'stretch-path')
-					.attr('stroke-width', '2px')
+					.attr('stroke-width', 2)
 
 			stretchSelection
 				.transition()
@@ -516,7 +526,7 @@
 				.delay(SECOND)
 				.duration(SECOND)
 				.ease('quad-in-out')
-				.attr('stroke-width', '2px')
+				.attr('stroke-width', 2)
 				.attr('d', createLineDuration)		
 
 			winsSelection.enter()
@@ -557,7 +567,7 @@
 				.style('opacity', 0)
 				.append('path')
 					.attr('class', 'stretch-path')
-					.attr('stroke-width', '2px')
+					.attr('stroke-width', 2)
 
 			stretchSelection
 				.transition()
@@ -571,7 +581,7 @@
 				.delay(SECOND)
 				.duration(SECOND)
 				.ease('quad-in-out')
-				.attr('stroke-width', '2px')
+				.attr('stroke-width', 2)
 				.attr('d', createLineDuration)			
 
 			winsSelection.enter()
@@ -714,16 +724,16 @@
 			.attr('transform', translate(0, Math.floor(chartHeight / 2)) + ' rotate(-90)')
 
 		// d3.selectAll('.annotations-rank')
-		// .attr('transform', function(d) {
-		// 	return 'translate(' + xScale(yearFormat.parse(d.x) + ',' + yScale(d.yVal) + ')'
-		// })
-		// 	.x(d => ))
-		// 	.y(d => yScale(d.y))
+		// 	.attr('transform', function(d) {
+		// 		console.log(d)
+		// 		return 'translate(' + xScale(yearFormat.parse(d.x)) + ',' + yScale(d.yVal) + ')'
+		// 	})
 
 		// d3.selectAll('.annotations-order')
-		//     .x(d => xScale(yearFormat.parse(d.x)))
-		//     .y(d => yScaleLinear(d.y))
-
+		//     .attr('transform', d => {
+		//     	console.log(d)
+		//     	return 'translate(' + xScale(yearFormat.parse(d.x)) + ',' + yScaleLinear(d.y) + ')'
+		// 	})
 
 		setupGraphScroll()
 	}

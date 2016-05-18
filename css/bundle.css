@@ -280,6 +280,7 @@ path.stretch-path {
   height: 1.6em;
   width: auto;
   vertical-align: middle;
+  pointer-events: none;
 }
 @media only screen and (min-width: 850px) {
   .stephen-curry {

@@ -325,6 +325,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 		tooltipRect.attr('x', x - 4).attr('y', y - 2).attr('width', width + 8).attr('height', height + 4).attr('class', 'tooltip-rect');
+
+		// update line
+		// d3.selectAll('.stretch-path')
+		// 	.style('stroke-width', 2)
+		// 	.style('stroke-opacity', 0.2)
+
+		// d3.select(`.id-${d.id}`)
+		// 	.style('stroke-width', 5)
+		// 	.style('stroke-opacity', 0.5)
 	}
 
 	function exitCircle() {
@@ -429,11 +438,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return createLine(d.values);
 					});
 
-					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', radiusSmall + 'px');
+					stretchSelection.enter().append('g').attr('class', 'stretch').append('path').attr('class', 'stretch-path').attr('stroke-width', radiusSmall);
 
 					stretchSelection.select('path').attr('d', createLine).attr('stroke-dasharray', emptyDash);
 
-					stretchSelection.select('path').attr('d', createLine).transition().duration(SECOND * DRAKE).ease('quad-in-out').attr('stroke-width', radiusSmall + 'px').attrTween('stroke-dasharray', tweenDash);
+					stretchSelection.select('path').attr('d', createLine).transition().duration(SECOND * DRAKE).ease('quad-in-out').attr('stroke-width', radiusSmall).attrTween('stroke-dasharray', tweenDash);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -461,9 +470,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			case 'stretch-all':
 				{
-					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', translate(0, 0)).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
+					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', translate(0, 0)).style('opacity', 0).append('path').attr('class', function (d) {
+						return 'stretch-path id-' + d[0].id + ' id-' + d[d.length - 1].id;
+					}).attr('stroke-width', 2);
 
-					stretchSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('transform', translate(0, 0)).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLine);
+					stretchSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('transform', translate(0, 0)).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', 2).attr('d', createLine);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -488,11 +499,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				{
 					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
+					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', 2);
 
 					stretchSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
+					}).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', 2).attr('d', createLineDuration);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -522,11 +533,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				{
 					stretchSelection.enter().append('g').attr('class', 'stretch').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', '2px');
+					}).style('opacity', 0).append('path').attr('class', 'stretch-path').attr('stroke-width', 2);
 
 					stretchSelection.transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('transform', function (d, i) {
 						return translate(0, yScaleLinear(i));
-					}).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', '2px').attr('d', createLineDuration);
+					}).style('opacity', 1).select('path').transition().delay(SECOND).duration(SECOND).ease('quad-in-out').attr('stroke-width', 2).attr('d', createLineDuration);
 
 					winsSelection.enter().append('circle').attr('class', function (d) {
 						return 'wins ' + (d.bottom ? 'bottom' : '') + ' ' + (d.top ? 'top' : '');
@@ -622,15 +633,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		d3.select('.axis--y-label').attr('transform', translate(0, Math.floor(chartHeight / 2)) + ' rotate(-90)');
 
 		// d3.selectAll('.annotations-rank')
-		// .attr('transform', function(d) {
-		// 	return 'translate(' + xScale(yearFormat.parse(d.x) + ',' + yScale(d.yVal) + ')'
-		// })
-		// 	.x(d => ))
-		// 	.y(d => yScale(d.y))
+		// 	.attr('transform', function(d) {
+		// 		console.log(d)
+		// 		return 'translate(' + xScale(yearFormat.parse(d.x)) + ',' + yScale(d.yVal) + ')'
+		// 	})
 
 		// d3.selectAll('.annotations-order')
-		//     .x(d => xScale(yearFormat.parse(d.x)))
-		//     .y(d => yScaleLinear(d.y))
+		//     .attr('transform', d => {
+		//     	console.log(d)
+		//     	return 'translate(' + xScale(yearFormat.parse(d.x)) + ',' + yScaleLinear(d.y) + ')'
+		// 	})
 
 		setupGraphScroll();
 	}
